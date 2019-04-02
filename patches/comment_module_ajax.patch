@@ -1,0 +1,36 @@
+diff --git a/modules/comment/src/Plugin/Field/FieldFormatter/CommentDefaultFormatter.php b/modules/comment/src/Plugin/Field/FieldFormatter/CommentDefaultFormatter.php
+index b03accc..021643f 100644
+--- a/modules/comment/src/Plugin/Field/FieldFormatter/CommentDefaultFormatter.php
++++ b/modules/comment/src/Plugin/Field/FieldFormatter/CommentDefaultFormatter.php
+@@ -175,8 +175,29 @@ class CommentDefaultFormatter extends FormatterBase implements ContainerFactoryP
+             // where a specific comment appears and does a subrequest pointing to
+             // that page, we need to pass that subrequest route to our pager to
+             // keep the pager working.
+-            $build['pager']['#route_name'] = $this->routeMatch->getRouteObject();
+-            $build['pager']['#route_parameters'] = $this->routeMatch->getRawParameters()->all();
++
++
++            $replaced_route_name = NULL;
++            $replaced_route_parameters = NULL;
++            if (0 === strpos($this->routeMatch->getRouteObject()->getPath(), '/ajax_comments')){
++              /** @var \Drupal\node\Entity\NodeRouteProvider $prov */
++              $providers =$this->entityManager->getRouteProviders($entity->getEntityTypeId());
++              if (!empty($providers['html'])){
++                /** @var \Drupal\node\Entity\NodeRouteProvider $provider */
++                $provider = $providers['html'];
++                /** @var RouteCollection $routes */
++                $routes = $provider->getRoutes($entity->getEntityType());
++                if ($canonical_route = $routes->get('entity.'.$entity->getEntityTypeId().'.canonical')){
++                  $replaced_route_name = $canonical_route;
++                  $replaced_route_parameters = [
++                    $entity->getEntityTypeId()=>$entity->id()
++                  ];
++                }
++              }
++            }
++
++            $build['pager']['#route_name'] = $replaced_route_name ? $replaced_route_name : $this->routeMatch->getRouteObject();
++            $build['pager']['#route_parameters'] = $replaced_route_parameters ? $replaced_route_parameters : $this->routeMatch->getRawParameters()->all();
+             if ($this->getSetting('pager_id')) {
+               $build['pager']['#element'] = $this->getSetting('pager_id');
+             }

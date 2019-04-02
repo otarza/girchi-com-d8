@@ -1,0 +1,10 @@
+tagging-js:
+  version: VERSION
+  css:
+    theme:
+      css/jquery-ui.min.css: {}
+      css/jquery.tagit.css: {}
+  js:
+    js/libs/jquery-ui.min.js: {}
+    js/libs/tag-it.min.js: {}
+    js/tag-it.js: {}

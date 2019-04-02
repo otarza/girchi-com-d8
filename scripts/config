@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Project variables.
+ADMIN_USER=omedia
+ADMIN_PASS=changeme
+ADMIN_EMAIL=drupal@omedia.ge
+
+# Override with local configs.
+DOCROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"

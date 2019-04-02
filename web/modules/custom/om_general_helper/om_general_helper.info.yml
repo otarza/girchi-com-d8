@@ -1,0 +1,5 @@
+name: Omedia General Helper
+type: module
+description: Omedia general helper code for site.
+core: 8.x
+package: Omedia

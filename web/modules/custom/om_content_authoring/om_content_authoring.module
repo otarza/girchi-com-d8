@@ -1,0 +1,165 @@
+<?php
+
+/**
+ * @file
+ * Contains om_content_authoring.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\editor\Entity\Editor;
+
+/**
+ * Implements hook_help().
+ */
+function om_content_authoring_help($route_name, RouteMatchInterface $route_match)
+{
+  switch ($route_name) {
+    // Main module help for the om_content_authoring module.
+    case 'help.page.om_content_authoring':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('WYSIWYG and text format features.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_ckeditor_css_alter().
+ */
+function om_content_authoring_ckeditor_css_alter(array &$css, Editor $editor)
+{
+  $css[] = drupal_get_path('module', 'om_content_authoring') . '/css/ckeditor.css';
+}
+
+/**
+ * Implements hook_editor_js_settings_alter().
+ */
+function om_content_authoring_editor_js_settings_alter(array &$settings)
+{
+  foreach (array_keys($settings['editor']['formats']) as $text_format_id) {
+    if ($settings['editor']['formats'][$text_format_id]['editor'] === 'ckeditor') {
+
+      // Disable WYSIWYG editor interface language by site language
+      $settings['editor']['formats'][$text_format_id]['editorSettings']['language'] = 'en';
+
+      // Custom special characters
+      $special_chars = [
+        ['&#8382;', 'Georgian Lari Symbol'], '&euro;', '&cent;', '&pound;', '&curren;', '&yen;',
+        '&ndash;', '&mdash;', '^', '_', '`', '~', '&hellip;',
+        '&brvbar;', '&sect;', '&uml;', '&copy;', '&trade;', '&reg;',
+        '&ordf;', '&laquo;', '&not;', '&macr;', '&deg;', '&sup2;', '&sup3;', '&acute;', '&micro;',
+        '&para;', '&middot;', '&cedil;', '&sup1;', '&ordm;', '&raquo;', '&frac14;', '&frac12;', '&frac34;',
+        '&times;', '&divide;', '&asymp;', '&#8800;', '&Oslash;', '&oslash;',
+        '&#9658;', '&bull;', '&rarr;', '&rArr;', '&larr;', '&lArr;',
+        '&hArr;', '&diams;'];
+
+      $settings['editor']['formats'][$text_format_id]['editorSettings']['specialChars'] = $special_chars;
+
+
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_embed_alter()
+ *
+ * Alters wysiwyg-embedded media entities to add editor-set properties.
+ */
+
+function om_content_authoring_entity_embed_alter(&$build, $entity, $context) {
+  if(isset($context['data-entity-type']) && $context['data-entity-type'] == 'media') {
+    // Maintain data-is-zoomable if it is there.
+    if (isset($context['data-is-zoomable']) && $context['data-is-zoomable']) {
+      $build['#attributes']['data-is-zoomable'] = "true";
+    }
+  }
+}
+
+
+function om_content_authoring_preprocess_entity_embed_container(&$vars) {
+  // Add more classes to embedded entity, to style by entity type and display mode.
+
+  if(isset($vars['element']) && isset($vars['element']['#entity'])) {
+    /** @var \Drupal\Core\Entity\Entity $entity */
+    $entity = $vars['element']['#entity'];
+
+    $vars['attributes']['class'][] = 'entity-'.$entity->getEntityTypeId();
+    $vars['attributes']['class'][] = 'entity-'.$entity->getEntityTypeId().'-'.$entity->bundle();
+
+    if(!empty($vars['element']['#context']['data-entity-embed-display'])) {
+      $display_class = $vars['element']['#context']['data-entity-embed-display'];
+      $display_class = explode(':', $display_class);
+      $display_class = !empty($display_class[1]) ? $display_class[1] : $display_class[0];
+      $display_class = \Drupal\Component\Utility\Html::getClass($display_class);
+
+      $vars['attributes']['class'][] = 'entity-view-mode-'.$display_class;
+    }
+  }
+}
+
+
+function om_content_authoring_preprocess_filter_caption(&$vars) {
+  // We're wrapping non-captioned images in <figure class="inline-image">'s
+  // in TextTransformFilter.
+  // Captioned images already have <figure> wrapper but here we're adding
+  // the same 'inline-image' class to them as well.
+  if(isset($vars['tag']) && $vars['tag'] == 'img') {
+    $vars['classes'] .= ' inline-image';
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+function om_content_authoring_form_alter(
+  &$form,
+  \Drupal\Core\Form\FormStateInterface $form_state,
+  $form_id
+) {
+  if($form_id == 'editor_image_dialog') {
+    $form['attributes']['alt']['#required'] = false;
+    $form['attributes']['alt']['#access'] = false;
+    if($form['align']['#default_value'] == 'none') {
+      $form['align']['#default_value'] = 'center';
+    }
+  }
+  if($form_id == 'editor_link_dialog') {
+    $form['attributes']['target']['#default_value'] = true;
+  }
+  if($form_id == 'entity_embed_dialog') {
+    if($form['attributes']['data-entity-type']['#value'] == 'media') {
+      // remove center alignment for media embed - no use
+      if(isset($form['attributes']['data-align'])) {
+        unset($form['attributes']['data-align']['#options']['center']);
+      }
+      // if the dialog is opened by user (editing) and not by media browser (in initial insert)
+      // then set the default value for view mode to full-width
+      // (on multiple select, our patch sets the default to full-width for all inserted entities)
+      if(empty($form_state->getUserInput()['editor_object'])){
+        $form['attributes']['data-entity-embed-display']['#default_value'] = 'view_mode:media.full_width';
+      }
+      // attach custom validation to validate alignment with selected view mode
+      $form['#validate'][] = '_om_content_authoring_validate_entity_embed_dialog';
+    }
+  }
+}
+
+function _om_content_authoring_validate_entity_embed_dialog(&$form, \Drupal\Core\Form\FormStateInterface $form_state){
+  if($form_state->hasValue(['attributes', 'data-align'])) {
+    $align = $form_state->getValue(['attributes', 'data-align']);
+    $view_mode = $form_state->getValue(['attributes', 'data-entity-embed-display']);
+
+    if(!$align && in_array($view_mode, ['view_mode:media.aligned', 'view_mode:media.aligned_small'])) {
+      $form_state->setError($form['attributes']['data-align'], 'This display mode requires to be aligned.');
+    }
+    if($align && in_array($view_mode, ['view_mode:media.full_width'])) {
+      $form_state->setError($form['attributes']['data-align'], 'You cannot align with this display mode.');
+    }
+  }
+}

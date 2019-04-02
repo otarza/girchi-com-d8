@@ -1,0 +1,117 @@
+<?php
+
+/**
+ * @file
+ * Contains om_general_helper.module.
+ */
+
+use Drupal\Core\Database\Database;
+use Drupal\Core\Render\BubbleableMetadata;
+use Drupal\paragraphs\Entity\Paragraph;
+
+
+/**
+ * Implements hook_token_info().
+ */
+function om_general_helper_token_info() {
+  $info = [];
+  $info['tokens']['site']['om-url-abs'] = [
+    'name' => t('Absolute site URL'),
+    'description' => t("Returns site URL without language prefix. Good for images."),
+  ];
+  $info['tokens']['site']['om-lang'] = [
+    'name' => t('Current language'),
+    'description' => t("Returns current language code."),
+  ];
+  $info['tokens']['node']['om-share-img'] = [
+    'name' => t('Share image by node'),
+    'description' => t("Returns appropriate share image for given node."),
+    'type' => 'node',
+  ];
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function om_general_helper_tokens(
+  $type,
+  $tokens,
+  array $data,
+  array $options,
+  BubbleableMetadata $bubbleable_metadata
+) {
+
+  $replacements = [];
+  $language_manager = \Drupal::languageManager();
+  if (isset($options['langcode'])) {
+    $langcode = $options['langcode'];
+  }
+  else {
+    $langcode = $language_manager->getCurrentLanguage()->getId();
+  }
+
+  if ($type == 'site') {
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+
+        case 'om-url-abs':
+          $result = \Drupal::request()->getSchemeAndHttpHost();
+          $bubbleable_metadata->addCacheableDependency($result);
+          $replacements[$original] = $result;
+          break;
+
+        case 'om-lang':
+          $language = \Drupal::languageManager()->getCurrentLanguage();
+          $bubbleable_metadata->addCacheableDependency($language);
+          $replacements[$original] = $language->getId();
+          break;
+      }
+
+    }
+  }
+  // Node tokens.
+  if ($type == 'node' && !empty($data['node'])) {
+    /* @var \Drupal\node\NodeInterface $node */
+    $node = $data['node'];
+
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'om-share-img':
+          $image_url = _om_global_get_share_image($node);;
+          $replacements[$original] = $image_url;
+          break;
+      }
+    }
+  }
+
+  return $replacements;
+}
+
+
+function _om_global_get_share_image(\Drupal\node\Entity\Node $node){
+
+  $image_entity = null;
+  $image_style = 'og_image';
+  $node_type = $node->getType();
+
+  if($node_type == 'article'){
+    if(!$node->get('field_social_thumbnail')->isEmpty()){
+      $image_entity = $node->get('field_social_thumbnail')->entity;
+    } elseif(!$node->get('field_thumbnail')->isEmpty()) {
+      $image_entity = $node->get('field_thumbnail')->entity;
+    }
+  }
+
+  if($image_entity instanceof \Drupal\file\Entity\File){
+    $uri = $image_entity->getFileUri();
+    if($image_style) {
+      $style = \Drupal\image\Entity\ImageStyle::load($image_style);
+      return $style->buildUrl($uri);
+    } else {
+      return file_create_url($uri);
+    }
+  }
+
+  return \Drupal::request()->getSchemeAndHttpHost().'/og.png';
+}

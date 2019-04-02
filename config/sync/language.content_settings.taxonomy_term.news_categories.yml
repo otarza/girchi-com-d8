@@ -1,0 +1,18 @@
+uuid: c55d378a-c2fa-45ed-9753-df000243a08d
+langcode: ka
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.news_categories
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.news_categories
+target_entity_type_id: taxonomy_term
+target_bundle: news_categories
+default_langcode: ka
+language_alterable: false

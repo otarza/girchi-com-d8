@@ -1,0 +1,113 @@
+uuid: 92513133-862a-4b87-b66a-301efa0d22ac
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - search_api.server.default
+  module:
+    - search_api
+    - node
+id: general_content
+name: 'General Content'
+description: ''
+read_only: false
+field_settings:
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 3
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - article
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  rendered_item: {  }
+  add_url: {  }
+  aggregated_field: {  }
+  highlight:
+    highlight: always
+    highlight_partial: true
+    excerpt: true
+    excerpt_length: 500
+    exclude_fields:
+      - title
+    prefix: '<strong class="search-result-highlight">'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
+  entity_status: {  }
+  ignorecase:
+    all_fields: false
+    fields:
+      - title
+      - body
+    weights:
+      preprocess_index: -48
+      preprocess_query: -50
+  content_access:
+    weights:
+      preprocess_query: -49
+  html_filter:
+    all_fields: false
+    fields:
+      - title
+      - body
+    title: true
+    alt: true
+    tags:
+      h1: 5
+      h2: 4
+      h3: 3
+      strong: 3
+      b: 3
+    weights:
+      preprocess_index: -49
+      preprocess_query: -47
+tracker_settings:
+  default: {  }
+options:
+  index_directly: false
+  cron_limit: 250
+server: default

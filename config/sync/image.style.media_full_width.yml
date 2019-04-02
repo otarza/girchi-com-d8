@@ -1,0 +1,15 @@
+uuid: 6b3c9f56-84c6-4228-b5eb-89d251b88e5a
+langcode: ka
+status: true
+dependencies: {  }
+name: media_full_width
+label: 'Media Full Width'
+effects:
+  e0ce4f1a-2b1e-4fa1-be36-af35ded9971a:
+    uuid: e0ce4f1a-2b1e-4fa1-be36-af35ded9971a
+    id: image_scale
+    weight: 1
+    data:
+      width: 1000
+      height: null
+      upscale: false

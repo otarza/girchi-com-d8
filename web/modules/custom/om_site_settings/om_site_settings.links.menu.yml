@@ -1,0 +1,7 @@
+om_site_settings.site_settings_form:
+  title: 'Site Settings'
+  route_name: om_site_settings.site_settings_form
+  description: 'General settings for this site.'
+  parent: system.admin_config
+  weight: -99
+

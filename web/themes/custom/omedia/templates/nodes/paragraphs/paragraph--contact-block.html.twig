@@ -1,0 +1,21 @@
+<section class="contact-block">
+    <div class="cb-block">
+        <div class="container-fluid om-width-choker">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="cb-block-inner">
+                        {% if not field_empty(content.field_title) %}
+                            <h2 class="page-section-title">{{ content.field_title }}</h2>
+                        {% endif %}
+                        {{ content.field_address }}
+                        {{ content.field_phone }}
+                        {{ content.field_email }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{ content.field_map }}
+</section>

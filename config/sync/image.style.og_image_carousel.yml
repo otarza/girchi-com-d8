@@ -1,0 +1,15 @@
+uuid: 307313f6-4f55-4be5-8251-d1f19936ee1f
+langcode: ka
+status: true
+dependencies: {  }
+name: og_image_carousel
+label: 'OG Image Carousel'
+effects:
+  b87d1fbd-c27f-4947-adcd-e0414ec17f99:
+    uuid: b87d1fbd-c27f-4947-adcd-e0414ec17f99
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1000
+      height: 1000
+      anchor: center-center

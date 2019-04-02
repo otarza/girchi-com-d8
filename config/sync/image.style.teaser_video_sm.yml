@@ -1,0 +1,15 @@
+uuid: 97cfb0b5-fa20-4da5-a72f-72cc657e619f
+langcode: ka
+status: true
+dependencies: {  }
+name: teaser_video_sm
+label: 'Teaser Video Sm'
+effects:
+  48ae9e03-dead-493b-9eb1-433c5f15498a:
+    uuid: 48ae9e03-dead-493b-9eb1-433c5f15498a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 105
+      height: 60
+      anchor: center-center

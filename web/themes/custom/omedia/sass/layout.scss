@@ -1,0 +1,414 @@
+// base
+@import "base";
+@import "mixins";
+
+
+
+// 
+// global layout
+//
+
+body {
+    background: $color-site-bg;
+    font-family: $font-body;
+    font-size: 14px;
+    line-height: 1.3;
+    color: $color-text-main;
+}
+
+
+.om-width-choker {
+    width: 100%;
+    max-width: 1460px;
+
+    @include breakpoint($break-mobile) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+
+$header-height: 95px;
+.om-header {
+    background: #f4f4f4;
+    border-bottom: 2px solid $color-red;
+    transition: background 0.2s;
+
+    .om-header-inner {
+        position: relative;
+        min-height: 50px;
+    }
+
+    .main-logo {
+        position: absolute;
+        padding-top: 4px;
+
+        .logo-white {
+            display: none;
+        }
+        img {
+            display: block;
+            width: 84px;
+            height: 39px;
+        }
+    }
+    .om-header-nav {
+        display: none;
+    }
+
+
+    @include breakpoint($break-mobile) {
+        .om-header-inner {
+            @include display-flex;
+            height: $header-height;
+        }
+
+        .main-logo {
+            position: static;
+            @include flex(0 1 auto);
+            padding-right: 30px;
+            padding-top: 13px;
+
+            img {
+                width: 135px;
+                height: 62.72px;
+            }
+        }
+        .om-header-nav {
+            @include flex(1 1 auto);
+            @include display-flex;
+        }
+
+        @include breakpoint-max(1240px) {
+            .main-logo {
+                padding-right: 15px;
+                padding-top: 21px;
+
+                img {
+                    width: 105px;
+                    height: 48.78px;
+                }
+            }
+        }
+    }
+
+    &.mobile-menu-opened {
+        background: $color-dark;
+
+        .logo-normal {
+            display: none;
+        }
+        .logo-white {
+            display: block;
+        }
+    }
+}
+
+.om-main-menu {
+    display: none; // slicknav uses it
+}
+@include breakpoint($break-mobile) {
+    .om-main-menu {
+        @include display-flex;
+        @include flex(1 1 auto);
+
+        .item-level-0 {
+            @include flex(1 1 auto);
+            @include display-flex;
+            @include font-upper;
+            font-size: 16px;
+            position: relative;
+
+            .link-level-0 {
+                color: $color-black;
+                background: #fff;
+                text-align: center;
+                box-shadow: inset -1px 0 0 0 #e5e5e5;
+                cursor: pointer;
+                @include display-flex;
+                @include flex(1 1 auto);
+                @include align-items(center);
+                @include justify-content(center);
+
+                @include hover-colors(#fff);
+                @include mouse-hover {
+                    background: $color-dark;
+                    box-shadow: inset 0 -2px 0 0 $color-red, -1px 0 0 0 $color-dark;
+                }
+            }
+            &.menu-item--active-trail .link-level-0 {
+                background: $color-red;
+                color: #fff;
+                box-shadow: inset 0 -2px 0 0 $color-red-darker;
+            }
+
+            &.menu-opened .link-level-0 {
+                background: $color-dark;
+                color: #fff;
+                box-shadow: inset 0 -2px 0 0 $color-red, -1px 0 0 0 $color-dark;
+            }
+
+            &:last-child .link-level-0 {
+                box-shadow: none;
+            }
+
+            @include breakpoint-max(1240px) {
+                font-size: 13px;
+            }
+        }
+
+        // main big black menu block
+        .submenu-level-1 {
+            display: none;
+            position: absolute;
+            top: $header-height;
+            left: 0;
+            z-index: 1000;
+            background: $color-dark;
+            box-shadow: -1px 0 0 0 $color-dark, 0 -2px 0 0 $color-red;
+            padding: 20px 10px 10px 30px;
+
+            // sub-sub block
+            .item-level-1 {
+                position: relative;
+                padding-bottom: 10px;
+
+                &:before {
+                    display: block;
+                    content: '';
+                    width: 10px;
+                    height: 7px;
+                    background: $color-red;
+                    position: absolute;
+                    left: -19px;
+                    top: 5px;
+                }
+
+                &.menu-item--active-trail .link-level-1 {
+                    text-decoration: underline;
+                }
+            }
+            .link-level-1 {
+                font-size: 16px;
+                color: #fff;
+            }
+            a.link-level-1 {
+                @include hover-colors(#cdcdcd);
+            }
+
+            &.subsub-grid {
+                @include display-flex(flex !important);
+                @include flex-direction(column);
+                @include flex-wrap(wrap);
+                @include align-items(flex-start);
+                @include align-content(flex-start);
+                background-image: image-url('menu-bg.svg');
+                background-size: contain;
+                background-position: right center;
+                background-repeat: no-repeat;
+                padding: 30px 30px 0 30px;
+
+                .item-level-1 {
+                    width: 355px;
+                    padding-right: 60px;
+
+                    &.menu-item--active-trail .link-level-1 {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .submenu-level-2 {
+            padding: 10px 0 30px 0;
+
+            .item-level-2 {
+                font-family: $font-body;
+                text-transform: none;
+                font-size: 14px;
+                margin-bottom: 10px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                &.menu-item--active-trail .link-level-2 {
+                    color: #fff;
+                    text-decoration: underline;
+                }
+            }
+
+            .link-level-2 {
+                color: #cdcdcd;
+
+                @include hover-colors(#fff);
+            }
+        }
+
+        .lang-item {
+
+            .flag-ka,
+            .flag-en {
+                width: 24px;
+                height: 15px;
+                margin-top: -5px;
+            }
+        }
+    }
+}
+
+
+.slicknav_menu {
+    background: transparent;
+    padding: 0;
+
+    .slicknav_btn {
+        margin: 8px 0 0 0;
+        background-color: #fff;
+        height: 33px;
+    }
+    .slicknav_menutxt {
+        text-shadow: none;
+        font-weight: normal;
+        color: #bcbdc5;
+        font-size: 14px;
+        @include font-upper;
+        line-height: 24px;
+    }
+    .slicknav_icon-bar {
+        background-color: lighten($color-dark, 5%);
+        @include box-shadow(none);
+    }
+
+    .slicknav_open {
+        background: $color-darker;
+
+        .slicknav_icon-bar {
+            background-color: lighten($color-dark, 20%);
+        }
+    }
+
+    .slicknav_nav {
+        padding-top: 15px;
+        clear: both;
+        margin: 0 -15px;
+
+        .slicknav_arrow {
+            margin-left: 0;
+            color: $color-red;
+        }
+
+        a:hover {
+            background: transparent;
+        }
+
+        > li > a {
+            @include font-upper;
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        .slicknav_parent.slicknav_open {
+            padding-bottom: 15px;
+        }
+
+        .menu-item--active-trail > a {
+            color: #e5e5e5;
+        }
+
+        .lang-item {
+            img {
+                width: 30px;
+                height: 18.75px;
+                vertical-align: -3px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+.om-footer {
+    border-top: 3px solid $color-red;
+    background: $color-darker;
+    color: $color-text-dark;
+    font-size: 14px;
+    padding: 15px 0;
+
+    a {
+        color: $color-text-dark;
+    }
+
+    .foot-social-link {
+        display: inline-block;
+        padding: 12px 15px 13px;
+        margin: 0 10px;
+        color: darken($color-text-dark, 10%);
+        border: 1px solid currentColor;
+        transition: all 0.2s;
+
+        .social-icon {
+            width: 26px;
+            height: 26px;
+            display: block;
+        }
+
+        @include mouse-hover {
+            color: $color-red;
+        }
+    }
+
+    .footer-social {
+        text-align: center;
+    }
+    .footer-text {
+        padding-top: 20px;
+    }
+    .omedia {
+        text-align: right;
+
+        a {
+            @include hover-colors(#ee4500);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

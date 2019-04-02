@@ -1,0 +1,23 @@
+uuid: 5849c4fb-0644-47b7-aff0-636a38dc5dd2
+langcode: ka
+status: true
+dependencies:
+  config:
+    - block_content.type.banner
+    - field.storage.block_content.field_target_blank
+id: block_content.banner.field_target_blank
+field_name: field_target_blank
+entity_type: block_content
+bundle: banner
+label: 'Open link in new window'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

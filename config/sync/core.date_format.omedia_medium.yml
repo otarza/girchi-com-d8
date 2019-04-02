@@ -1,0 +1,8 @@
+uuid: b157d4be-6e53-420a-bf53-b2f351ba7799
+langcode: en
+status: true
+dependencies: {  }
+id: omedia_medium
+label: 'Omedia Medium'
+locked: false
+pattern: 'F j, Y'

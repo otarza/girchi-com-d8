@@ -1,0 +1,8 @@
+name: Omedia Menu Parents Token
+type: module
+description: Provides token for grabbing path of current menu link's parents. Useful for Hierarchical Slug Paths.
+core: 8.x
+package: Omedia
+dependencies:
+  - token
+  - pathauto

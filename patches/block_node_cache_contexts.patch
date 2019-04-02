@@ -1,0 +1,21 @@
+diff --git a/src/Plugin/Block/NodeBlock.php b/src/Plugin/Block/NodeBlock.php
+index d178aa7..7c9ec43 100644
+--- a/src/Plugin/Block/NodeBlock.php
++++ b/src/Plugin/Block/NodeBlock.php
+@@ -3,6 +3,7 @@
+ namespace Drupal\block_node\Plugin\Block;
+ 
+ use Drupal\Core\Block\BlockBase;
++use Drupal\Core\Cache\Cache;
+ use Drupal\Core\Form\FormStateInterface;
+ use Drupal\Core\Session\AccountInterface;
+ use Drupal\Core\Access\AccessResult;
+@@ -185,4 +186,8 @@ class NodeBlock extends BlockBase implements ContainerFactoryPluginInterface {
+     return $this->node->access('view', NULL, TRUE);
+   }
+ 
++  public function getCacheContexts() {
++    return Cache::mergeContexts(['route'], parent::getCacheContexts());
++  }
++
+ }

@@ -1,0 +1,9 @@
+
+om_utils.bulk_create_form:
+  path: '/admin/om_utils/bulk_create'
+  defaults:
+    _form: '\Drupal\om_utils\Form\BulkCreateForm'
+    _title: 'BulkCreateForm'
+  requirements:
+    _access: 'TRUE'
+  

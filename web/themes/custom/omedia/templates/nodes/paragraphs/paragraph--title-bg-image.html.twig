@@ -1,0 +1,8 @@
+{% if field_empty(content.field_bg_image) %}
+    {% set bg_image = theme_path('images/para-bg-title-default.jpg') %}
+{% else %}
+    {% set bg_image = content.field_bg_image | field_value %}
+{% endif %}
+<h2 class="paragraph-title-bg-image body-content-full-width {{ enable_gradient ? 'enable-gradient' : '' }}" style="background-image: url('{{ bg_image }}')">
+    <span class="tbi-inner">{{ content.field_title }}</span>
+</h2>

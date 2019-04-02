@@ -1,0 +1,23 @@
+uuid: 187ff5b0-ab63-4064-9410-bf5975afbe36
+langcode: ka
+status: true
+dependencies:
+  config:
+    - block_content.type.banner
+    - field.storage.block_content.field_disabled
+id: block_content.banner.field_disabled
+field_name: field_disabled
+entity_type: block_content
+bundle: banner
+label: 'Disable Banner'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

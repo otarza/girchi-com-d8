@@ -1,0 +1,10 @@
+uuid: 577a1f3b-b5a6-45b5-b800-911c13853c7d
+langcode: ka
+status: true
+dependencies:
+  module:
+    - node
+id: node.page_header
+label: 'Page Header'
+targetEntityType: node
+cache: true

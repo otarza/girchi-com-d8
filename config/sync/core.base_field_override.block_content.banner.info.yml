@@ -1,0 +1,18 @@
+uuid: c9fe020c-6699-45a1-83d5-75a591a27328
+langcode: ka
+status: true
+dependencies:
+  config:
+    - block_content.type.banner
+id: block_content.banner.info
+field_name: info
+entity_type: block_content
+bundle: banner
+label: 'Block description'
+description: 'A brief description of your block.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

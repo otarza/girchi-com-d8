@@ -1,0 +1,10 @@
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      css/media.css: {}
+  js:
+    js/media.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

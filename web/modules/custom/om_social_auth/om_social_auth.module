@@ -1,0 +1,127 @@
+<?php
+
+/**
+ * @file
+ * Contains om_social_auth.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\user\UserInterface;
+
+/**
+ * Implements hook_help().
+ */
+function om_social_auth_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the om_social_auth module.
+    case 'help.page.om_social_auth':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Helper Code for Social Auth Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * @see user_register_form()
+ */
+function om_social_auth_form_user_register_form_alter(
+  &$form,
+  FormStateInterface $form_state
+) {
+  $current_user = \Drupal::currentUser();
+  if (\Drupal::config('user.settings')
+      ->get('register') == USER_REGISTER_VISITORS
+    && \Drupal::config('user_registrationpassword.settings')
+      ->get('registration') == USER_REGISTRATIONPASSWORD_VERIFICATION_PASS
+    && !$current_user->id()) {
+    /*
+     * მომხმარებლის ანგარიში გავხადოთ აქტიური, მიუხედავად იმისა რომ არ მოუხდენია
+     * ელ.ფოსტის დადასტურება.
+     *
+     * პ.ს. ამას ვაკეთებთ იმიტომ, რომ დეფაულტად user_registrationpassword მოდული
+     * მომხმარებელს ანიჭებს blocked სტატუსს.
+     * */
+    $form['account']['status']['#value'] = TRUE;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ *
+ * @param \Drupal\user\UserInterface $user
+ *
+ */
+function om_social_auth_user_presave(UserInterface $user) {
+  /*
+   * ახალი მომხმარებელს შექმნის წინ დავუმატოთ როლი passive დეფაულტად.
+   * */
+  if ($user->isNew() && !$user->hasRole('authenticated')) {
+    $user->addRole('passive');
+  }
+}
+
+
+/**
+ * Implements hook_form_alter().
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+function om_social_auth_form_alter(
+  &$form,
+  FormStateInterface $form_state,
+  $form_id
+) {
+  if ($form_id == 'user_form') {
+    /** @var \Drupal\user\Entity\User $current_user */
+    $current_user = \Drupal::currentUser();
+    if (in_array('passive', $current_user->getRoles())) {
+      $form['actions']['resend_activation_link'] = [
+        '#type' => 'submit',
+        '#value' => t('Resend Activation Link'),
+        '#submit' => [
+          '_om_social_auth_resend_activation_link',
+        ],
+        "#button_type" => "primary",
+        "#weight" => 5,
+      ];
+    }
+  }
+}
+
+
+/*
+ * ხელახლა გავაგზავნოთ აქტივაციის ლინკი მომხმარებელთან
+ * */
+function _om_social_auth_resend_activation_link(
+  &$form,
+  FormStateInterface $form_state
+) {
+  if ($form_state->hasValue('mail') && !empty($form_state->getValue('mail'))) {
+    $user_mail = $form_state->getValue('mail');
+    if (\Drupal::service('email.validator')->isValid($user_mail)) {
+      $account = \Drupal::currentUser();
+      $params['account'] = \Drupal::entityTypeManager()
+        ->getStorage('user')
+        ->load($account->id());
+      if (\Drupal::service('plugin.manager.mail')
+        ->mail('user_registrationpassword', 'register', $user_mail,
+          $account->getPreferredLangcode(), $params)) {
+        \Drupal::logger('user')
+          ->notice('Password reset instructions resend to %name at %email.', [
+            '%name' => $account->getAccountName(),
+            '%email' => $account->getEmail(),
+          ]);
+        user_registrationpassword_set_message();
+      }
+    }
+  }
+}

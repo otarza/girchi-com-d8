@@ -1,0 +1,19 @@
+uuid: cea38bbe-f1ea-4d3e-b837-3ef055975b67
+langcode: ka
+status: true
+dependencies:
+  config:
+    - block_content.type.banner
+    - field.storage.block_content.field_banner_code
+id: block_content.banner.field_banner_code
+field_name: field_banner_code
+entity_type: block_content
+bundle: banner
+label: 'Banner Code'
+description: 'HTML/JS Banner Code. This takes over the image+link combination, so if set, image banner and link won''t be displayed.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

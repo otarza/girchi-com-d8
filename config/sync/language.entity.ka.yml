@@ -1,0 +1,9 @@
+uuid: c92a3b8d-53b6-4b0c-88f9-5c51f84665be
+langcode: en
+status: true
+dependencies: {  }
+id: ka
+label: Georgian
+direction: ltr
+weight: -9
+locked: false

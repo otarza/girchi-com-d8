@@ -1,0 +1,30 @@
+uuid: 06098838-ba4a-4e14-981c-e09bccba0c5f
+langcode: ka
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact_larger
+    - field.field.user.user.user_picture
+    - image.style.avatar_sm
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.compact_larger
+targetEntityType: user
+bundle: user
+mode: compact_larger
+content:
+  user_picture:
+    type: image
+    weight: 0
+    region: content
+    settings:
+      image_style: avatar_sm
+      image_link: ''
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  langcode: true
+  member_for: true

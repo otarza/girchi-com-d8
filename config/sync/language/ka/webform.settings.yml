@@ -1,0 +1,3 @@
+settings:
+  default_submit_button_label: გაგზავნა
+  default_form_required_label: 'აღნიშნავს სავალდებულო ველს'

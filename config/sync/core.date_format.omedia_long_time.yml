@@ -1,0 +1,8 @@
+uuid: 0be25f41-b164-48ae-a100-6c92375c324d
+langcode: en
+status: true
+dependencies: {  }
+id: omedia_long_time
+label: 'Omedia Long Time'
+locked: false
+pattern: 'F j, Y - h:iA'

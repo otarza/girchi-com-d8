@@ -1,0 +1,30 @@
+{%
+set classes = [
+    'logo-single',
+    field_empty(content.body) ? '' : 'has-body'
+]
+%}
+<li{{ attributes.addClass(classes) }}>
+    {{ title_suffix }}
+    <span class="logo-inner">
+        <span class="logo-img-wrap" style="{{ width_adjust ? 'width:'~width_adjust~'%' : '' }}">
+            {% if not field_empty(content.field_url) %}
+                <a target="_blank" href="{{ content.field_url | field_value }}"><img src="{{ content.field_logo | field_value }}" alt="{{ label | field_value }}"></a>
+            {% else %}
+                <img src="{{ content.field_logo | field_value }}" alt="{{ label | field_value }}">
+            {% endif %}
+        </span>
+    </span>
+    {% if not field_empty(content.body) %}
+        <div class="logo-body">
+            {{ content.body }}
+        </div>
+    {% endif %}
+    {% if not field_empty(content.field_tagline) %}
+        <div class="logo-tagline">
+            <div class="logo-tagline-inner">
+                {{ content.field_tagline }}
+            </div>
+        </div>
+    {% endif %}
+</li>

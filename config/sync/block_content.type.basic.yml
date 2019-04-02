@@ -1,0 +1,10 @@
+uuid: 805c401e-c3df-4a9e-923c-6f5da9851a56
+langcode: ka
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: zglzjmYxi0G0ag9MZ02y0LSJOdpWRwJxyP_OvFojFyo
+id: basic
+label: 'Basic block'
+revision: 0
+description: ''

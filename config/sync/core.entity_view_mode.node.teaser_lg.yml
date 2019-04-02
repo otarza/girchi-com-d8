@@ -1,0 +1,10 @@
+uuid: 84274cd3-6dae-4a32-bb9e-de7f424e3c3e
+langcode: ka
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_lg
+label: 'Teaser Lg'
+targetEntityType: node
+cache: true

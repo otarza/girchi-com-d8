@@ -1,0 +1,15 @@
+uuid: e6cf1032-225d-4d90-b5c0-69b0efea8657
+langcode: ka
+status: true
+dependencies: {  }
+name: banner_sidebar
+label: 'Banner Sidebar'
+effects:
+  a2907b67-a458-4ad1-9527-5d6d35d2fdf9:
+    uuid: a2907b67-a458-4ad1-9527-5d6d35d2fdf9
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 350
+      height: 210
+      anchor: center-center

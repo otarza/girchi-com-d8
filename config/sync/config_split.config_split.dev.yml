@@ -1,0 +1,17 @@
+uuid: fb324c6e-ea6e-4432-a5a1-d03661782e64
+langcode: ka
+status: false
+dependencies: {  }
+id: dev
+label: dev
+folder: ../config/environments/dev
+module:
+  devel: 0
+  devel_generate: 0
+  kint: 0
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

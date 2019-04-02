@@ -1,0 +1,5 @@
+name: Omedia Media
+type: module
+description: Custom helper code for Drupal Media
+core: 8.x
+package: Omedia

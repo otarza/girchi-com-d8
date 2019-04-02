@@ -1,0 +1,10 @@
+uuid: 3de3b6ee-43fe-4945-acb4-d9c3f6b18ed9
+langcode: ka
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.boxed_link
+label: 'Boxed Link'
+targetEntityType: taxonomy_term
+cache: true

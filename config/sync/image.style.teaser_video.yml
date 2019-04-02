@@ -1,0 +1,15 @@
+uuid: 5e0d5280-9b17-4263-a77e-b13402876ae2
+langcode: ka
+status: true
+dependencies: {  }
+name: teaser_video
+label: 'Teaser Video'
+effects:
+  6878a131-276f-4be7-8c5b-10b9550005b2:
+    uuid: 6878a131-276f-4be7-8c5b-10b9550005b2
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 341
+      height: 187
+      anchor: center-center

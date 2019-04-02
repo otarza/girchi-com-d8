@@ -1,0 +1,30 @@
+name: Omedia
+type: theme
+description: Omedia custom theme
+package: Omedia
+core: 8.x
+libraries:
+  - omedia/bootstrap
+  - omedia/super-form-reset
+  - omedia/slicknav
+  - omedia/slick
+  - omedia/js-cookie
+  - omedia/svg4everybody
+  - omedia/global-styling
+
+libraries-override:
+  #core/drupal : false
+  #system/base : false
+
+base theme: false
+
+regions:
+  header: Header
+  header_nav: Header Navigation
+  content_top: Content Top
+  content: Content
+  content_bottom: Content Bottom
+  sidebar_primary: Primary Sidebar
+  sidebar_secondary: Secondary Sidebar
+  footer_nav: Footer Navigation
+  footer: Footer

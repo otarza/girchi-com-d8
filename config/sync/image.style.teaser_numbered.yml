@@ -1,0 +1,15 @@
+uuid: 990a0a8c-73a1-4187-bbe7-a03ac34bd7d9
+langcode: ka
+status: true
+dependencies: {  }
+name: teaser_numbered
+label: 'Teaser Numbered'
+effects:
+  63540373-9d3f-4716-8246-30d61fc178e9:
+    uuid: 63540373-9d3f-4716-8246-30d61fc178e9
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 207
+      height: 135
+      anchor: center-center

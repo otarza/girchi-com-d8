@@ -1,0 +1,2890 @@
+# Georgian translation of Drupal core (8.3.0)
+# Copyright (c) 2017 by the Georgian translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Drupal core (8.3.0)\n"
+"POT-Creation-Date: 2017-04-06 13:11+0000\n"
+"PO-Revision-Date: 2017-04-29 20:18+0400\n"
+"Language-Team: Georgian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Last-Translator: \n"
+"Language: ka\n"
+"X-Generator: Poedit 2.0.1\n"
+
+msgid "Forms"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "User interface"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Body"
+msgstr ""
+
+msgid "Next"
+msgstr ""
+
+msgid "Pages"
+msgstr ""
+
+msgid "Save configuration"
+msgstr ""
+
+msgid "delete"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Register"
+msgstr ""
+
+msgid "Create a new user account."
+msgstr ""
+
+msgid "Markup"
+msgstr ""
+
+msgid "Prefix"
+msgstr ""
+
+msgid "Suffix"
+msgstr ""
+
+msgid "Approve"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Submit"
+msgstr ""
+
+msgid "Operations"
+msgstr ""
+
+msgid "Content"
+msgstr ""
+
+msgid "Attribute"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "Email address"
+msgstr ""
+
+msgid "Development"
+msgstr ""
+
+msgid "Groups"
+msgstr ""
+
+msgid "Group"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Author"
+msgstr ""
+
+msgid "Replies"
+msgstr ""
+
+msgid "Closed"
+msgstr ""
+
+msgid "yes"
+msgstr ""
+
+msgid "List"
+msgstr ""
+
+msgid "Subject"
+msgstr ""
+
+msgid "Send email"
+msgstr ""
+
+msgid "closed"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "disabled"
+msgstr ""
+
+msgid "Confirm"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Last comment"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "more"
+msgstr ""
+
+msgid "Enable"
+msgstr ""
+
+msgid "Disable"
+msgstr ""
+
+msgid "Article"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Administration"
+msgstr ""
+
+msgid "Comments"
+msgstr ""
+
+msgid "More"
+msgstr ""
+
+msgid "not verified"
+msgstr ""
+
+msgid "Action"
+msgstr ""
+
+msgid "Last updated"
+msgstr ""
+
+msgid "On"
+msgstr ""
+
+msgid "new"
+msgstr ""
+
+msgid "Tags"
+msgstr ""
+
+msgid "Block title"
+msgstr ""
+
+msgid "The title of the block as shown to the user."
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "Content types"
+msgstr ""
+
+msgid "Homepage"
+msgstr ""
+
+msgid "Home page"
+msgstr ""
+
+msgid "Download"
+msgstr ""
+
+msgid "Version"
+msgstr ""
+
+msgid "view"
+msgstr ""
+
+msgid "updated"
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "File information"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "Tag"
+msgstr ""
+
+msgid "File path"
+msgstr ""
+
+msgid "Advanced options"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Links"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Daily"
+msgstr ""
+
+msgid "Weekly"
+msgstr ""
+
+msgid "Monthly"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Test"
+msgstr ""
+
+msgid "Number"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "Account Name"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Block settings"
+msgstr ""
+
+msgid "- None -"
+msgstr ""
+
+msgid "Country"
+msgstr ""
+
+msgid "Weight"
+msgstr ""
+
+msgid "Link"
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "Container"
+msgstr ""
+
+msgid "Types"
+msgstr ""
+
+msgid "Hierarchy"
+msgstr ""
+
+msgid "Required"
+msgstr ""
+
+msgid "Parent"
+msgstr ""
+
+msgid "Category"
+msgstr ""
+
+msgid "Add container"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "edit container"
+msgstr ""
+
+msgid "edit"
+msgstr ""
+
+msgid "Go to previous page"
+msgstr ""
+
+msgid "Go to parent page"
+msgstr ""
+
+msgid "Go to next page"
+msgstr ""
+
+msgid "Import"
+msgstr ""
+
+msgid "Book"
+msgstr ""
+
+msgid "Export"
+msgstr ""
+
+msgid "settings"
+msgstr ""
+
+msgid "Field"
+msgstr ""
+
+msgid "Label"
+msgstr ""
+
+msgid "Session opened for %name."
+msgstr ""
+
+msgid "Help"
+msgstr ""
+
+msgid "Image settings"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+msgid "Open"
+msgstr ""
+
+msgid "Sunday"
+msgstr "კვირა"
+
+msgid "Monday"
+msgstr "ორშაბათი"
+
+msgid "Tuesday"
+msgstr "სამშაბათი"
+
+msgid "Wednesday"
+msgstr "ოთხშაბათი"
+
+msgid "Thursday"
+msgstr "ხუთშაბათი"
+
+msgid "Friday"
+msgstr "პარასკევი"
+
+msgid "Saturday"
+msgstr "შაბათი"
+
+msgid "High"
+msgstr ""
+
+msgid "Low"
+msgstr ""
+
+msgid "Album"
+msgstr ""
+
+msgid "Artist"
+msgstr ""
+
+msgid "Add new"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Add"
+msgstr ""
+
+msgid "Length"
+msgstr ""
+
+msgid "Format"
+msgstr ""
+
+msgid "History"
+msgstr ""
+
+msgid "hidden"
+msgstr ""
+
+msgid "Path"
+msgstr ""
+
+msgid "Filename"
+msgstr ""
+
+msgid "File extensions"
+msgstr ""
+
+msgid "Vocabularies"
+msgstr ""
+
+msgid "Modules"
+msgstr ""
+
+msgid "Form ID"
+msgstr ""
+
+msgid "General discussion"
+msgstr ""
+
+msgid "edit forum"
+msgstr ""
+
+msgid "Forum name"
+msgstr ""
+
+msgid "forum"
+msgstr ""
+
+msgid "Manage"
+msgstr ""
+
+msgid "Refresh"
+msgstr ""
+
+msgid "Region"
+msgstr ""
+
+msgid "link"
+msgstr ""
+
+msgid "Anchor"
+msgstr ""
+
+msgid "Display"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+msgid "Advanced settings"
+msgstr ""
+
+msgid "never"
+msgstr ""
+
+msgid "Updated"
+msgstr ""
+
+msgid "Text"
+msgstr ""
+
+msgid "Add forum"
+msgstr ""
+
+msgid "Component"
+msgstr ""
+
+msgid "Statistics"
+msgstr ""
+
+msgid "You are not authorized to access this page."
+msgstr ""
+
+msgid "Unknown"
+msgstr ""
+
+msgid "Attachment"
+msgstr ""
+
+msgid "Upload"
+msgstr ""
+
+msgid "Picture"
+msgstr ""
+
+msgid "Upload image"
+msgstr ""
+
+msgid "Before"
+msgstr ""
+
+msgid "After"
+msgstr ""
+
+msgid "Database type"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "Content type"
+msgstr ""
+
+msgid "Continue"
+msgstr ""
+
+msgid "Configure"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Files"
+msgstr ""
+
+msgid "User ID"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Options"
+msgstr ""
+
+msgid "Contact"
+msgstr ""
+
+msgid "no"
+msgstr ""
+
+msgid "Created"
+msgstr ""
+
+msgid "Sent email to %recipient"
+msgstr ""
+
+msgid "Unable to send email to %recipient"
+msgstr ""
+
+msgid "The subject of the message."
+msgstr ""
+
+msgid "Number of columns"
+msgstr ""
+
+msgid "Create"
+msgstr ""
+
+msgid "Separator"
+msgstr ""
+
+msgid "Horizontal"
+msgstr ""
+
+msgid "Vertical"
+msgstr ""
+
+msgid "Open link in new window"
+msgstr ""
+
+msgid "Expanded"
+msgstr ""
+
+msgid "Parent item"
+msgstr ""
+
+msgid "Add child page"
+msgstr ""
+
+msgid "Content type for child pages"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Done"
+msgstr ""
+
+msgid "Last post"
+msgstr ""
+
+msgid "Access denied"
+msgstr ""
+
+msgid "Year"
+msgstr ""
+
+msgid "Date format"
+msgstr ""
+
+msgid "Add content"
+msgstr ""
+
+msgid "Page title"
+msgstr ""
+
+msgid "Block"
+msgstr ""
+
+msgid "Override title"
+msgstr ""
+
+msgid "CSS class"
+msgstr ""
+
+msgid "Page"
+msgstr ""
+
+msgid "View arguments"
+msgstr ""
+
+msgid "1 minute"
+msgid_plural "@count minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "1 hour"
+msgid_plural "@count hours"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "1 day"
+msgid_plural "@count days"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Configuration saved."
+msgstr ""
+
+msgid "Logo"
+msgstr ""
+
+msgid "Site name"
+msgstr ""
+
+msgid "Site slogan"
+msgstr ""
+
+msgid "Good"
+msgstr ""
+
+msgid "User settings"
+msgstr ""
+
+msgid "Site"
+msgstr ""
+
+msgid "Web Server"
+msgstr ""
+
+msgid "Database"
+msgstr ""
+
+msgid "Drupal"
+msgstr ""
+
+msgid "Not found"
+msgstr ""
+
+msgid "Module"
+msgstr ""
+
+msgid "Off"
+msgstr ""
+
+msgid "Host"
+msgstr ""
+
+msgid "PostgreSQL"
+msgstr ""
+
+msgid "Available updates"
+msgstr ""
+
+msgid "Manual update check"
+msgstr ""
+
+msgid "Never"
+msgstr ""
+
+msgid "Check manually"
+msgstr ""
+
+msgid "Up to date"
+msgstr ""
+
+msgid "Update available"
+msgstr ""
+
+msgid "Drupal core update status"
+msgstr ""
+
+msgid "Out of date"
+msgstr ""
+
+msgid "Left sidebar"
+msgstr ""
+
+msgid "Right sidebar"
+msgstr ""
+
+msgid "Inline"
+msgstr ""
+
+msgid "Recipients"
+msgstr ""
+
+msgid "Your name"
+msgstr ""
+
+msgid "Menu link"
+msgstr ""
+
+msgid "To"
+msgstr ""
+
+msgid "From"
+msgstr ""
+
+msgid "Visibility"
+msgstr ""
+
+msgid "Roles"
+msgstr ""
+
+msgid "Role ID"
+msgstr ""
+
+msgid "Comment"
+msgstr ""
+
+msgid "Comment ID"
+msgstr ""
+
+msgid "Score"
+msgstr ""
+
+msgid "Published"
+msgstr ""
+
+msgid "Signature"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "File ID"
+msgstr ""
+
+msgid "File name"
+msgstr ""
+
+msgid "File MIME type"
+msgstr ""
+
+msgid "File size"
+msgstr ""
+
+msgid "Vocabulary"
+msgstr ""
+
+msgid "Vocabulary ID"
+msgstr ""
+
+msgid "Vocabulary name"
+msgstr ""
+
+msgid "User role"
+msgstr ""
+
+msgid "Role name"
+msgstr ""
+
+msgid "Last access"
+msgstr ""
+
+msgid "Last login"
+msgstr ""
+
+msgid "Time zone"
+msgstr ""
+
+msgid "Field name"
+msgstr ""
+
+msgid "Field type"
+msgstr ""
+
+msgid "Global settings"
+msgstr ""
+
+msgid "Fields"
+msgstr ""
+
+msgid "Contains"
+msgstr ""
+
+msgid "Does not contain"
+msgstr ""
+
+msgid "Is less than"
+msgstr ""
+
+msgid "Is less than or equal to"
+msgstr ""
+
+msgid "Is equal to"
+msgstr ""
+
+msgid "Is greater than or equal to"
+msgstr ""
+
+msgid "Is greater than"
+msgstr ""
+
+msgid "Is not equal to"
+msgstr ""
+
+msgid "Average"
+msgstr ""
+
+msgid "Count"
+msgstr ""
+
+msgid "Mode"
+msgstr ""
+
+msgid "Warning"
+msgstr ""
+
+msgid "blocked"
+msgstr ""
+
+msgid "active"
+msgstr ""
+
+msgid "Number of news items in block"
+msgstr ""
+
+msgid "Items"
+msgstr ""
+
+msgid "Last update"
+msgstr ""
+
+msgid "Next update"
+msgstr ""
+
+msgid "%time ago"
+msgstr ""
+
+msgid "%time left"
+msgstr ""
+
+msgid "Authored by"
+msgstr ""
+
+msgid "Advanced"
+msgstr ""
+
+msgid "Processor"
+msgstr ""
+
+msgid "Width"
+msgstr ""
+
+msgid "Height"
+msgstr ""
+
+msgid "Maximum"
+msgstr ""
+
+msgid "Medium"
+msgstr ""
+
+msgid "Media"
+msgstr ""
+
+msgid "standard"
+msgstr ""
+
+msgid "Month"
+msgstr ""
+
+msgid "Details"
+msgstr ""
+
+msgid "Prev"
+msgstr ""
+
+msgid "System"
+msgstr ""
+
+msgid "Domain"
+msgstr ""
+
+msgid "Processors"
+msgstr ""
+
+msgid "Unlimited"
+msgstr ""
+
+msgid "Current"
+msgstr ""
+
+msgid "Desc"
+msgstr ""
+
+msgid "Filter by"
+msgstr ""
+
+msgid "Owner"
+msgstr ""
+
+msgid "Recipient"
+msgstr ""
+
+msgid "OR"
+msgstr ""
+
+msgid "Add a role to the selected users"
+msgstr ""
+
+msgid "Remove a role from the selected users"
+msgstr ""
+
+msgid "Administer content"
+msgstr ""
+
+msgid "General"
+msgstr ""
+
+msgid "Directory"
+msgstr ""
+
+msgid "Method"
+msgstr ""
+
+msgid "Egypt"
+msgstr "ეგვიპტე"
+
+msgid "Namibia"
+msgstr "ნამიბია"
+
+msgid "Israel"
+msgstr "ისრაელი"
+
+msgid "Iran"
+msgstr "ირანი"
+
+msgid "New Zealand"
+msgstr "ახალი ზელანდია"
+
+msgid "Tonga"
+msgstr "ტონგა"
+
+msgid "Cuba"
+msgstr "კუბა"
+
+msgid "Brazil"
+msgstr "ბრაზილია"
+
+msgid "Chile"
+msgstr "ჩილე"
+
+msgid "Jamaica"
+msgstr "იამაიკა"
+
+msgid "Japan"
+msgstr "იაპონია"
+
+msgid "Libya"
+msgstr "ლიბია"
+
+msgid "Poland"
+msgstr "პოლონეთი"
+
+msgid "Portugal"
+msgstr "პორტუგალია"
+
+msgid "Singapore"
+msgstr "სინგაპური"
+
+msgid "Turkey"
+msgstr "თურქეთი"
+
+msgid "Day"
+msgstr ""
+
+msgid "Table"
+msgstr ""
+
+msgid "Mon"
+msgstr "ორშ"
+
+msgid "Tue"
+msgstr "სამშ"
+
+msgid "Wed"
+msgstr "ოთხ"
+
+msgid "Thu"
+msgstr "ხუთ"
+
+msgid "Fri"
+msgstr "პარ"
+
+msgid "Sat"
+msgstr "შაბ"
+
+msgid "Sun"
+msgstr "კვი"
+
+msgid "May"
+msgstr "მაისი"
+
+msgid "am"
+msgstr "დილის"
+
+msgid "pm"
+msgstr "საღამოს"
+
+msgid "Forum"
+msgstr ""
+
+msgid "Configuration"
+msgstr ""
+
+msgid "Other"
+msgstr ""
+
+msgid "Display title"
+msgstr ""
+
+msgid "Background color"
+msgstr ""
+
+msgid "Text color"
+msgstr ""
+
+msgid "Navigation"
+msgstr ""
+
+msgid "Color"
+msgstr ""
+
+msgid "Appearance"
+msgstr ""
+
+msgid "Link URL"
+msgstr ""
+
+msgid "List type"
+msgstr ""
+
+msgid "Attributes"
+msgstr ""
+
+msgid "Role"
+msgstr ""
+
+msgid "Select all"
+msgstr ""
+
+msgid "User login"
+msgstr ""
+
+msgid "Log in"
+msgstr ""
+
+msgid "Link text"
+msgstr ""
+
+msgid "Add new comment"
+msgstr ""
+
+msgid "Destination"
+msgstr ""
+
+msgid "Counter"
+msgstr ""
+
+msgid "External"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "Not installed"
+msgstr ""
+
+msgid ""
+"@site is currently under maintenance. We should be back shortly. Thank you "
+"for your patience."
+msgstr ""
+
+msgid "Default front page"
+msgstr ""
+
+msgid "Button"
+msgstr ""
+
+msgid "Both"
+msgstr ""
+
+msgid "Maximum length"
+msgstr ""
+
+msgid "Cache"
+msgstr ""
+
+msgid "Argument"
+msgstr ""
+
+msgid "Anonymous"
+msgstr ""
+
+msgid "Provider"
+msgstr ""
+
+msgid "Install"
+msgstr ""
+
+msgid "Save and edit"
+msgstr ""
+
+msgid "Tools"
+msgstr ""
+
+msgid "Arguments"
+msgstr ""
+
+msgid "Operator"
+msgstr ""
+
+msgid "Filters"
+msgstr ""
+
+msgid "Random"
+msgstr ""
+
+msgid "Position"
+msgstr ""
+
+msgid "Integer"
+msgstr ""
+
+msgid "Anonymous users"
+msgstr ""
+
+msgid "Clear cache"
+msgstr ""
+
+msgid "fields"
+msgstr ""
+
+msgid "Save settings"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "Session closed for %name."
+msgstr ""
+
+msgid "Germany"
+msgstr ""
+
+msgid "Created date"
+msgstr ""
+
+msgid "Updated date"
+msgstr ""
+
+msgid "comments"
+msgstr ""
+
+msgid "Full"
+msgstr ""
+
+msgid "1 new"
+msgid_plural "@count new"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Default language"
+msgstr ""
+
+msgid "Condition"
+msgstr ""
+
+msgid "Albania"
+msgstr "ალბანეთი"
+
+msgid "Algeria"
+msgstr "ალჟირი"
+
+msgid "American Samoa"
+msgstr "ამერიკის სამოა"
+
+msgid "Andorra"
+msgstr "ანდორა"
+
+msgid "Angola"
+msgstr "ანგოლა"
+
+msgid "Anguilla"
+msgstr "ანგილია"
+
+msgid "Antarctica"
+msgstr "ანტარქტიდა"
+
+msgid "Antigua and Barbuda"
+msgstr "ანტიგუა და ბარბუდა"
+
+msgid "Argentina"
+msgstr "არგენტინა"
+
+msgid "Armenia"
+msgstr "სომხეთი"
+
+msgid "Aruba"
+msgstr "არუბა"
+
+msgid "Australia"
+msgstr "ავსტრალია"
+
+msgid "Austria"
+msgstr "ავსტრია"
+
+msgid "Azerbaijan"
+msgstr "აზერბაიჯანი"
+
+msgid "Bahamas"
+msgstr "ბაჰამის თანამეგობრობა"
+
+msgid "Bahrain"
+msgstr "ბაჰრეინი"
+
+msgid "Bangladesh"
+msgstr "ბანგლადეში"
+
+msgid "Barbados"
+msgstr "ბარბადოსი"
+
+msgid "Belarus"
+msgstr "ბელარუსი"
+
+msgid "Belgium"
+msgstr "ბელგია"
+
+msgid "Belize"
+msgstr "ბელიზი"
+
+msgid "Benin"
+msgstr "ბენინი"
+
+msgid "Bermuda"
+msgstr "ბერმუდი"
+
+msgid "Bhutan"
+msgstr "ბჰუტანი"
+
+msgid "Bolivia"
+msgstr "ბოლივია"
+
+msgid "Bosnia and Herzegovina"
+msgstr "ბოსნია და ჰერცეგოვინა"
+
+msgid "Botswana"
+msgstr "ბოტსვანა"
+
+msgid "Bouvet Island"
+msgstr "ბუვე"
+
+msgid "Brunei"
+msgstr "ბრუნეი"
+
+msgid "Bulgaria"
+msgstr "ბულგარეთი"
+
+msgid "Burkina Faso"
+msgstr "ბურკინა-ფასო"
+
+msgid "Burundi"
+msgstr "ბურუნდი"
+
+msgid "Cambodia"
+msgstr "კამბოჯა"
+
+msgid "Cameroon"
+msgstr "კამერუნი"
+
+msgid "Canada"
+msgstr "კანადა"
+
+msgid "Cape Verde"
+msgstr "კაბო-ვერდე"
+
+msgid "Cayman Islands"
+msgstr "კაიმანის კუნძულები"
+
+msgid "Central African Republic"
+msgstr "ცენტრალური აფრიკის რესპუბლიკა"
+
+msgid "Chad"
+msgstr "ჩადი"
+
+msgid "China"
+msgstr "ჩინეთი"
+
+msgid "Christmas Island"
+msgstr "შობის კუნძული"
+
+msgid "Colombia"
+msgstr "კოლუმბია"
+
+msgid "Comoros"
+msgstr "კომორის კუნძულები"
+
+msgid "Cook Islands"
+msgstr "კუკის კუნძულები"
+
+msgid "Costa Rica"
+msgstr "კოსტა-რიკა"
+
+msgid "Cyprus"
+msgstr "კვიპროსი"
+
+msgid "Czech Republic"
+msgstr "ჩეხეთის რესპუბლიკა"
+
+msgid "Denmark"
+msgstr "დანია"
+
+msgid "Djibouti"
+msgstr "ჯიბუტი"
+
+msgid "Dominica"
+msgstr "დომინიკა"
+
+msgid "Dominican Republic"
+msgstr "დომინიკელთა რესპუბლიკა"
+
+msgid "Ecuador"
+msgstr "ეკვადორი"
+
+msgid "El Salvador"
+msgstr "სალვადორი"
+
+msgid "Equatorial Guinea"
+msgstr "ეკვატორული გვინეა"
+
+msgid "Eritrea"
+msgstr "ერიტრეა"
+
+msgid "Estonia"
+msgstr "ესტონეთი"
+
+msgid "Ethiopia"
+msgstr "ეთიოპია"
+
+msgid "Faroe Islands"
+msgstr "ფარერის კუნძულები"
+
+msgid "Finland"
+msgstr "ფინეთი"
+
+msgid "France"
+msgstr "საფრანგეთი"
+
+msgid "French Guiana"
+msgstr "საფრანგეთის გვიანა"
+
+msgid "French Polynesia"
+msgstr "საფრანგეთის პოლინეზია"
+
+msgid "Gabon"
+msgstr "გაბონი"
+
+msgid "Gambia"
+msgstr "გამბია"
+
+msgid "Georgia"
+msgstr "საქართველო"
+
+msgid "Ghana"
+msgstr "განა"
+
+msgid "Gibraltar"
+msgstr "გიბრალტარი"
+
+msgid "Greece"
+msgstr "საბერძნეთი"
+
+msgid "Greenland"
+msgstr "გრენლანდია"
+
+msgid "Grenada"
+msgstr "გრენადა"
+
+msgid "Guadeloupe"
+msgstr "გვადელუპა"
+
+msgid "Guam"
+msgstr "გუამი"
+
+msgid "Guatemala"
+msgstr "გვატემალა"
+
+msgid "Guinea"
+msgstr "გვინეა"
+
+msgid "Guinea-Bissau"
+msgstr "გვინეა-ბისაუ"
+
+msgid "Guyana"
+msgstr "გაიანა"
+
+msgid "Haiti"
+msgstr "ჰაიტი"
+
+msgid "Heard Island and McDonald Islands"
+msgstr "ჰერდი და მაკდონალდის კუნძულები"
+
+msgid "Honduras"
+msgstr "ჰონდურასი"
+
+msgid "Hungary"
+msgstr "უნგრეთი"
+
+msgid "Iceland"
+msgstr "ისლანდია"
+
+msgid "India"
+msgstr "ინდოეთი"
+
+msgid "Indonesia"
+msgstr "ინდონეზია"
+
+msgid "Iraq"
+msgstr "ერაყი"
+
+msgid "Ireland"
+msgstr "ირლანდია"
+
+msgid "Italy"
+msgstr "იტალია"
+
+msgid "Jordan"
+msgstr "იორდანია"
+
+msgid "Kazakhstan"
+msgstr "ყაზახეთი"
+
+msgid "Kenya"
+msgstr "კენია"
+
+msgid "Kiribati"
+msgstr "კირიბატი"
+
+msgid "Kuwait"
+msgstr "ქუვეითი"
+
+msgid "Kyrgyzstan"
+msgstr "ყირგიზეთი"
+
+msgid "Laos"
+msgstr "ლაოსი"
+
+msgid "Latvia"
+msgstr "ლატვია"
+
+msgid "Lebanon"
+msgstr "ლიბანი"
+
+msgid "Lesotho"
+msgstr "ლესოთო"
+
+msgid "Liberia"
+msgstr "ლიბერია"
+
+msgid "Liechtenstein"
+msgstr "ლიხტენშტაინი"
+
+msgid "Lithuania"
+msgstr "ლიტვა"
+
+msgid "Luxembourg"
+msgstr "ლუქსემბურგი"
+
+msgid "Madagascar"
+msgstr "მადაგასკარი"
+
+msgid "Malawi"
+msgstr "მალავი"
+
+msgid "Malaysia"
+msgstr "მალაიზია"
+
+msgid "Maldives"
+msgstr "მალდივები"
+
+msgid "Mali"
+msgstr "მალი"
+
+msgid "Malta"
+msgstr "მალტა"
+
+msgid "Marshall Islands"
+msgstr "მარშალის კუნძულები"
+
+msgid "Martinique"
+msgstr "მარტინიკა"
+
+msgid "Mauritania"
+msgstr "მავრიტანია"
+
+msgid "Mauritius"
+msgstr "მავრიკი"
+
+msgid "Mayotte"
+msgstr "მაიოტა"
+
+msgid "Mexico"
+msgstr "მექსიკა"
+
+msgid "Micronesia"
+msgstr "მიკრონეზია"
+
+msgid "Moldova"
+msgstr "მოლდოვა"
+
+msgid "Monaco"
+msgstr "მონაკო"
+
+msgid "Mongolia"
+msgstr "მონღოლეთი"
+
+msgid "Montserrat"
+msgstr "მონსერატი"
+
+msgid "Morocco"
+msgstr "მაროკო"
+
+msgid "Mozambique"
+msgstr "მოზამბიკი"
+
+msgid "Nauru"
+msgstr "ნაურუ"
+
+msgid "Nepal"
+msgstr "ნეპალი"
+
+msgid "Netherlands"
+msgstr "ნიდერლანდი"
+
+msgid "Netherlands Antilles"
+msgstr "ნიდერლანდის ანტილები"
+
+msgid "New Caledonia"
+msgstr "ახალი კალედონია"
+
+msgid "Nicaragua"
+msgstr "ნიკარაგუა"
+
+msgid "Niger"
+msgstr "ნიგერი"
+
+msgid "Nigeria"
+msgstr "ნიგერია"
+
+msgid "Niue"
+msgstr "ნიუე"
+
+msgid "Norfolk Island"
+msgstr "ნორფოლკის კუნძული"
+
+msgid "North Korea"
+msgstr "ჩრდილოეთი კორეა"
+
+msgid "Northern Mariana Islands"
+msgstr "ჩრდილოეთი მარიანას კუნძულები"
+
+msgid "Norway"
+msgstr "ნორვეგია"
+
+msgid "Oman"
+msgstr "ომანი"
+
+msgid "Pakistan"
+msgstr "პაკისტანი"
+
+msgid "Palau"
+msgstr "პალაუ"
+
+msgid "Panama"
+msgstr "პანამა"
+
+msgid "Papua New Guinea"
+msgstr "პაპუა-ახალი გვინეა"
+
+msgid "Peru"
+msgstr "პერუ"
+
+msgid "Philippines"
+msgstr "ფილიპინები"
+
+msgid "Pitcairn Islands"
+msgstr "პიტკერნის კუნძულები"
+
+msgid "Puerto Rico"
+msgstr "პუერტო-რიკო"
+
+msgid "Qatar"
+msgstr "კატარი"
+
+msgid "Romania"
+msgstr "რუმინეთი"
+
+msgid "Russia"
+msgstr "რუსეთი"
+
+msgid "Rwanda"
+msgstr "რუანდა"
+
+msgid "Samoa"
+msgstr "სამოა"
+
+msgid "San Marino"
+msgstr "სან-მარინო"
+
+msgid "Saudi Arabia"
+msgstr "საუდის არაბეთი"
+
+msgid "Senegal"
+msgstr "სენეგალი"
+
+msgid "Seychelles"
+msgstr "სეიშელის კუნძულები"
+
+msgid "Sierra Leone"
+msgstr "სიერა-ლეონე"
+
+msgid "Slovakia"
+msgstr "სლოვაკეთი"
+
+msgid "Slovenia"
+msgstr "სლოვენია"
+
+msgid "Solomon Islands"
+msgstr "სოლომონის კუნძულები"
+
+msgid "Somalia"
+msgstr "სომალი"
+
+msgid "South Africa"
+msgstr "სამხრეთი აფრიკა"
+
+msgid "South Georgia and the South Sandwich Islands"
+msgstr "სამხრეთი გეორგია და სამხრეთ სენდვიჩის კუნძულები"
+
+msgid "Spain"
+msgstr "ესპანეთი"
+
+msgid "Sri Lanka"
+msgstr "შრი-ლანკა"
+
+msgid "Sudan"
+msgstr "სუდანი"
+
+msgid "Suriname"
+msgstr "სურინამი"
+
+msgid "Svalbard and Jan Mayen"
+msgstr "შპიცბერგენი და იან-მაიენი"
+
+msgid "Swaziland"
+msgstr "სვაზილენდი"
+
+msgid "Sweden"
+msgstr "შვედეთი"
+
+msgid "Switzerland"
+msgstr "შვეიცარია"
+
+msgid "Syria"
+msgstr "სირია"
+
+msgid "Taiwan"
+msgstr "ტაივანი"
+
+msgid "Tajikistan"
+msgstr "ტაჯიკეთი"
+
+msgid "Tanzania"
+msgstr "ტანზანია"
+
+msgid "Thailand"
+msgstr "ტაილანდი"
+
+msgid "Togo"
+msgstr "ტოგო"
+
+msgid "Tokelau"
+msgstr "ტოკელაუ"
+
+msgid "Trinidad and Tobago"
+msgstr "ტრინიდადი და ტობაგო"
+
+msgid "Tunisia"
+msgstr "ტუნისი"
+
+msgid "Turkmenistan"
+msgstr "თურქმენეთი"
+
+msgid "Turks and Caicos Islands"
+msgstr "ტერქსისა და კაიკოსის კუნძულები"
+
+msgid "Tuvalu"
+msgstr "ტუვალუ"
+
+msgid "Uganda"
+msgstr "უგანდა"
+
+msgid "Ukraine"
+msgstr "უკრაინა"
+
+msgid "United Arab Emirates"
+msgstr "არაბთა გაერთიანებული საამიროები"
+
+msgid "United Kingdom"
+msgstr "გაერთიანებული სამეფო"
+
+msgid "United States"
+msgstr "შეერთებული შტატები"
+
+msgid "Uruguay"
+msgstr "ურუგვაი"
+
+msgid "Uzbekistan"
+msgstr "უზბეკეთი"
+
+msgid "Vanuatu"
+msgstr "ვანუატუ"
+
+msgid "Venezuela"
+msgstr "ვენესუელა"
+
+msgid "Wallis and Futuna"
+msgstr "უოლისი და ფუტუნა"
+
+msgid "Yemen"
+msgstr "იემენი"
+
+msgid "Zambia"
+msgstr "ზამბია"
+
+msgid "Zimbabwe"
+msgstr "ზიმბაბვე"
+
+msgid "Database username"
+msgstr ""
+
+msgid "Database password"
+msgstr ""
+
+msgid "Database name"
+msgstr ""
+
+msgid "Add user"
+msgstr ""
+
+msgid "Port"
+msgstr ""
+
+msgid "Authoring information"
+msgstr ""
+
+msgid "Authored on"
+msgstr ""
+
+msgid "Hidden"
+msgstr ""
+
+msgid "Show"
+msgstr ""
+
+msgid "Key"
+msgstr ""
+
+msgid "Site language"
+msgstr ""
+
+msgid "Change"
+msgstr ""
+
+msgid "English"
+msgstr ""
+
+msgid "Spanish"
+msgstr ""
+
+msgid "Messages"
+msgstr ""
+
+msgid "Edit term"
+msgstr ""
+
+msgid "Switch"
+msgstr ""
+
+msgid "Allowed HTML tags"
+msgstr ""
+
+msgid "Sources"
+msgstr ""
+
+msgid "Add menu"
+msgstr ""
+
+msgid "Result"
+msgstr ""
+
+msgid "Browser"
+msgstr ""
+
+msgid "Titles only"
+msgstr ""
+
+msgid "Full text"
+msgstr ""
+
+msgid "Source"
+msgstr ""
+
+msgid "published"
+msgstr ""
+
+msgid "Member for"
+msgstr ""
+
+msgid "@time ago"
+msgstr ""
+
+msgid "Front page"
+msgstr ""
+
+msgid "Deleted"
+msgstr ""
+
+msgid "Languages"
+msgstr ""
+
+msgid "Today"
+msgstr ""
+
+msgid "Edit menu"
+msgstr ""
+
+msgid "Delete menu"
+msgstr ""
+
+msgid "Minimum height"
+msgstr ""
+
+msgid "Minimum width"
+msgstr ""
+
+msgid "Configure block"
+msgstr ""
+
+msgid "Jan"
+msgstr "იან"
+
+msgid "Feb"
+msgstr "თებ"
+
+msgid "Mar"
+msgstr "მარ"
+
+msgid "Apr"
+msgstr "აპრ"
+
+msgid "Jun"
+msgstr "ივნ"
+
+msgid "Jul"
+msgstr "ივლ"
+
+msgid "Aug"
+msgstr "აგვ"
+
+msgid "Sep"
+msgstr "სექ"
+
+msgid "Oct"
+msgstr "ოქტ"
+
+msgid "Nov"
+msgstr "ნოე"
+
+msgid "Dec"
+msgstr "დეკ"
+
+msgid "Hour"
+msgstr ""
+
+msgid "Minute"
+msgstr ""
+
+msgid "Second"
+msgstr ""
+
+msgid "Posts"
+msgstr ""
+
+msgid "author"
+msgstr ""
+
+msgid "Fixed"
+msgstr ""
+
+msgid "Revert"
+msgstr ""
+
+msgid "Empty"
+msgstr ""
+
+msgid "Greater than"
+msgstr ""
+
+msgid "Less than"
+msgstr ""
+
+msgid "Buttons"
+msgstr ""
+
+msgid "Log out"
+msgstr ""
+
+msgid "characters"
+msgstr ""
+
+msgid "Su"
+msgstr "კვ"
+
+msgid "Mo"
+msgstr "ორ"
+
+msgid "Tu"
+msgstr "სა"
+
+msgid "We"
+msgstr "ოთ"
+
+msgid "Th"
+msgstr "ხთ"
+
+msgid "Fr"
+msgstr "პრ"
+
+msgid "Sa"
+msgstr "შბ"
+
+msgid "First day of week"
+msgstr ""
+
+msgid "Left"
+msgstr ""
+
+msgid "Right"
+msgstr ""
+
+msgid "Seconds"
+msgstr ""
+
+msgid "Info"
+msgstr ""
+
+msgid "People"
+msgstr ""
+
+msgid "Site information"
+msgstr ""
+
+msgid "Blocked"
+msgstr ""
+
+msgid ""
+"Deleting a term will delete all its children if there are any. This action "
+"cannot be undone."
+msgstr ""
+
+msgid "Parent term"
+msgstr ""
+
+msgid "Parent terms"
+msgstr ""
+
+msgid "Syndicate"
+msgstr ""
+
+msgid "Books"
+msgstr ""
+
+msgid "Style"
+msgstr ""
+
+msgid "Forums"
+msgstr ""
+
+msgid "The specified passwords do not match."
+msgstr ""
+
+msgid "Session"
+msgstr ""
+
+msgid "No forums defined"
+msgstr ""
+
+msgid "This topic has been moved"
+msgstr ""
+
+msgid "Permissions"
+msgstr ""
+
+msgid "Your settings have been saved."
+msgstr ""
+
+msgid "Cron"
+msgstr ""
+
+msgid "Plugin"
+msgstr ""
+
+msgid "Link color"
+msgstr ""
+
+msgid "Fiji"
+msgstr "ფიჯი"
+
+msgid "Falkland Islands"
+msgstr "ფოლკლენდის კუნძულები"
+
+msgid "Saint Kitts and Nevis"
+msgstr "სენტ-კიტსი და ნევისი"
+
+msgid "South Korea"
+msgstr "სამხრეთი კორეა"
+
+msgid "Saint Lucia"
+msgstr "სენტ-ლუსია"
+
+msgid "Saint Helena"
+msgstr "წმინდა ელენეს კუნძული"
+
+msgid "French Southern Territories"
+msgstr "საფრანგეთის სამხრეთული ტერიტორია"
+
+msgid "Saint Vincent and the Grenadines"
+msgstr "სენტ-ვინსენტი და გრენადინები"
+
+msgid "British Virgin Islands"
+msgstr "ბრიტანეთის ვირჯინის კუნძულები"
+
+msgid "U.S. Virgin Islands"
+msgstr "აშშ-ის ვირჯინის კუნძულები"
+
+msgid "Vietnam"
+msgstr "ვიეტნამი"
+
+msgid "Guernsey"
+msgstr "გერნსი"
+
+msgid "Jersey"
+msgstr "ჯერსი"
+
+msgid "User name"
+msgstr ""
+
+msgid "Not published"
+msgstr ""
+
+msgid "File settings"
+msgstr ""
+
+msgid "Formats"
+msgstr ""
+
+msgid "New comments"
+msgstr ""
+
+msgid "New"
+msgstr ""
+
+msgid "Login attempt failed for %user."
+msgstr ""
+
+msgid "‹ Previous"
+msgstr ""
+
+msgid "Next ›"
+msgstr ""
+
+msgid "Oldest first"
+msgstr ""
+
+msgid "Themes"
+msgstr ""
+
+msgid "Multilingual"
+msgstr ""
+
+msgid "JPEG quality"
+msgstr ""
+
+msgid "%"
+msgstr ""
+
+msgid "Content options"
+msgstr ""
+
+msgid "Delete comments"
+msgstr ""
+
+msgid "not published"
+msgstr ""
+
+msgid "Published comments"
+msgstr ""
+
+msgid "Loading..."
+msgstr ""
+
+msgid "Protected"
+msgstr ""
+
+msgid "Comment settings"
+msgstr ""
+
+msgid "Sticky"
+msgstr ""
+
+msgid "Contact settings"
+msgstr ""
+
+msgid "Processing"
+msgstr ""
+
+msgid "Temporary directory"
+msgstr ""
+
+msgid "File upload error. Could not move uploaded file."
+msgstr ""
+
+msgid "User status"
+msgstr ""
+
+msgid "Next page"
+msgstr ""
+
+msgid "Shortcuts"
+msgstr ""
+
+msgid "Shortcut"
+msgstr ""
+
+msgid "Default value"
+msgstr ""
+
+msgid "Timezone"
+msgstr ""
+
+msgid "Password strength:"
+msgstr ""
+
+msgid "Passwords match:"
+msgstr ""
+
+msgid "Slogan"
+msgstr ""
+
+msgid "Anonymous user"
+msgstr ""
+
+msgid "Enabled modules"
+msgstr ""
+
+msgid "Please wait..."
+msgstr ""
+
+msgid "Not translated"
+msgstr ""
+
+msgid "Translatable"
+msgstr ""
+
+msgid "Show blocks"
+msgstr ""
+
+msgid "Go to first page"
+msgstr ""
+
+msgid "Go to last page"
+msgstr ""
+
+msgid "Plugins"
+msgstr ""
+
+msgid "Delete role"
+msgstr ""
+
+msgid "PHP Code"
+msgstr ""
+
+msgid "Basic configuration"
+msgstr ""
+
+msgid "British Indian Ocean Territory"
+msgstr ""
+
+msgid "Croatia"
+msgstr ""
+
+msgid "Macedonia"
+msgstr ""
+
+msgid "Western Sahara"
+msgstr ""
+
+msgid "Language switcher"
+msgstr ""
+
+msgid "Block description"
+msgstr ""
+
+msgid "Translation status"
+msgstr ""
+
+msgid "Blocks"
+msgstr ""
+
+msgid "Delete block"
+msgstr ""
+
+msgid "Save blocks"
+msgstr ""
+
+msgid "The block settings have been updated."
+msgstr ""
+
+msgid "Save block"
+msgstr ""
+
+msgid "The block configuration has been saved."
+msgstr ""
+
+msgid "Add vocabulary"
+msgstr ""
+
+msgid "Edit vocabulary"
+msgstr ""
+
+msgid "Created new vocabulary %name."
+msgstr ""
+
+msgid "Updated vocabulary %name."
+msgstr ""
+
+msgid "Are you sure you want to delete the vocabulary %title?"
+msgstr ""
+
+msgid ""
+"Deleting a vocabulary will delete all the terms in it. This action cannot "
+"be undone."
+msgstr ""
+
+msgid "Deleted vocabulary %name."
+msgstr ""
+
+msgid "Above"
+msgstr ""
+
+msgid "Default time zone"
+msgstr ""
+
+msgid "Manage fields"
+msgstr ""
+
+msgid "Add field"
+msgstr ""
+
+msgid "Add a new field"
+msgstr ""
+
+msgid "Save field settings"
+msgstr ""
+
+msgid "The update has encountered an error."
+msgstr ""
+
+msgid "Minimum"
+msgstr ""
+
+msgid "Publish"
+msgstr ""
+
+msgid "Permission"
+msgstr ""
+
+msgid "More information"
+msgstr ""
+
+msgid "Italic"
+msgstr ""
+
+msgid "Text Editor"
+msgstr ""
+
+msgid "Hide"
+msgstr ""
+
+msgid "Anonymous commenting"
+msgstr ""
+
+msgid "Anonymous posters may not enter their contact information"
+msgstr ""
+
+msgid "Anonymous posters may leave their contact information"
+msgstr ""
+
+msgid "Anonymous posters must leave their contact information"
+msgstr ""
+
+msgid "Default comment setting"
+msgstr ""
+
+msgid ""
+"The content of this field is kept private and will not be shown publicly."
+msgstr ""
+
+msgid "parent"
+msgstr ""
+
+msgid "Date - newest first"
+msgstr ""
+
+msgid "1 comment"
+msgid_plural "@count comments"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "1 new comment"
+msgid_plural "@count new comments"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Global"
+msgstr ""
+
+msgid "Show descriptions"
+msgstr ""
+
+msgid "Language code"
+msgstr ""
+
+msgid "Authenticated user"
+msgstr ""
+
+msgid "Menu link title"
+msgstr ""
+
+msgid "Menu name"
+msgstr ""
+
+msgid "Page not found"
+msgstr ""
+
+msgid "More help"
+msgstr ""
+
+msgid "Sizes"
+msgstr ""
+
+msgid "Add terms"
+msgstr ""
+
+msgid "The directory %directory does not exist."
+msgstr ""
+
+msgid "No comments available."
+msgstr ""
+
+msgid "empty"
+msgstr ""
+
+msgid "@type: updated %title."
+msgstr ""
+
+msgid "@type: added %title."
+msgstr ""
+
+msgid "Add role"
+msgstr ""
+
+msgid "- None selected -"
+msgstr ""
+
+msgid "Clean URLs"
+msgstr ""
+
+msgid "1 year"
+msgid_plural "@count years"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "1 week"
+msgid_plural "@count weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "1 min"
+msgid_plural "@count min"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "1 sec"
+msgid_plural "@count sec"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Module name"
+msgstr ""
+
+msgid "Page settings"
+msgstr ""
+
+msgid "German"
+msgstr ""
+
+msgid "The file could not be created."
+msgstr ""
+
+msgid "Not secure!"
+msgstr ""
+
+msgid "Recommended version:"
+msgstr ""
+
+msgid "Security update:"
+msgstr ""
+
+msgid "Latest version:"
+msgstr ""
+
+msgid "Or"
+msgstr ""
+
+msgid "Install profile"
+msgstr ""
+
+msgid "File directory"
+msgstr ""
+
+msgid "Web server"
+msgstr ""
+
+msgid "Memory limit"
+msgstr ""
+
+msgid "Translate"
+msgstr ""
+
+msgid "Web services"
+msgstr ""
+
+msgid "Effect"
+msgstr ""
+
+msgid "For security reasons, your upload has been renamed to %filename."
+msgstr ""
+
+msgid "Dates"
+msgstr ""
+
+msgid "1 month"
+msgid_plural "@count months"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Password field is required."
+msgstr ""
+
+msgid "Confirm password"
+msgstr ""
+
+msgid "Run cron"
+msgstr ""
+
+msgid "The file %file could not be saved. An unknown error has occurred."
+msgstr ""
+
+msgid "Only files with the following extensions are allowed: %files-allowed."
+msgstr ""
+
+msgid "The file is %filesize exceeding the maximum file size of %maxsize."
+msgstr ""
+
+msgid "The file is %filesize which would exceed your disk quota of %quota."
+msgstr ""
+
+msgid ""
+"The image was resized to fit within the maximum allowed dimensions of "
+"%dimensions pixels."
+msgstr ""
+
+msgid "The image is too small; the minimum dimensions are %dimensions pixels."
+msgstr ""
+
+msgid ""
+"Upload error. Could not move uploaded file %file to destination "
+"%destination."
+msgstr ""
+
+msgid "Save and continue"
+msgstr ""
+
+msgid "Maximum height"
+msgstr ""
+
+msgid "Maximum width"
+msgstr ""
+
+msgid ""
+"An illegal choice has been detected. Please contact the site administrator."
+msgstr ""
+
+msgid "MIME type"
+msgstr ""
+
+msgid "The MIME type of the file."
+msgstr ""
+
+msgid "PHP extensions"
+msgstr ""
+
+msgid "Administration pages"
+msgstr ""
+
+msgid "0 sec"
+msgstr ""
+
+msgid "Abbreviation"
+msgstr ""
+
+msgid "Administration menu"
+msgstr ""
+
+msgid "Attempting to re-run cron while it is already running."
+msgstr ""
+
+msgid "Cron run completed."
+msgstr ""
+
+msgid "- All -"
+msgstr ""
+
+msgid "Machine-readable name"
+msgstr ""
+
+msgid "The requested page could not be found."
+msgstr ""
+
+msgid "Requirements problem"
+msgstr ""
+
+msgid "Database configuration"
+msgstr ""
+
+msgid "Select an installation profile"
+msgstr ""
+
+msgid "Choose language"
+msgstr ""
+
+msgid "Select language"
+msgstr ""
+
+msgid "No profiles available"
+msgstr ""
+
+msgid "Drupal already installed"
+msgstr ""
+
+msgid "Installing @drupal"
+msgstr ""
+
+msgid "The installation has encountered an error."
+msgstr ""
+
+msgid "Configure site"
+msgstr ""
+
+msgid "Installed %module module."
+msgstr ""
+
+msgid "Choose profile"
+msgstr ""
+
+msgid "Verify requirements"
+msgstr ""
+
+msgid "Set up database"
+msgstr ""
+
+msgid "Set up translations"
+msgstr ""
+
+msgid "Install site"
+msgstr ""
+
+msgid "Finish translations"
+msgstr ""
+
+msgid ""
+"By default, dates in this site will be displayed in the chosen time zone."
+msgstr ""
+
+msgid "Update notifications"
+msgstr ""
+
+msgid "Check for updates automatically"
+msgstr ""
+
+msgid "1 byte"
+msgid_plural "@count bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid ""
+"The machine-readable name must contain only lowercase letters, numbers, and "
+"underscores."
+msgstr ""
+
+msgid "Upload logo image"
+msgstr ""
+
+msgid "Date and time"
+msgstr ""
+
+msgid "Interface"
+msgstr ""
+
+msgid "@size KB"
+msgstr ""
+
+msgid "@size MB"
+msgstr ""
+
+msgid "@size GB"
+msgstr ""
+
+msgid "@size TB"
+msgstr ""
+
+msgid "@size PB"
+msgstr ""
+
+msgid "@size EB"
+msgstr ""
+
+msgid "@size ZB"
+msgstr ""
+
+msgid "@size YB"
+msgstr ""
+
+msgid "All messages"
+msgstr ""
+
+msgid "Text format"
+msgstr ""
+
+msgid "The name of the site."
+msgstr ""
+
+msgid "Add format"
+msgstr ""
+
+msgid "Delete date format"
+msgstr ""
+
+msgid "Regional settings"
+msgstr ""
+
+msgid "Structure"
+msgstr ""
+
+msgid "The slogan of the site."
+msgstr ""
+
+msgid "You are not allowed to access this page."
+msgstr ""
+
+msgid "Connection method"
+msgstr ""
+
+msgid "Enter connection settings"
+msgstr ""
+
+msgid "Change connection type"
+msgstr ""
+
+msgid "Site under maintenance"
+msgstr ""
+
+msgid "Table of files"
+msgstr ""
+
+msgid "Text formats"
+msgstr ""
+
+msgid "Starting a discussion"
+msgstr ""
+
+msgid "Select a new effect"
+msgstr ""
+
+msgid "Update style"
+msgstr ""
+
+msgid "Style name"
+msgstr ""
+
+msgid "Update effect"
+msgstr ""
+
+msgid "Add effect"
+msgstr ""
+
+msgctxt "Long month name"
+msgid "January"
+msgstr "იანვარი"
+
+msgctxt "Long month name"
+msgid "February"
+msgstr "თებერვალი"
+
+msgctxt "Long month name"
+msgid "March"
+msgstr "მარტი"
+
+msgctxt "Long month name"
+msgid "April"
+msgstr "აპრილი"
+
+msgctxt "Long month name"
+msgid "May"
+msgstr "მაისი"
+
+msgctxt "Long month name"
+msgid "June"
+msgstr "ივნისი"
+
+msgctxt "Long month name"
+msgid "July"
+msgstr "ივლისი"
+
+msgctxt "Long month name"
+msgid "August"
+msgstr "აგვისტო"
+
+msgctxt "Long month name"
+msgid "September"
+msgstr "სექტემბერი"
+
+msgctxt "Long month name"
+msgid "October"
+msgstr "ოქტომბერი"
+
+msgctxt "Long month name"
+msgid "November"
+msgstr "ნოემბერი"
+
+msgctxt "Long month name"
+msgid "December"
+msgstr "დეკემბერი"
+
+msgid "Short format"
+msgstr ""
+
+msgid "Medium format"
+msgstr ""
+
+msgid "Long format"
+msgstr ""
+
+msgid "Managing modules"
+msgstr ""
+
+msgid "Public files"
+msgstr ""
+
+msgid "Temporary files"
+msgstr ""
+
+msgid "Update modules"
+msgstr ""
+
+msgid "Delete IP address"
+msgstr ""
+
+msgid "Regional and language"
+msgstr ""
+
+msgid "Database support"
+msgstr ""
+
+msgid "Site details"
+msgstr ""
+
+msgid "Text Formats"
+msgstr ""
+
+msgid "Hot topic, new comments"
+msgstr ""
+
+msgid "Hot topic"
+msgstr ""
+
+msgid "Normal topic"
+msgstr ""
+
+msgid "Closed topic"
+msgstr ""
+
+msgid "Nothing"
+msgstr ""
+
+msgid "Next steps"
+msgstr ""
+
+msgid "Database system"
+msgstr ""
+
+msgid "Database system version"
+msgstr ""

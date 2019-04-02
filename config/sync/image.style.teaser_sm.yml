@@ -1,0 +1,15 @@
+uuid: e5112135-bdc9-41b7-85ee-19a0ac031eed
+langcode: ka
+status: true
+dependencies: {  }
+name: teaser_sm
+label: 'Teaser Sm'
+effects:
+  308e9b48-8997-46fc-856c-d2b57287d843:
+    uuid: 308e9b48-8997-46fc-856c-d2b57287d843
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 95
+      height: 78
+      anchor: center-center

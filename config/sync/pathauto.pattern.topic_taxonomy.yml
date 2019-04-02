@@ -1,0 +1,23 @@
+uuid: 8894ca67-f581-4a44-a645-ddc0c705cb47
+langcode: ka
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: topic_taxonomy
+label: 'Topic Taxonomy'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'topic/[term:field_slug]'
+selection_criteria:
+  841eef7f-0adb-455b-a7b7-8d76cf7b68a5:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      topics: topics
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 841eef7f-0adb-455b-a7b7-8d76cf7b68a5
+selection_logic: and
+weight: -5
+relationships: {  }

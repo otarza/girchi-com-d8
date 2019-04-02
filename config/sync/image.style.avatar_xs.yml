@@ -1,0 +1,15 @@
+uuid: c412e64b-cbf3-4786-8158-47e65e543332
+langcode: ka
+status: true
+dependencies: {  }
+name: avatar_xs
+label: 'Avatar Extra Small (30x30)'
+effects:
+  362b3326-5255-4521-9135-ef720184aa80:
+    uuid: 362b3326-5255-4521-9135-ef720184aa80
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 30
+      height: 30
+      anchor: center-center

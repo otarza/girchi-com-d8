@@ -1,0 +1,15 @@
+uuid: 0eb430af-75f2-491f-89c3-3dca6da169ae
+langcode: ka
+status: true
+dependencies: {  }
+name: thumbnail_tiny
+label: 'Thumbnail Tiny'
+effects:
+  0715a378-c2e9-49d3-a091-a065fc472460:
+    uuid: 0715a378-c2e9-49d3-a091-a065fc472460
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 25
+      height: 25
+      anchor: center-center

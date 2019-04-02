@@ -1,0 +1,11 @@
+uuid: b842cfc8-4a4a-42e8-b7a7-c6f3b3cf043b
+langcode: ka
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: eNX6lLCKDaY83nCMh20My---y03KbiFlv802DKCCpvg
+id: und
+label: 'Not specified'
+direction: ltr
+weight: 4
+locked: true

@@ -1,0 +1,7 @@
+{#
+  views-view-fields--VIEWNAME--DISPLAYNAME.html.twig
+  Use this sample to display custom HTML in row output.
+
+  {{ kint(fields) }}
+#}
+

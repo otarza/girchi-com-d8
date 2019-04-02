@@ -1,0 +1,5 @@
+services:
+  om_utils.redirect_by_field_subscriber:
+    class: Drupal\om_utils\EventSubscriber\RedirectByFieldSubscriber
+    tags:
+      - { name: event_subscriber }

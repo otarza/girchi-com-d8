@@ -1,0 +1,44 @@
+{%
+set classes = [
+    node.bundle|clean_class,
+    node.isPromoted() ? 'is-promoted',
+    node.isSticky() ? 'is-sticky',
+    not node.isPublished() ? 'is-unpublished',
+    view_mode ? view_mode|clean_class,
+]
+%}
+<section{{ attributes.addClass(classes) }} style="background-image: url('{{ content.field_image | field_value }}')">
+    {{ title_suffix }}
+
+    {% if not field_empty(content.field_url) %}
+        <a href="{{ content.field_url | field_value }}" class="slide-link" target="{{ link_blank ? '_blank' : '_self' }}"></a>
+    {% endif %}
+
+    <div class="container-fluid om-width-choker">
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="slide-content-wrap">
+                    {% if not hide_title or not field_empty(content.field_text) %}
+                        {%
+                            set content_classes = [
+                                'slide-content',
+                                field_empty(content.field_text) ? '' : 'has-text',
+                                hide_title ? '' : 'has-title'
+                            ]
+                        %}
+                        <div{{ make_attribute().addClass(content_classes) }}>
+                            {% if not hide_title %}
+                                <h2 class="slide-title">{{ label }}</h2>
+                            {% endif %}
+                            {% if not field_empty(content.field_text) %}
+                                <div class="slide-text">{{ content.field_text }}</div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

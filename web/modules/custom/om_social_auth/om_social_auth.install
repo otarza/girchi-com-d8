@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Install file.
+ */
+
+use Drupal\user\Entity\Role;
+
+/**
+ * Implements hook_install().
+ */
+function om_social_auth_install() {
+  /*
+   * შევქმნათ active და passive როლები თუ არ არსებობს მოდულის ინსტალაციის დროს
+   * */
+  $new_roles = [
+    'active' => [
+      'label' => 'Active',
+      'weight' => 3,
+    ],
+    'passive' => [
+      'label' => 'Passive',
+      'weight' => 4,
+    ],
+  ];
+
+  /** @var Role $role */
+  foreach ($new_roles as $id => $role) {
+    if (empty(Role::load($id))) {
+      $role = Role::create([
+        'id' => $id,
+        'label' => $role['label'],
+        'weight' => $role['weight'],
+      ]);
+      $role->save();
+    }
+  }
+}

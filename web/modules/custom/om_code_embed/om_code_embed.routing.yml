@@ -1,0 +1,7 @@
+om_code_embed.dialog:
+  path: '/om-code-embed/dialog/{editor}/{embed_button}'
+  defaults:
+    _form: '\Drupal\om_code_embed\Form\OmCodeEmbedDialog'
+    _title: 'Embed Code'
+  requirements:
+    _embed_button_editor_access: 'TRUE'

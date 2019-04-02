@@ -1,0 +1,10 @@
+uuid: a90e5a6b-fa08-42c4-a6d1-a6a2fd777957
+langcode: ka
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_sm
+label: 'Teaser Sm'
+targetEntityType: node
+cache: true

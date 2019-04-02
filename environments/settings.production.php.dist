@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * Production configuration feature.
+ *
+ * To activate this feature, copy and rename it such that its path plus
+ * filename is 'sites/example.com/settings.local.php', where example.com
+ * is the name of your site. Then, go to the bottom of
+ * 'sites/example.com/settings.php' and uncomment the commented lines that
+ * mention 'settings.local.php'.
+ */
+
+// Database settings
+$databases['default']['default'] = array(
+  'database' => '',
+  'username' => '',
+  'password' => '',
+  'prefix' => '',
+  'host' => '',
+  'port' => '3306',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+  'collation' => 'utf8mb4_general_ci',
+);
+
+/**
+ * Hide all error messages.
+ */
+$config['system.logging']['error_level'] = 'none';
+
+/**
+ * Disallow test modules and themes to be installed.
+ *
+ * Drupal ignores test modules and themes by default for performance reasons.
+ * During development it can be useful to install test extensions for debugging
+ * purposes.
+ */
+$settings['extension_discovery_scan_tests'] = FALSE;
+
+/**
+ * Disable access to rebuild.php.
+ *
+ * This setting can be enabled to allow Drupal's php and database cached
+ * storage to be cleared via the rebuild.php page. Access to this page can also
+ * be gained by generating a query string from rebuild_token_calculator.sh and
+ * using these parameters in a request to rebuild.php.
+ */
+$settings['rebuild_access'] = FALSE;
+
+$config['config_split.config_split.prod']['status'] = TRUE;

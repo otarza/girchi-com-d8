@@ -1,0 +1,15 @@
+uuid: ee2f8d58-0b4f-4739-af69-33b3b98fafbe
+langcode: ka
+status: true
+dependencies: {  }
+name: teaser_vertical
+label: 'Teaser Vertical'
+effects:
+  5c39a20c-3909-4154-960f-ddf17a617cd6:
+    uuid: 5c39a20c-3909-4154-960f-ddf17a617cd6
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 445
+      height: 420
+      anchor: center-center

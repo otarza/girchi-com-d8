@@ -1,0 +1,76 @@
+{% block page_head %}
+    <header class="om-header">
+        <div class="container-fluid om-width-choker">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="om-header-inner">
+                        <a href="{{ front_page }}" class="main-logo">
+                            {#<img class="logo-normal" src="{{ theme_path('images/logo-'~language.id~'.svg') }}" alt="{{ site_name }}">#}
+                            {#<img class="logo-white" src="{{ theme_path('images/logo-white.svg') }}" alt="{{ site_name }}">#}
+                        </a>
+
+                        {% if page.header_nav %}
+                            <nav class="om-header-nav">
+                                <ul class="om-main-menu">
+                                    {{ page.header_nav }}
+                                    {% set lang_links = get_language_links(false) %}
+                                    {% for lang_id, lang_link in lang_links %}
+                                        <li class="menu-item item-level-0 lang-item">
+                                            <a href="{{ lang_link.url }}" class="link-level-0"><img class="flag-{{ lang_id }}" src="{{ theme_path('images/flag-'~lang_id~'.svg') }}" alt="{{ lang_link.title }}"><span class="mobile-only-inline"> {{ lang_link.title }}</span></a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </nav>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block page_main %}
+
+    {% if page.content_top %}
+        {{ page.content_top }}
+    {% endif %}
+
+    {% if page.content %}
+        {{ page.content }}
+    {% endif %}
+
+    {% if page.content_bottom %}
+        {{ page.content_bottom }}
+    {% endif %}
+
+{% endblock %}
+
+{% block page_foot %}
+    <footer class="om-footer">
+        <div class="container-fluid om-width-choker">
+            <div class="row">
+                <div class="col-xs-4 footer-text">
+                    UGT &copy; {{ "now"|date("Y") }}, {{ tt('ყველა უფლება დაცულია', 'All rights reserved') }}
+                </div>
+                <div class="col-xs-4 footer-social">
+                    {% if facebook_page_url %}
+                        <a class="foot-social-link" href="{{ facebook_page_url }}" target="_blank">
+                            {{ svg_icon('facebook', 'social-icon') }}
+                        </a>
+                    {% endif %}
+                    {% if linkedin_page_url %}
+                        <a class="foot-social-link" href="{{ linkedin_page_url }}" target="_blank">
+                            {{ svg_icon('linkedin', 'social-icon') }}
+                        </a>
+                    {% endif %}
+                </div>
+                <div class="col-xs-4 footer-text omedia">
+                    {{ tt([
+                    '<a href="http://omedia.ge" target="_blank">შექმნილია ომედიაში</a>',
+                    '<a href="http://omedia.ge/inenglish" target="_blank">Website by Omedia</a>'
+                    ]) }}
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

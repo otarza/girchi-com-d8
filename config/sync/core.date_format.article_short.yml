@@ -1,0 +1,8 @@
+uuid: 7e75ebc4-1485-4aad-b099-2df3b30c50a3
+langcode: ka
+status: true
+dependencies: {  }
+id: article_short
+label: 'Article Short'
+locked: false
+pattern: 'j M Y'

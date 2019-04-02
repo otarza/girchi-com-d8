@@ -1,0 +1,30 @@
+uuid: 37d3904c-2126-4b62-9a8b-0c450ba6b37e
+langcode: ka
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.user_header
+    - field.field.user.user.user_picture
+    - image.style.avatar_md
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.user_header
+targetEntityType: user
+bundle: user
+mode: user_header
+content:
+  user_picture:
+    type: image
+    weight: 0
+    region: content
+    settings:
+      image_style: avatar_md
+      image_link: ''
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  langcode: true
+  member_for: true

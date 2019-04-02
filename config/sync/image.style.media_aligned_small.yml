@@ -1,0 +1,15 @@
+uuid: ae49f62e-09ac-439c-85ac-6bc1d2454bad
+langcode: ka
+status: true
+dependencies: {  }
+name: media_aligned_small
+label: 'Media Aligned Small'
+effects:
+  8b359eea-1428-43b9-a4f1-79ca8a548c43:
+    uuid: 8b359eea-1428-43b9-a4f1-79ca8a548c43
+    id: image_scale
+    weight: 1
+    data:
+      width: 180
+      height: null
+      upscale: false

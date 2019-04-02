@@ -1,0 +1,20 @@
+{% if field_empty(content.field_image) %}
+    {% set field_image = theme_path('images/logo-icon.svg') %}
+{% else %}
+    {% set field_image = content.field_image | field_value %}
+{% endif %}
+<div class="history-event">
+    {% if field_empty(content.field_url) %}
+        <img class="event-icon" src="{{ field_image }}" alt="">
+        <div class="event-text">
+            {{ content.field_text }}
+        </div>
+    {% else %}
+        <a href="{{ content.field_url | field_value }}" target="_blank">
+            <img class="event-icon" src="{{ field_image }}" alt="">
+        </a>
+        <div class="event-text">
+            <a href="{{ content.field_url | field_value }}" target="_blank">{{ content.field_text }}</a>
+        </div>
+    {% endif %}
+</div>

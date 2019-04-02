@@ -1,0 +1,7 @@
+uuid: 909726c1-30c5-475a-831c-edb0d10ffbb5
+langcode: ka
+status: true
+dependencies: {  }
+id: person
+label: Person
+behavior_plugins: {  }

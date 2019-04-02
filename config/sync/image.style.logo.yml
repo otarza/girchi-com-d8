@@ -1,0 +1,15 @@
+uuid: b1815477-8c9c-49b9-8b74-ba4bea633889
+langcode: ka
+status: true
+dependencies: {  }
+name: logo
+label: Logo
+effects:
+  18174360-dd9d-454d-ba66-cfc1782336c0:
+    uuid: 18174360-dd9d-454d-ba66-cfc1782336c0
+    id: image_scale
+    weight: 1
+    data:
+      width: 200
+      height: 200
+      upscale: false

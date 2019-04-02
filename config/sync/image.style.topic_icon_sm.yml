@@ -1,0 +1,15 @@
+uuid: fcc486c8-6315-43f3-8cb4-60bdb9d8afce
+langcode: ka
+status: true
+dependencies: {  }
+name: topic_icon_sm
+label: 'Topic Icon Sm'
+effects:
+  e368fca1-b016-4edc-8edf-baa0412d34f9:
+    uuid: e368fca1-b016-4edc-8edf-baa0412d34f9
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 45
+      height: 45
+      anchor: center-center

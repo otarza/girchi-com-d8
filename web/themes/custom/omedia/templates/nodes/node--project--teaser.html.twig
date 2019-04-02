@@ -1,0 +1,16 @@
+<article class="project-teaser clearfix">
+    <a href="{{ url }}" class="pt-image">
+        {% if field_empty(content.field_image) %}
+            <img src="{{ theme_path('images/project-thumb-default.png') }}" alt="">
+        {% else %}
+            {{ content.field_image }}
+        {% endif %}
+    </a>
+    <div class="pt-info">
+        <h2 class="pt-title"><a href="{{ url }}">{{ label }}</a></h2>
+        <p class="pt-teaser">
+            {{ content.field_teaser }}
+        </p>
+        <a href="{{ url }}" class="pt-read-more">{{ tt('გაიგე მეტი', 'Read more') }} {{ svg_icon('chevron-right', 'rm-icon') }}</a>
+    </div>
+</article>

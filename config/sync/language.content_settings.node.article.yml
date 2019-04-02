@@ -1,0 +1,18 @@
+uuid: 34f12184-09c7-4f39-9ee7-0070e9546174
+langcode: ka
+status: true
+dependencies:
+  config:
+    - node.type.article
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.article
+target_entity_type_id: node
+target_bundle: article
+default_langcode: ka
+language_alterable: false

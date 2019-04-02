@@ -1,0 +1,7 @@
+uuid: e016c6b8-816d-4737-8286-a4c0c7a45830
+langcode: ka
+status: true
+dependencies: {  }
+id: view_reference
+label: 'View Reference'
+behavior_plugins: {  }

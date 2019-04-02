@@ -1,0 +1,22 @@
+.cke_widget_element {
+  display: block;
+}
+om-code {
+  background: #d3edc6;
+  border: 2px dotted #77b773;
+  padding: 7px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: normal;
+  white-space: nowrap;
+}
+om-code:before {
+  display: inline-block;
+  content: '';
+  background: url(/modules/custom/om_code_embed/js/plugins/omcode/omcodeembed.png) no-repeat 0 1px;
+  vertical-align: -2px;
+  width: 20px;
+  height: 16px;
+  color: #000;
+}

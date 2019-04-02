@@ -1,0 +1,16 @@
+{%
+set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    'paragraph-view-' ~ paragraph.field_view_machine_name.value|clean_class,
+    'paragraph-view-display-' ~ paragraph.field_display_machine_name.value|clean_class
+]
+%}
+{% block paragraph %}
+    <div{{ attributes.addClass(classes) }}>
+        {% block content %}
+            {{ print_view(paragraph.field_view_machine_name.value, paragraph.field_display_machine_name.value) }}
+        {% endblock %}
+    </div>
+{% endblock paragraph %}

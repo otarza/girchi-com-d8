@@ -1,0 +1,18 @@
+{{ attach_library('omedia/qtip') }}
+{%
+set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'clients-partners-full'
+]
+%}
+<div{{ attributes.addClass(classes) }}>
+
+    <div class="cp-selector">
+        <a class="active" href="#clients">{{ tt('კლიენტები', 'Clients') }}</a>
+        <a href="#partners">{{ tt('პარტნიორები', 'Partners') }}</a>
+    </div>
+
+    {{ rows }}
+    {{ empty }}
+    {{ pager }}
+</div>

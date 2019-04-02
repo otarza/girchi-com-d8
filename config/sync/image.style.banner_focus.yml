@@ -1,0 +1,15 @@
+uuid: 07bd06c6-1c7b-4f84-9b7e-8118d8d23e68
+langcode: ka
+status: true
+dependencies: {  }
+name: banner_focus
+label: 'Banner Focus'
+effects:
+  f88d4139-9c55-4301-bf54-3a5e33d5f561:
+    uuid: f88d4139-9c55-4301-bf54-3a5e33d5f561
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 350
+      height: 270
+      anchor: center-center

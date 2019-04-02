@@ -1,0 +1,15 @@
+uuid: 4fffacc9-2baa-444f-9256-f73e477ba8df
+langcode: ka
+status: true
+dependencies: {  }
+name: teaser_media
+label: 'Teaser Media'
+effects:
+  59a2d4d1-8831-4f45-8177-0acac0661f18:
+    uuid: 59a2d4d1-8831-4f45-8177-0acac0661f18
+    id: image_scale
+    weight: 2
+    data:
+      width: 500
+      height: 263
+      upscale: true

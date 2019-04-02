@@ -1,0 +1,15 @@
+uuid: 9f539894-cb50-48d3-a1fe-5968d3315251
+langcode: ka
+status: true
+dependencies: {  }
+name: banner_footer
+label: 'Banner Footer'
+effects:
+  7a644059-58dd-4cc9-9e70-e7ae0dcd2790:
+    uuid: 7a644059-58dd-4cc9-9e70-e7ae0dcd2790
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 540
+      height: 220
+      anchor: center-center

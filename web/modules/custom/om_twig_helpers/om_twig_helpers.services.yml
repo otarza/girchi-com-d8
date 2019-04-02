@@ -1,0 +1,6 @@
+services:
+  om_twig_helpers:
+    class: Drupal\om_twig_helpers\TwigExtension
+    tags:
+      - { name: twig.extension }
+

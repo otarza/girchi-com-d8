@@ -1,0 +1,13 @@
+<a class="news-teaser-single clearfix" href="{{ url }}">
+    <span class="news-img">
+        {% if field_empty(content.field_image) %}
+            <img src="{{ theme_path('images/news-thumb-default.png') }}" alt="">
+        {% else %}
+            {{ content.field_image }}
+        {% endif %}
+    </span>
+    <span class="news-info">
+        <span class="news-date">{{ node.getCreatedTime|format_date('content_short') }}</span>
+        <span class="news-title">{{ label }}</span>
+    </span>
+</a>

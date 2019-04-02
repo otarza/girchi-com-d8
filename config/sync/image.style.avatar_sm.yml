@@ -1,0 +1,15 @@
+uuid: 103dc2ff-44ef-41f7-ab5c-54d34755b657
+langcode: ka
+status: true
+dependencies: {  }
+name: avatar_sm
+label: 'Avatar Small (42x42)'
+effects:
+  86d6a5e1-1033-494d-b4f4-67bf2bade3ef:
+    uuid: 86d6a5e1-1033-494d-b4f4-67bf2bade3ef
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 42
+      height: 42
+      anchor: center-center

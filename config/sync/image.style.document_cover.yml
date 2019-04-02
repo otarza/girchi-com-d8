@@ -1,0 +1,15 @@
+uuid: c30c2773-e9a1-48e7-8b6c-1805b0887cc4
+langcode: ka
+status: true
+dependencies: {  }
+name: document_cover
+label: 'Document Cover'
+effects:
+  3eb0eb34-5864-429d-8f32-2ab7e4f99959:
+    uuid: 3eb0eb34-5864-429d-8f32-2ab7e4f99959
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 220
+      upscale: true

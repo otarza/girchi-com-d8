@@ -1,0 +1,8 @@
+uuid: 40549ec8-98c9-4658-8880-a0001f8c476b
+langcode: ka
+status: true
+dependencies: {  }
+id: omedia_short_with_time
+label: 'Omedia Short with Time'
+locked: false
+pattern: 'j M, Y, H:i'

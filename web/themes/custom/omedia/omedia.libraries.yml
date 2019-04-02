@@ -1,0 +1,82 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      css/global.css: {}
+      css/layout.css: {}
+      css/elements.css: {}
+      css/pages.css: {}
+  js:
+    js/site.helpers.js: {}
+    js/site.start.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+
+fbsdk:
+  version: 1.x
+  header: true
+  js:
+    js/vendor/facebook.jssdk.js: {}
+
+bootstrap:
+  version: 1.x
+  css:
+    theme:
+      css/vendor/bootstrap/css/bootstrap.css: {}
+
+slicknav:
+  version: 1.x
+  css:
+    component:
+      js/vendor/slicknav/slicknav.min.css: {}
+  js:
+    js/vendor/slicknav/jquery.slicknav.min.js: {}
+
+slick:
+  version: 1.x
+  css:
+    component:
+      js/vendor/slick/slick.css: {}
+  js:
+    js/vendor/slick/slick.min.js: {}
+
+super-form-reset:
+  version: 1.x
+  css:
+    base:
+      css/vendor/super-form-reset.css: {}
+
+svg4everybody:
+  version: 1.x
+  js:
+    js/vendor/svg4everybody.min.js: {}
+    js/svg4everybody.run.js: {}
+
+font-loader:
+  version: 1.x
+  js:
+    js/vendor/FontLoader.js: {}
+
+js-cookie:
+  version: 1.x
+  js:
+    js/vendor/js.cookie.js: {}
+
+magnific-popup:
+  version: 1.x
+  css:
+    component:
+      js/vendor/magnific-popup/magnific-popup.css: {}
+  js:
+    js/vendor/magnific-popup/magnific-popup.min.js: {}
+
+qtip:
+  version: 1.x
+  css:
+    component:
+      js/vendor/jquery.qtip/jquery.qtip.min.css: {}
+  js:
+    js/vendor/jquery.qtip/jquery.qtip.min.js: {}

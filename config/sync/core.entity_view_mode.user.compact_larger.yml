@@ -1,0 +1,10 @@
+uuid: 34bc4aae-1ee6-4b52-aceb-5b76d36fbe8f
+langcode: ka
+status: true
+dependencies:
+  module:
+    - user
+id: user.compact_larger
+label: 'Compact Larger'
+targetEntityType: user
+cache: true

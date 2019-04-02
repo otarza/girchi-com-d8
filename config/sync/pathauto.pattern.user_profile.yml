@@ -1,0 +1,14 @@
+uuid: 1d2c8cfe-4697-479f-8b42-6e919288b6e8
+langcode: ka
+status: true
+dependencies:
+  module:
+    - user
+id: user_profile
+label: 'User Profile'
+type: 'canonical_entities:user'
+pattern: 'profile/[user:uid]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

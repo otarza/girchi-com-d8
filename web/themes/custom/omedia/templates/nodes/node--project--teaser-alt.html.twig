@@ -1,0 +1,9 @@
+<article class="project-teaser-alt clearfix" style="background-image: url('{{ content.field_image | field_value }}');">
+    <div class="pt-info">
+        <h2 class="pt-title"><a href="{{ url }}">{{ label }}</a></h2>
+        <p class="pt-teaser">
+            {{ content.field_teaser }}
+        </p>
+        <a href="{{ url }}" class="pt-read-more">{{ tt('გაიგე მეტი', 'Read more') }} {{ svg_icon('chevron-right', 'rm-icon') }}</a>
+    </div>
+</article>

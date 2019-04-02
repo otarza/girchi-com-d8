@@ -1,0 +1,19 @@
+<section class="promo-grid-wrap grid-{{ content.field_grid_layout | field_value}}" data-layout="{{ content.field_grid_layout | field_value}}">
+    <div class="container-fluid om-width-choker">
+        <div class="row">
+            <div class="col-xs-12">
+
+                {% if not field_empty(content.field_title) %}
+                    <h2 class="page-section-title">{{ content.field_title }}</h2>
+                {% endif %}
+
+                <div class="promo-grid">
+                    <div class="inner-wrap">
+                        {{ content.field_grid_items }}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

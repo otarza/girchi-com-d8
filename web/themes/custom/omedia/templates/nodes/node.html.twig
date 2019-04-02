@@ -1,0 +1,150 @@
+<article class="om-page om-page-normal header--{{ header_size }} header--specific-child-{{ has_head_image_child }}" style="background-image: url('{{ head_image }}')">
+    <div class="container-fluid om-width-choker">
+        <div class="row">
+            <div class="col-xs-12">
+
+                <header class="om-page-header header--{{ header_size }}">
+                    <div class="oph-inner">
+                        {{ svg_icon('double-dash', 'oph-double-dash') }}
+                        <h1{{ title_attributes.addClass("oph-title") }}>
+                            {% if header_title_link %}
+                                <a href="{{ header_title_link }}">
+                                    <span class="back-icon">{{ svg_icon('chevron-left', 'icn') }}</span>
+                                    {{ header_title }}</a>
+                            {% else %}
+                                {{ header_title }}
+                            {% endif %}
+                        </h1>
+                        {% if head_intro %}
+                            <div class="oph-intro">
+                                <p>{{ head_intro }}</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </header>
+
+                <div class="om-page-cols">
+                    <div class="om-page-col-main {{ cta_location == 'bottom' ? 'has-bottom-cta' : '' }}">
+
+                        <div class="om-content">
+
+                            {% if page_real_title != header_title %}
+                                {% if node.getType() == 'news' %}
+                                    <time class="pub-date" datetime="{{ node.getCreatedTime|format_date('html_datetime') }}">
+                                        {{ node.getCreatedTime|format_date('content_full') }}
+                                    </time>
+                                {% endif %}
+                                <h1 class="page-section-title">{{ page_real_title }}</h1>
+                            {% endif %}
+
+                            {% if node.getType() == 'news' and not field_empty(content.field_image) %}
+                                <figure class="article-main-image">
+                                    {{ content.field_image }}
+                                </figure>
+                            {% endif %}
+
+                            {% if node.getType() == 'job_post' %}
+                                <ul class="job-post-info">
+                                    {% if not field_empty(content.field_department) %}
+                                    <li class="clearfix">
+                                        <span class="jpi-label">{{ tt('დეპარტამენტი', 'Department') }}:</span>
+                                        <span class="jpi-info">{{ content.field_department }}</span>
+                                    </li>
+                                    {% endif %}
+                                    <li class="clearfix">
+                                        <span class="jpi-label">{{ tt('განთავსების თარიღი', 'Published at') }}:</span>
+                                        <span class="jpi-info">{{ node.getCreatedTime|format_date('content_full') }}</span>
+                                    </li>
+                                    <li class="clearfix">
+                                        <span class="jpi-label">{{ tt('ბოლო ვადა', 'Deadline') }}:</span>
+                                        <span class="jpi-info">{{ content.field_deadline }}</span>
+                                    </li>
+                                </ul>
+                            {% endif %}
+
+                            {{ content.field_content }}
+                            {{ content.body }}
+                            {{ print_block('omedia_local_tasks') }}
+                        </div>
+
+                        {% if cta_location == 'bottom' %}
+                            <footer class="cta-block-footer">
+                                {{ svg_icon('double-dash', 'dash-icon') }}
+                                <div class="cta-content">
+                                    <p class="cta-text">{{ cta_text }}</p>
+                                    <a href="{{ cta_button_link }}" class="cta-btn">{{ cta_button_text }}</a>
+                                </div>
+                            </footer>
+                        {% endif %}
+
+                    </div>
+                    <aside class="om-page-col-sidebar">
+
+                        {% if enabled_blocks.menu %}
+                            {{ print_block('section_nav') }}
+                        {% endif %}
+
+                        {% if cta_location == 'sidebar' %}
+                            <section class="om-block cta-block-sidebar body-content-full-width full-bottom no-leak">
+                                <div class="cta-content">
+                                    <p class="cta-text">{{ cta_text }}</p>
+                                    <a href="{{ cta_button_link }}" class="cta-btn">{{ cta_button_text }}</a>
+                                </div>
+                            </section>
+                        {% endif %}
+
+                        {% if enabled_blocks.partners %}
+                            <section class="om-block partners-block">
+                                {% if partners_manual %}
+                                    {% set manual_partners = partners_manual_list | safe_join(',') %}
+                                    {{ print_view('partners_small', 'block_manual', manual_partners) }}
+                                {% else %}
+                                    {{ print_view('partners_small', 'block_auto') }}
+                                {% endif %}
+
+                                <a class="pb-more" href="{{ simple_url('clients-partners') }}#partners">
+                                    {{ tt('ჩვენი პარტნიორები', 'Our Partners') }}
+                                    {{ svg_icon('chevron-right', 'chevron-icon') }}
+                                </a>
+                            </section>
+                        {% endif %}
+
+                        {% if enabled_blocks.facebook %}
+                            <section class="om-block fb-block">
+                                <h2 class="fb-block-title">
+                                    {{ tt('შემოგვიერთდით ფეისბუქზე', 'Join us on Facebook') }}
+                                </h2>
+                                {{ svg_icon('facebook', 'fb-icon') }}
+
+                                {{ attach_library('omedia/fbsdk') }}
+                                <div class="fb-page"
+                                     data-href="{{ facebook_page_url }}"
+                                     data-height="220"
+                                     data-width="500"
+                                     data-small-header="false"
+                                     data-adapt-container-width="true"
+                                     data-hide-cover="true"
+                                     data-show-facepile="true"></div>
+
+                            </section>
+                        {% endif %}
+
+                    </aside>
+                </div>
+
+
+                {% if enabled_blocks.banners %}
+                    <section class="om-block banners-block">
+                        {% if banners_manual %}
+                            {% set manual_banners = banners_manual_list | safe_join(',') %}
+                            {{ print_view('bottom_banners', 'block_manual', manual_banners) }}
+                        {% else %}
+                            {{ print_view('bottom_banners', 'block_auto') }}
+                        {% endif %}
+                    </section>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</article>

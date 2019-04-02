@@ -1,0 +1,10 @@
+uuid: 6d83a19e-3f07-4641-91d5-5ace0c9bedde
+langcode: ka
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.icon_and_link
+label: 'Icon and link'
+targetEntityType: paragraph
+cache: true

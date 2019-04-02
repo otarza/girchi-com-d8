@@ -1,0 +1,15 @@
+uuid: 4cf6dd79-f13d-4bb1-acfa-4a6f237e4934
+langcode: ka
+status: true
+dependencies: {  }
+name: teaser_lg
+label: 'Teaser Lg'
+effects:
+  96d11745-355d-4444-9c47-1fb381320cfa:
+    uuid: 96d11745-355d-4444-9c47-1fb381320cfa
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 303
+      height: 195
+      anchor: center-center

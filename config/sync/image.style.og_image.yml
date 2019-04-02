@@ -1,0 +1,15 @@
+uuid: 25ea8d07-a073-424f-834a-7262f3177c12
+langcode: ka
+status: true
+dependencies: {  }
+name: og_image
+label: 'OG Image'
+effects:
+  05f3208f-683f-45bf-90b4-1fa0cc541eef:
+    uuid: 05f3208f-683f-45bf-90b4-1fa0cc541eef
+    id: image_scale
+    weight: 1
+    data:
+      width: 1400
+      height: 1400
+      upscale: false

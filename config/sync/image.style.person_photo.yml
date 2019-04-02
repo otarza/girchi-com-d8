@@ -1,0 +1,15 @@
+uuid: 438d2547-fe89-494e-9566-457f06dc8f98
+langcode: ka
+status: true
+dependencies: {  }
+name: person_photo
+label: 'Person Photo'
+effects:
+  6e3a996e-d7a6-4ecb-b9f9-885095edb40c:
+    uuid: 6e3a996e-d7a6-4ecb-b9f9-885095edb40c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 250
+      height: 250
+      anchor: center-center

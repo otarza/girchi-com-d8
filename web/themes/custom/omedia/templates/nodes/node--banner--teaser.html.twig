@@ -1,0 +1,16 @@
+{% if field_empty(content.field_url) %}
+    <div class="banner-single {{ hide_title ? 'no-dim' : 'dim' }}">
+{% else %}
+    <a href="{{ content.field_url | field_value }}" class="banner-single {{ hide_title ? 'no-dim' : 'dim' }}" target="{{ link_blank ? '_blank' : '_self' }}">
+{% endif %}
+
+        <span class="ban-img">{{ content.field_image }}</span>
+        {% if not hide_title %}
+            <span class="ban-text"><span class="ban-text-inner">{{ label }}</span></span>
+        {% endif %}
+
+{% if not field_empty(content.field_url) %}
+    </a>
+{% else %}
+    </div>
+{% endif %}

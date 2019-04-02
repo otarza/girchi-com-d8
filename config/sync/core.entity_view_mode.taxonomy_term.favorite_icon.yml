@@ -1,0 +1,10 @@
+uuid: 0fc6a478-0e07-4825-b3d7-a4c070c6ba7b
+langcode: ka
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.favorite_icon
+label: 'Favorite Icon'
+targetEntityType: taxonomy_term
+cache: true

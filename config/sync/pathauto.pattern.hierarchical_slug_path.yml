@@ -1,0 +1,23 @@
+uuid: 46844a99-c7e0-47ab-9b1c-df09ed0c1867
+langcode: ka
+status: true
+dependencies:
+  module:
+    - node
+id: hierarchical_slug_path
+label: 'Hierarchical Slug Path'
+type: 'canonical_entities:node'
+pattern: '[node:menu-link:om-parents-slugs:join-path]/[node:field_url_slug]'
+selection_criteria:
+  88a75755-97a9-4886-83cd-1282af419614:
+    id: node_type
+    bundles:
+      page: page
+      system_page: system_page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 88a75755-97a9-4886-83cd-1282af419614
+selection_logic: and
+weight: -5
+relationships: {  }

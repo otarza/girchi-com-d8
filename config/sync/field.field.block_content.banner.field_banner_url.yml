@@ -1,0 +1,23 @@
+uuid: 17322804-e667-4640-87f8-e1f21bf61373
+langcode: ka
+status: true
+dependencies:
+  config:
+    - block_content.type.banner
+    - field.storage.block_content.field_banner_url
+  module:
+    - link
+id: block_content.banner.field_banner_url
+field_name: field_banner_url
+entity_type: block_content
+bundle: banner
+label: 'Banner URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

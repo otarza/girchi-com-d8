@@ -1,0 +1,14 @@
+uuid: 74ce3d8f-64cd-4b65-a92f-6725e585277a
+langcode: ka
+status: true
+dependencies:
+  config:
+    - user.role.content_manager
+  module:
+    - user
+id: user_add_role_action.content_manager
+label: 'Add the Content Manager role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: content_manager

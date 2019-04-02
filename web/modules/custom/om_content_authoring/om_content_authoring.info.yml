@@ -1,0 +1,7 @@
+name: Omedia Content Authoring
+type: module
+description: WYSIWYG and text format features.
+core: 8.x
+package: Omedia
+dependencies:
+  - url_embed

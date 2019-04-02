@@ -1,0 +1,8 @@
+uuid: feadc036-cfe5-4467-9d0c-a8a6024217c8
+langcode: ka
+status: true
+dependencies: {  }
+id: article_full
+label: 'Article Full'
+locked: false
+pattern: 'l, j F, Y'

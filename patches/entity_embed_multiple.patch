@@ -1,0 +1,83 @@
+diff --git a/js/plugins/drupalentity/plugin.js b/js/plugins/drupalentity/plugin.js
+index b8a5090..bd056e8 100644
+--- a/js/plugins/drupalentity/plugin.js
++++ b/js/plugins/drupalentity/plugin.js
+@@ -59,13 +59,26 @@
+           };
+ 
+           var saveCallback = function (values) {
+-            var entityElement = editor.document.createElement('drupal-entity');
+             var attributes = values.attributes;
+-            for (var key in attributes) {
+-              entityElement.setAttribute(key, attributes[key]);
+-            }
++            if (attributes['data-entity-uuid']) {
++              var entityElement = editor.document.createElement('drupal-entity');
+ 
+-            editor.insertHtml(entityElement.getOuterHtml());
++              for (var key in attributes) {
++                entityElement.setAttribute(key, attributes[key]);
++              }
++              editor.insertHtml(entityElement.getOuterHtml());
++            } else {
++              var htmlCode = '',
++                  entityElement;
++              for (var uuid in attributes) {
++                entityElement = editor.document.createElement('drupal-entity');
++                for (var key in attributes[uuid]) {
++                  entityElement.setAttribute(key, attributes[uuid][key]);
++                }
++                htmlCode += entityElement.getOuterHtml();
++              }
++              editor.insertHtml(htmlCode);
++            }
+             if (existingElement) {
+               // Detach the behaviors that were attached when the entity content
+               // was inserted.
+diff --git a/src/Form/EntityEmbedDialog.php b/src/Form/EntityEmbedDialog.php
+index ae0194b..d36169f 100644
+--- a/src/Form/EntityEmbedDialog.php
++++ b/src/Form/EntityEmbedDialog.php
+@@ -238,7 +238,7 @@ class EntityEmbedDialog extends FormBase {
+       $form['entity_browser'] = [
+         '#type' => 'entity_browser',
+         '#entity_browser' => $this->entityBrowser->id(),
+-        '#cardinality' => 1,
++        '#cardinality' => -1,
+         '#entity_browser_validators' => [
+           'entity_type' => ['type' => $entity_element['data-entity-type']],
+         ],
+@@ -651,12 +651,27 @@ class EntityEmbedDialog extends FormBase {
+       $response->addCommand(new HtmlCommand('#entity-embed-dialog-form', $form));
+     }
+     else {
+-      $form_state->set('step', !empty($this->entityBrowserSettings['display_review']) ? 'review' : 'embed');
+-      $form_state->setRebuild(TRUE);
+-      $rebuild_form = $this->formBuilder->rebuildForm('entity_embed_dialog', $form_state, $form);
+-      unset($rebuild_form['#prefix'], $rebuild_form['#suffix']);
+-      $response->addCommand(new HtmlCommand('#entity-embed-dialog-form', $rebuild_form));
+-      $response->addCommand(new SetDialogTitleCommand('', $rebuild_form['#title']));
++      $form_values = $form_state->getValues();
++      $values = $form_state->getValue('attributes');
++
++      $returned = [];
++      if (!empty($form_values['entity_browser']['entities']) && count($form_values['entity_browser']['entities']) > 1) {
++        foreach ($form_values['entity_browser']['entities'] as $media_elem) {
++          $values['data-entity-embed-display'] = 'view_mode:media.full_width';
++          $values['data-embed-button'] = $form_state->get('embed_button')->id();
++          $values['data-entity-uuid'] = $media_elem->uuid();
++          $returned[$media_elem->uuid()] = $values;
++        }
++        $response->addCommand(new EditorDialogSave(['attributes' => $returned]));
++        $response->addCommand(new CloseModalDialogCommand());
++      } else {
++        $form_state->set('step', !empty($this->entityBrowserSettings['display_review']) ? 'review' : 'embed');
++        $form_state->setRebuild(TRUE);
++        $rebuild_form = $this->formBuilder->rebuildForm('entity_embed_dialog', $form_state, $form);
++        unset($rebuild_form['#prefix'], $rebuild_form['#suffix']);
++        $response->addCommand(new HtmlCommand('#entity-embed-dialog-form', $rebuild_form));
++        $response->addCommand(new SetDialogTitleCommand('', $rebuild_form['#title']));
++      }
+     }
+ 
+     return $response;

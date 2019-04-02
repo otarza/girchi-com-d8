@@ -1,0 +1,30 @@
+uuid: abe8a436-a151-4593-a744-3c21a6e8a39a
+langcode: ka
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.account_info_block
+    - field.field.user.user.user_picture
+    - image.style.avatar_md
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.account_info_block
+targetEntityType: user
+bundle: user
+mode: account_info_block
+content:
+  user_picture:
+    type: image
+    weight: 0
+    region: content
+    settings:
+      image_style: avatar_md
+      image_link: content
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  langcode: true
+  member_for: true

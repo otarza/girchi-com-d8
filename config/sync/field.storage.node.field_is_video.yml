@@ -1,0 +1,18 @@
+uuid: e2b5a6d9-b9e4-4128-b012-f3b84f49605c
+langcode: ka
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_is_video
+field_name: field_is_video
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

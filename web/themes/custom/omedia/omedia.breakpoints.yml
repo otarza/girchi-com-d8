@@ -1,0 +1,36 @@
+omedia.xs-max:
+  label: xs-max
+  mediaQuery: 'all and (max-width: 767px)'
+  weight: 1
+  multipliers:
+    - 1x
+omedia.sm-min:
+  label: sm-min
+  mediaQuery: 'all and (min-width: 768px)'
+  weight: 1
+  multipliers:
+    - 1x
+omedia.sm-max:
+  label: sm-max
+  mediaQuery: 'all and (max-width: 991px)'
+  weight: 1
+  multipliers:
+    - 1x
+omedia.md-min:
+  label: md-min
+  mediaQuery: 'all and (min-width: 992px)'
+  weight: 1
+  multipliers:
+    - 1x
+omedia.md-max:
+  label: md-max
+  mediaQuery: 'all and (max-width: 1199px)'
+  weight: 1
+  multipliers:
+    - 1x
+omedia.lg-min:
+  label: lg-min
+  mediaQuery: 'all and (min-width: 1200px)'
+  weight: 1
+  multipliers:
+    - 1x

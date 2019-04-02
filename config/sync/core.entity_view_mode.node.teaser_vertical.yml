@@ -1,0 +1,10 @@
+uuid: 864b9190-3a56-4db4-8c72-5d759f380373
+langcode: ka
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_vertical
+label: 'Teaser Vertical'
+targetEntityType: node
+cache: true

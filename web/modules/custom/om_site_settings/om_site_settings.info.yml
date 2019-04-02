@@ -1,0 +1,5 @@
+name: Omedia Site Settings
+type: module
+description: Site configuration managment
+core: 8.x
+package: Omedia

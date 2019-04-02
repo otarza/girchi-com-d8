@@ -1,0 +1,8 @@
+uuid: 2382ec2c-8fd7-4100-aefa-aa23d23b79c3
+langcode: en
+status: true
+dependencies: {  }
+id: omedia_short
+label: 'Omedia Short'
+locked: false
+pattern: 'M j, Y'

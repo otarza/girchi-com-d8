@@ -1,0 +1,9 @@
+name: Omedia Code Embed
+type: module
+description: 'Allows Arbitrary codes to be embedded using a text editor.'
+core: 8.x
+package: Omedia
+dependencies:
+  - editor
+  - embed
+  - filter

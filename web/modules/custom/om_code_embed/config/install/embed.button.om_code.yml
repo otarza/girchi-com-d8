@@ -1,0 +1,6 @@
+label: 'Code'
+id: 'om_code'
+type_id: 'om_code'
+dependencies:
+  module:
+    - om_code_embed

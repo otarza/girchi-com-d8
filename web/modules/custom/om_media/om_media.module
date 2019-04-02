@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * Contains om_media.module.
+ */
+
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\CloseModalDialogCommand;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\editor\Ajax\EditorDialogSave;
+use Drupal\om_media\Ajax\EditorMediaMultipleSave;
+
+/**
+ * Implements hook_page_attachments().
+ */
+function om_media_page_attachments(array &$attachments) {
+  // Add custom CSS and JS to admin theme only
+
+  $config = \Drupal::config('system.theme');
+  $admin_theme = $config->get('admin');
+
+  $active_theme = \Drupal::service('theme.manager')
+    ->getActiveTheme()
+    ->getName();
+
+  if ($active_theme == $admin_theme) {
+    $attachments['#attached']['library'][] = 'om_media/global-styling';
+  }
+
+  $attachments['#cache']['contexts'][] = 'theme';
+
+}
+
+
+/**
+ * Implements hook_form_alter().
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+function om_media_form_alter(
+  &$form,
+  FormStateInterface $form_state,
+  $form_id
+) {
+
+}

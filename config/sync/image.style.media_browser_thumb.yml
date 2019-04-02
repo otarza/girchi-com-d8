@@ -1,0 +1,15 @@
+uuid: 3e32d819-fd21-407a-9045-54fba5f21030
+langcode: ka
+status: true
+dependencies: {  }
+name: media_browser_thumb
+label: 'Media Browser Thumb'
+effects:
+  605d3d7e-9d9c-4663-a394-03437ed0bf77:
+    uuid: 605d3d7e-9d9c-4663-a394-03437ed0bf77
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 100
+      height: 100
+      anchor: center-center

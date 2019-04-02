@@ -1,0 +1,7 @@
+name: Omedia Social Auth Helper
+type: module
+description: Helper Code for Social Auth Module
+core: 8.x
+package: Omedia
+dependencies:
+  - social_auth

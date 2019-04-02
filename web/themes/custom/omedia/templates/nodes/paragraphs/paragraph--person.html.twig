@@ -1,0 +1,19 @@
+<section class="person-single {{ field_empty(content.field_body) ? '' : 'has-bio' }}">
+    <figure class="person-photo">
+        {{ content.field_photo }}
+    </figure>
+    <div class="person-info">
+        <div class="person-head">
+            <h2 class="person-name">
+                {{ content.field_name }}
+                <span class="person-title">{{ content.field_title }}</span>
+            </h2>
+            {{ svg_icon('chevron-down', 'toggle-chevron') }}
+        </div>
+        {% if not field_empty(content.field_body) %}
+            <div class="person-bio om-text-content">
+                {{ content.field_body }}
+            </div>
+        {% endif %}
+    </div>
+</section>

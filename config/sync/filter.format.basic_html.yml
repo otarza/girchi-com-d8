@@ -1,0 +1,105 @@
+uuid: b6b58dd0-7962-4d24-a6ca-97fce5a4ee77
+langcode: ka
+status: true
+dependencies:
+  module:
+    - editor
+    - om_code_embed
+    - om_content_authoring
+    - url_embed
+    - video_embed_wysiwyg
+_core:
+  default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
+name: 'Basic HTML'
+format: basic_html
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -50
+    settings:
+      allowed_html: '<em> <strong> <cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h3 id> <h4 id> <h5 id> <h6 id> <br> <s> <sub> <sup> <hr> <a href hreflang data-entity-type data-entity-uuid target !href accesskey id rel title class=""> <drupal-url data-align data-*> <img alt src height width data-entity-type data-entity-uuid data-align data-caption data-cke-saved-src data-cke-upload-id data-widget data-cke-widget-keep-attr data-cke-widget-data data-image-style data-responsive-image-style data-is-zoomable class=""> <blockquote cite class="align-right align-left large wide"> <p class="emphasised highlighted muted indented text-align-left text-align-center text-align-right text-align-justify"> <h2 id class="smaller alt"> <span class="marked alt-color"> <table class> <caption> <tbody> <thead> <tfoot> <th colspan rowspan class="text-align-left text-align-center text-align-right text-align-justify"> <td colspan rowspan class="text-align-left text-align-center text-align-right text-align-justify"> <tr class="alt-row"> <drupal-entity data-*> <figure class> <om-code data-*> <div class="om_social_embed_buttons_placeholder_widget om_gallery">'
+      filter_html_help: false
+      filter_html_nofollow: false
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: -49
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: -48
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: false
+    weight: -42
+    settings: {  }
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: true
+    weight: -47
+    settings: {  }
+  video_embed_wysiwyg:
+    id: video_embed_wysiwyg
+    provider: video_embed_wysiwyg
+    status: true
+    weight: -43
+    settings: {  }
+  url_embed:
+    id: url_embed
+    provider: url_embed
+    status: true
+    weight: -45
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: false
+    weight: -40
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: false
+    weight: -37
+    settings: {  }
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -41
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: false
+    weight: -39
+    settings:
+      filter_url_length: 72
+  om_text_transform:
+    id: om_text_transform
+    provider: om_content_authoring
+    status: true
+    weight: -46
+    settings: {  }
+  url_embed_convert_links:
+    id: url_embed_convert_links
+    provider: url_embed
+    status: false
+    weight: -38
+    settings:
+      url_prefix: ''
+  om_code_embed:
+    id: om_code_embed
+    provider: om_code_embed
+    status: true
+    weight: -44
+    settings: {  }

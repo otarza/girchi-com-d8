@@ -1,0 +1,10 @@
+uuid: edc7633d-b428-4260-bd32-d3c67bd72c5b
+langcode: ka
+status: true
+dependencies:
+  module:
+    - user
+id: user.account_info_block
+label: 'Account Info Block'
+targetEntityType: user
+cache: true

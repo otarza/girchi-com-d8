@@ -1,0 +1,18 @@
+diff --git a/src/VkAuthManager.php b/src/VkAuthManager.php
+index 80d4ea0..d697901 100644
+--- a/src/VkAuthManager.php
++++ b/src/VkAuthManager.php
+@@ -83,7 +83,12 @@ class VkAuthManager extends OAuth2Manager {
+     $user_info = $this->client->api('users.get', $parameters);
+     if (!empty($user_info) && !empty($user_info['response'][0])) {
+       $user_info = $user_info['response'][0];
+-      $user_info['email'] = $token['email'];
++      if (empty($token['email'])){
++        $user_id = !empty($token['user_id']) ? $token['user_id'] : random_int(100000, 999999);
++        $user_info['email']= 'vk' . $user_id . '@popsport.ge';
++      }else{
++        $user_info['email'] = $token['email'];
++      }
+     }
+     else {
+       $user_info = FALSE;

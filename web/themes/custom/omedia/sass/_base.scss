@@ -1,0 +1,62 @@
+// config
+$graceful-usage-threshold: 5;
+$critical-usage-threshold: 1;
+
+// compass
+@import "compass/utilities";
+@import "compass/css3";
+@import "compass/layout";
+@import "compass/typography";
+
+// other vendor
+@import "vendor/breakpoint/breakpoint";
+
+// font vars
+$font-body: "BPG Algeti", Helvetica, Arial, sans-serif;
+$font-upper: "BPG Excelsior Caps", Arial, sans-serif;
+
+// weight vars
+$bold: bold;
+$normal: normal;
+
+// brand colors
+$color-red: #e41c34;
+$color-red-darker: #a41425;
+$color-black: #000; //#1b1d20;
+
+// backgrounds
+$color-site-bg: #e1e1e1;
+$color-light-bg: #f1f1f1;
+$color-dark: #4b5152;
+$color-darker: #323637;
+
+// texts and elements
+$color-text-main: $color-black;
+$color-link-main: #4f5c7a;
+$color-inactive: #848f9d;
+$color-text-dark: #b0b0b0;
+
+// lines
+$color-line-light: #cbcbcb;
+$color-line-dark: #86868b;
+
+// vendors
+$color-facebook: #3564a5;
+$color-twitter: #1da1f2;
+$color-email: #33A3A9;
+$color-viber: #8156a3;
+$color-whatsapp: #43c050;
+
+// layout vars (some of them are also copied in JS!)
+$break-sm: 768px;
+$break-md: 992px;
+$break-lg: 1200px;
+$body-lg: 1170px;
+$body-md: 992px;
+$body-sm: 768px;
+$bootstrap-grid-gutter: 30px;
+$gutter-half : round($bootstrap-grid-gutter / 2);
+$break-mobile: 992px; // under this point layout is officially "mobile"
+
+
+

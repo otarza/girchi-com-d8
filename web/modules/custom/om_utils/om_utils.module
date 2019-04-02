@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains om_utils.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function om_utils_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the om_utils module.
+    case 'help.page.om_utils':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Standalone utility pages and actions for non-production use.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

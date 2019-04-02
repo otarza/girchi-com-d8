@@ -1,0 +1,33 @@
+global-styling:
+  version: VERSION
+  css:
+    component:
+      css/font-awesome.min.css: {}
+    theme:
+      css/admin.css: {}
+  js:
+    js/admin.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+
+sortable-list:
+  version: VERSION
+  css:
+    theme:
+      css/nestable.css: {}
+  js:
+    js/libs/jquery.nestable.js: {}
+    js/sortable.js: {}
+
+vuejs:
+  version: 1.x
+  js:
+    js/libs/vue.min.js: { minified: true }
+    js/libs/vue-select.js: { minified: true }
+
+vuedraggable:
+  version: 1.x
+  js:
+    js/libs/Sortable.min.js: { minified: true }
+    js/libs/vuedraggable.min.js: { minified: true }

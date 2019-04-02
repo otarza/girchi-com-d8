@@ -1,0 +1,15 @@
+uuid: 51e308bb-be6b-4010-8cc7-a36c05c5043a
+langcode: ka
+status: true
+dependencies: {  }
+name: media_wysiwyg_preview
+label: 'Media WYSIWYG Preview'
+effects:
+  88e02b02-f210-4791-ba21-1d95d0e6fc91:
+    uuid: 88e02b02-f210-4791-ba21-1d95d0e6fc91
+    id: image_scale
+    weight: 1
+    data:
+      width: 800
+      height: 800
+      upscale: false

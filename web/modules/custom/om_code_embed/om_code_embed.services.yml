@@ -1,0 +1,3 @@
+services:
+  om_code_embed:
+    class: Drupal\om_code_embed\OmCodeEmbed

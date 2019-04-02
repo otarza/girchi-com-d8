@@ -1,0 +1,8 @@
+uuid: 46513576-fdf1-49c6-b305-9337824ca346
+langcode: zxx
+status: true
+dependencies: {  }
+id: mailchimp_subscribe
+label: 'Mailchimp Subscribe'
+locked: false
+pattern: d/m/Y

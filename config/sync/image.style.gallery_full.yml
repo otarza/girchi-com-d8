@@ -1,0 +1,15 @@
+uuid: e87bb04c-9011-44f5-8141-1d6b8db36431
+langcode: ka
+status: true
+dependencies: {  }
+name: gallery_full
+label: 'Gallery Full'
+effects:
+  1a726c0b-d4bd-45c9-ac14-09f93cc1922b:
+    uuid: 1a726c0b-d4bd-45c9-ac14-09f93cc1922b
+    id: image_scale
+    weight: 1
+    data:
+      width: 1920
+      height: 1920
+      upscale: false

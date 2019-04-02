@@ -1,0 +1,18 @@
+uuid: e0fb8109-3a31-4c5b-8f3a-29aa17a2ff78
+langcode: ka
+status: true
+dependencies:
+  config:
+    - block_content.type.paragraph_container
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.paragraph_container
+target_entity_type_id: block_content
+target_bundle: paragraph_container
+default_langcode: current_interface
+language_alterable: true

@@ -1,0 +1,4 @@
+om_site_settings.site_settings_form_tab:
+  route_name: om_site_settings.site_settings_form
+  title: Site Settings
+  base_route: om_site_settings.site_settings_form

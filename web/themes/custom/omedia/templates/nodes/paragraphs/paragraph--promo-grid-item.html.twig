@@ -1,0 +1,11 @@
+{% if not paragraph.field_image.isEmpty() %}
+    {% set image_uri = paragraph.field_image.entity.fileuri %}
+    <a class="promo-grid-item" href="{{ content.field_url | field_value }}"
+       data-image-wide="{{ image_style_url(image_uri, 'promo_grid_wide') }}"
+       data-image-tall="{{ image_style_url(image_uri, 'promo_grid_tall') }}"
+       data-image-square="{{ image_style_url(image_uri, 'promo_grid_square') }}">
+        <span class="item-inner">
+            <span class="item-text-wrap">{{ content.field_title }}</span>
+        </span>
+    </a>
+{% endif %}

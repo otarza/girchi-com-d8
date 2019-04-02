@@ -1,0 +1,15 @@
+uuid: 62a706fc-6ade-4fe2-86a7-b66607f81e19
+langcode: ka
+status: true
+dependencies: {  }
+name: gallery_thumb
+label: 'Gallery Thumb'
+effects:
+  78a0d54d-9bfb-4fbc-88fd-e2637e685f99:
+    uuid: 78a0d54d-9bfb-4fbc-88fd-e2637e685f99
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 200
+      anchor: center-center

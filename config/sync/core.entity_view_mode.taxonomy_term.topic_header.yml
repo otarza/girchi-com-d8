@@ -1,0 +1,10 @@
+uuid: 76c2dd36-8c20-4d8a-8b1f-88d0ad10db28
+langcode: ka
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.topic_header
+label: 'Topic Header'
+targetEntityType: taxonomy_term
+cache: true

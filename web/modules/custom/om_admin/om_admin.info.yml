@@ -1,0 +1,6 @@
+name: Omedia Admin Features
+type: module
+description: Custom styles, front-end and back-end functionality for admin panel.
+core: 8.x
+package: Omedia
+dependencies:

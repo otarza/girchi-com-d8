@@ -1,0 +1,10 @@
+services:
+  om_social_auth.social_auth_subscriber:
+    class: Drupal\om_social_auth\EventSubscriber\SocialAuthSubscriber
+    arguments: ['@session', '@plugin.network.manager', '@social_auth_facebook.manager']
+    tags:
+      - { name: event_subscriber }
+  om_social_auth.user_verification_route_subscriber:
+      class: Drupal\om_social_auth\Routing\VerificationRouteSubscriber
+      tags:
+        - { name: event_subscriber }

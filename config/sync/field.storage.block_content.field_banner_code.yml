@@ -1,0 +1,19 @@
+uuid: 86f47a42-f67d-4ff2-a063-5558f1de688c
+langcode: ka
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_banner_code
+field_name: field_banner_code
+entity_type: block_content
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

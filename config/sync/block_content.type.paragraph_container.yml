@@ -1,0 +1,8 @@
+uuid: 605c61c3-2f1f-4bc9-8948-30019b4611ae
+langcode: ka
+status: true
+dependencies: {  }
+id: paragraph_container
+label: 'Paragraph Container'
+revision: 1
+description: ''

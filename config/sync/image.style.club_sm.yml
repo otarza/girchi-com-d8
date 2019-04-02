@@ -1,0 +1,15 @@
+uuid: 785e9be5-0c27-4648-a0bf-bc8ac6db938b
+langcode: ka
+status: true
+dependencies: {  }
+name: club_sm
+label: 'Club Sm'
+effects:
+  b6e77206-eb82-47a1-9f1a-60f2a7152bcb:
+    uuid: b6e77206-eb82-47a1-9f1a-60f2a7152bcb
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 50
+      height: 50
+      anchor: center-center

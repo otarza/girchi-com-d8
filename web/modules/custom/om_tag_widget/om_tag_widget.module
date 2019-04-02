@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains om_tag_widget.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function om_tag_widget_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the om_tag_widget module.
+    case 'help.page.om_tag_widget':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom Tag widget') . '</p>';
+      return $output;
+
+    default:
+  }
+}

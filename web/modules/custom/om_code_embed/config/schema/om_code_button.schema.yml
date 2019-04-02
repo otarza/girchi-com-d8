@@ -1,0 +1,5 @@
+# Schema for the configuration files of the Omedia Code Embed module.
+
+embed.embed_type_settings.om_code:
+  type: mapping
+  label: 'Schema for the OmCode embed type additions to an embed button entity'

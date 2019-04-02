@@ -1,0 +1,395 @@
+//
+// BEM mixins
+//
+
+@mixin element($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+@mixin modifier($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
+// @alias element
+@mixin e($element) {
+    @include element($element)  {
+        @content;
+    }
+}
+
+// @alias modifier
+@mixin m($modifier) {
+    @include modifier($modifier) {
+        @content;
+    }
+}
+
+
+
+//
+// media breakpoint mixins
+//
+
+@mixin breakpoint-max($mw) {
+    @include breakpoint(max-width $mw) {
+        @content;
+    }
+}
+@mixin media-sm-and-up {
+    @include breakpoint($break-sm) {
+        @content;
+    }
+}
+@mixin media-sm-and-down {
+    @include breakpoint(max-width $break-md - 1px) {
+        @content;
+    }
+}
+@mixin media-sm-only {
+    @include breakpoint($break-sm $break-md - 1px ) {
+        @content;
+    }
+}
+
+@mixin media-xs {
+    @include breakpoint(max-width $break-sm - 1px) {
+        @content;
+    }
+}
+
+@mixin media-md-and-down {
+    @include breakpoint(max-width $break-lg - 1px) {
+        @content;
+    }
+}
+@mixin media-md-and-up {
+    @include breakpoint($break-md) {
+        @content;
+    }
+}
+@mixin media-md-only {
+    @include breakpoint($break-md $break-lg - 1px ) {
+        @content;
+    }
+}
+
+@mixin media-lg-and-up {
+    @include breakpoint($break-lg) {
+        @content;
+    }
+}
+
+
+
+
+//
+// Misc mixins
+//
+
+@mixin mouse-device {
+    @if & {
+        html.mouse-device & {
+            @content;
+        }
+    } @else  {
+        html.mouse-device {
+            @content;
+        }
+    }
+}
+@mixin touch-device {
+    @if & {
+        html.touch-device & {
+            @content;
+        }
+    } @else  {
+        html.touch-device {
+            @content;
+        }
+    }
+}
+
+
+// mixin for hovers
+@mixin mouse-hover {
+  @include mouse-device {
+    &:hover {
+      @content;
+    }
+  }
+}
+@mixin mouse-active {
+  @include mouse-device {
+    &:active {
+      @content;
+    }
+  }
+}
+// sets color for hover, focus and active
+@mixin hover-colors($color-hover, $color-active:"", $color-focus:"") {
+    @if $color-active == "" {
+        $color-active: $color-hover;
+    }
+    @if $color-focus == "" {
+        $color-focus: $color-hover;
+    }
+    @include mouse-device {
+        &:hover {
+            color: $color-hover;
+        }
+        &:active {
+            color: $color-active;
+        }
+        &:focus {
+            color: $color-focus;
+        }
+    }
+}
+
+
+// all-zero position
+@mixin all-zero {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+// aspect ratio (with bottom-padding)
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+    > .inner-wrap {
+        position: absolute;
+        @include all-zero;
+    }
+}
+
+// cover pseudo-element
+@mixin pseudo-cover {
+    content: '';
+    display: block;
+    position: absolute;
+    @include all-zero;
+}
+
+// for css animation stop flickering
+@mixin image-transition-fix {
+  transform: translatez(0);
+  -webkit-backface-visibility: hidden;
+}
+
+// crisp image resize
+@mixin image-rendering-crisp{
+    image-rendering: -moz-crisp-edges;         /* Firefox */
+    image-rendering:   -o-crisp-edges;         /* Opera */
+    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+}
+
+// input placeholder styling
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+
+// scrolling on touch
+@mixin touch-scroll {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+// text-size-adjust
+
+@mixin text-size-adjust($value: none) {
+  -webkit-text-size-adjust: $value;
+  -moz-text-size-adjust: $value;
+  -ms-text-size-adjust: $value;
+}
+
+// px to em
+
+@function em($pixels, $context: 16) {
+    @return ($pixels / $context) * 1em;
+}
+
+
+// dropcaps selector
+@mixin text-content-dropcaps-select {
+    &.dropcaps > p:first-of-type:first-letter,
+    &.dropcaps.dropcaps-every > h2 + p:first-letter,
+    p.dropcaps:first-letter,
+    .single-dropcap {
+        @content;
+    }
+}
+
+
+
+//
+// extend-like mixins
+//
+
+@mixin text-bold-upper {
+    font-weight: $bold;
+    text-transform: uppercase;
+}
+
+@mixin font-upper {
+    font-family: $font-upper;
+    text-transform: uppercase;
+}
+
+@mixin custom-ol($element:"before") {
+    counter-reset: custom-ol-counter;
+
+    & > li:#{$element} {
+        display: block;
+        content: counter(custom-ol-counter);
+        counter-increment: custom-ol-counter;
+    }
+}
+
+@mixin hamburger($width:60px, $color:#000, $color-opened: $color){
+
+    $ratio: 0.75;
+    $height: $width * $ratio;
+    $pill-height: $height / 3 / 1.66;
+    $pill-spacing: ($height - ($pill-height*3)) / 2;
+
+    display: block;
+    width: $width;
+    height: $height;
+    position: relative;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+
+    span {
+        display: block;
+        position: absolute;
+        height: $pill-height;
+        width: 100%;
+        background: $color;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+
+        &:nth-child(1) {
+            top: 0;
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+            top: $pill-height + $pill-spacing;
+        }
+        &:nth-child(4) {
+            top: ($pill-height + $pill-spacing) * 2;
+        }
+    }
+
+    &.opened {
+        span {
+            background: $color;
+
+            &:nth-child(1) {
+                top: $pill-height + $pill-spacing;
+                width: 0%;
+                left: 50%;
+            }
+            &:nth-child(2) {
+                transform: rotate(45deg);
+            }
+            &:nth-child(3) {
+                transform: rotate(-45deg);
+            }
+            &:nth-child(4) {
+                top: $pill-height + $pill-spacing;
+                width: 0%;
+                left: 50%;
+            }
+        }
+    }
+}
+
+
+
+
+
+//
+// x-mixins
+//
+
+@mixin x-spacing($name, $property, $multiplier: 1) {
+    .x-#{$name} {
+        #{$property}: $bootstrap-grid-gutter * $multiplier !important;
+    }
+    .x-#{$name}-horiz {
+        #{$property}-left: $bootstrap-grid-gutter * $multiplier !important;
+        #{$property}-right: $bootstrap-grid-gutter * $multiplier !important;
+    }
+    .x-#{$name}-vert {
+        #{$property}-top: $bootstrap-grid-gutter * $multiplier !important;
+        #{$property}-bottom: $bootstrap-grid-gutter * $multiplier !important;
+    }
+    .x-#{$name}-top {
+        #{$property}-top: $bootstrap-grid-gutter * $multiplier !important;
+    }
+    .x-#{$name}-bottom {
+        #{$property}-bottom: $bootstrap-grid-gutter * $multiplier !important;
+    }
+    .x-#{$name}-left {
+        #{$property}-left: $bootstrap-grid-gutter * $multiplier !important;
+    }
+    .x-#{$name}-right {
+        #{$property}-right: $bootstrap-grid-gutter * $multiplier !important;
+    }
+}
+
+@mixin x-faux-border($name, $inset: false) {
+    .x-#{$name}-top {
+        box-shadow: if($inset, inset, null) 0 if($inset, 1px, -1px) 0 $color-line-light;
+    }
+    .x-#{$name}-bottom {
+        box-shadow: if($inset, inset, null) 0 if($inset, -1px, 1px) 0 $color-line-light;
+    }
+    .x-#{$name}-left {
+        box-shadow: if($inset, inset, null) if($inset, 1px, -1px) 0 0 $color-line-light;
+    }
+    .x-#{$name}-right {
+        box-shadow: if($inset, inset, null) if($inset, -1px, 1px) 0 0 $color-line-light;
+    }
+    .x-#{$name}-bottom-right {
+        box-shadow: if($inset, inset, null) 0 if($inset, -1px, 1px) 0 $color-line-light, if($inset, inset, null) if($inset, -1px, 1px) 0 0 $color-line-light;
+    }
+    .x-#{$name}-top-left {
+        box-shadow: if($inset, inset, null) 0 if($inset, 1px, -1px) 0 $color-line-light, if($inset, inset, null) if($inset, 1px, -1px) 0 0 $color-line-light;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

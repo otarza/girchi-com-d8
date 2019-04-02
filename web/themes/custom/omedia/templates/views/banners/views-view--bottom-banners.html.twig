@@ -1,0 +1,17 @@
+{{ attach_library('omedia/qtip') }}
+{%
+set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'bottom-banners'
+]
+%}
+<aside{{ attributes.addClass(classes) }}>
+
+    <h2 class="banners-title"><span>ასევე იხილეთ</span></h2>
+
+    <div class="banners-list">
+        {{ rows }}
+    </div>
+    {{ empty }}
+    {{ pager }}
+</aside>

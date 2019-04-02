@@ -1,0 +1,22 @@
+uuid: 354dea61-e96d-4f55-85e6-36b119503d13
+langcode: ka
+status: true
+dependencies:
+  module:
+    - node
+id: article
+label: Article
+type: 'canonical_entities:node'
+pattern: 'media/news/[node:nid]'
+selection_criteria:
+  a1991355-7603-435a-9ad2-33207cc4bfed:
+    id: node_type
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: node
+    uuid: a1991355-7603-435a-9ad2-33207cc4bfed
+selection_logic: and
+weight: -5
+relationships: {  }

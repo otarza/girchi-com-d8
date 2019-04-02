@@ -1,0 +1,5 @@
+om_site_settings.site_settings:
+  title: 'Omedia Site Settings'
+  base_route_name: om_site_settings.site_settings_form
+  names:
+    - om_site_settings.site_settings

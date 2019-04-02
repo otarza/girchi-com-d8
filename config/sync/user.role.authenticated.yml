@@ -1,0 +1,23 @@
+uuid: 6a53ce6e-b840-46e9-97cd-5a9a7beb53a4
+langcode: ka
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access kint'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'access user profiles'
+  - 'search content'
+  - 'use text format basic_html'
+  - 'view error messages'
+  - 'view media'
+  - 'view status messages'
+  - 'view warning messages'

@@ -1,0 +1,8 @@
+{# for rendering company logos in dark sidebar block #}
+<span class="logo-single" style="{{ width_adjust ? 'width:'~width_adjust~'%' : '' }}">
+    {% if content.field_url | field_value is not empty %}
+        <a target="_blank" href="{{ content.field_url | field_value }}"><img src="{{ content.field_logo_mono | field_value }}" alt="{{ label | field_value }}"></a>
+    {% else %}
+        <img src="{{ content.field_logo_mono | field_value }}" alt="{{ label | field_value }}">
+    {% endif %}
+</span>

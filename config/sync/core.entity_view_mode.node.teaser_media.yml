@@ -1,0 +1,10 @@
+uuid: 00d50933-26ec-4744-a4cf-1b128f2e3f8b
+langcode: ka
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_media
+label: 'Teaser Media'
+targetEntityType: node
+cache: true

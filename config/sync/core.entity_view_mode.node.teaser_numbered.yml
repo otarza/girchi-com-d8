@@ -1,0 +1,10 @@
+uuid: 8049836e-a913-4a1e-96da-61f8b6bdf81d
+langcode: ka
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_numbered
+label: 'Teaser Numbered'
+targetEntityType: node
+cache: true

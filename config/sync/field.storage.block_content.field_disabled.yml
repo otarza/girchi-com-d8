@@ -1,0 +1,18 @@
+uuid: cba968d9-f2fb-4702-a81a-8a566d2e7a0d
+langcode: ka
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_disabled
+field_name: field_disabled
+entity_type: block_content
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

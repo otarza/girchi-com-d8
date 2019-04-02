@@ -1,0 +1,10 @@
+
+om_admin.drop_user_interface_translations_form:
+  path: '/admin/config/regional/translate/drop'
+  defaults:
+    _form: '\Drupal\om_admin\Form\DropUserInterfaceTranslationsForm'
+    _title: 'DropUserInterfaceTranslationsForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

@@ -1,0 +1,15 @@
+uuid: 0d04a66b-ebb3-4a62-a6f5-b8faaee7c134
+langcode: ka
+status: true
+dependencies: {  }
+name: get_involved
+label: 'Get Involved'
+effects:
+  5f7138cc-61e4-403a-97b9-602315cf133d:
+    uuid: 5f7138cc-61e4-403a-97b9-602315cf133d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 200
+      anchor: center-center

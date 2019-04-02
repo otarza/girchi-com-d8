@@ -1,0 +1,10 @@
+uuid: ced0d502-f7aa-4b8d-8804-0c68f14509e3
+langcode: ka
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_video
+label: 'Teaser Video'
+targetEntityType: node
+cache: true

@@ -1,0 +1,23 @@
+uuid: 2813c0c0-b760-4f91-a6ad-55f5b005d096
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_video
+    - node.type.article
+id: node.article.field_is_video
+field_name: field_is_video
+entity_type: node
+bundle: article
+label: 'Mark as Video'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,13 @@
+uuid: 009c0d42-0376-4ea4-98e8-f19430cfd786
+langcode: en
+status: true
+dependencies:
+  module:
+    - om_code_embed
+_core:
+  default_config_hash: TaDbkM-xjx8KUzPdu6DIPzH3BOtbWRbHZgaMyTwc0qo
+label: Code
+id: om_code
+type_id: om_code
+type_settings: {  }
+icon_uuid: null

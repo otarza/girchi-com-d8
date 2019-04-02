@@ -1,0 +1,162 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the omedia theme.
+ */
+
+include drupal_get_path('theme', 'omedia') . '/omedia.theme-suggestions.inc';
+
+/**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ */
+function omedia_preprocess_html(array &$variables) {
+  // Add class to html tag
+  $variables['html_attributes']->addClass('no-js');
+
+  // Don't display the site name twice on the front page (and potentially others)
+  if (isset($variables['head_title_array']['title']) && isset($variables['head_title_array']['name']) && ($variables['head_title_array']['title'] == $variables['head_title_array']['name'])) {
+    $variables['head_title'] = $variables['head_title_array']['name'];
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function omedia_page_attachments_alter(array &$page) {
+
+  // Tell IE to use latest rendering engine (not to use compatibility mode).
+  $ie_edge = [
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => [
+    'http-equiv' => 'X-UA-Compatible',
+    'content' => 'IE=edge',
+    ],
+  ];
+  $page['#attached']['html_head'][] = [$ie_edge, 'ie_edge'];
+
+  // Give SVG Icon file name to drupalSettings
+  $page['#attached']['drupalSettings']['omedia']['svg_icon_file'] = theme_get_setting('omedia_svg_icon_file') ?: '';
+
+  // Give JS other contextual variables
+  $page['#attached']['drupalSettings']['omedia']['theme_path'] = base_path() . \Drupal::theme()->getActiveTheme()->getPath();
+  $page['#attached']['drupalSettings']['omedia']['css_js_query_string'] = \Drupal::state()->get('system.css_js_query_string') ?: '0';
+
+  // active langs
+  $active_langs = \Drupal::languageManager()->getLanguages();
+  uasort($active_langs, function($a, $b){
+      return $a->getWeight() - $b->getWeight();
+  });
+  $page['#attached']['drupalSettings']['omedia']['active_langs'] = array_keys($active_langs);
+
+}
+
+/**
+ * Implements hook_preprocess_page() for page.html.twig.
+ */
+function omedia_preprocess_page(array &$variables) {
+
+  // Pass site identity variables to page.html.twig
+  $config = \Drupal::config('system.site');
+  $variables['site_name']   = $config->get('name');
+  $variables['site_slogan'] = $config->get('slogan');
+
+  // Omedia config
+  /*
+  $omedia_config = \Drupal::config('om_site_settings.omsitesettings');
+  $variables['facebook_page_url'] = $omedia_config->get('facebook_page_url');
+  */
+
+  // Do things based on the node.
+  /*
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node) {
+
+  }
+  */
+
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function omedia_preprocess_node(array &$variables) {
+
+  // Get properties
+  $node = $variables['elements']['#node'];
+  $view_mode = $variables['elements']['#view_mode'];
+  $type = $node->getType();
+
+  // is front
+  try {
+    $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  }
+  catch (Exception $e) {
+    $variables['is_front'] = FALSE;
+  }
+
+  // Set node_url
+  $variables['node_url'] = $node->toUrl()->setAbsolute()->toString();
+
+  // Check if field has value.
+  if ($node->hasField('field_category') && !$node->field_category->isEmpty()) {
+
+  }
+
+
+}
+
+
+function omedia_preprocess_paragraph(array &$variables) {
+
+  // Get properties
+  $para = $variables['elements']['#paragraph'];
+  $view_mode = $variables['elements']['#view_mode'];
+  $type = $para->getType();
+
+  // Logo paragraph
+
+  if($type == 'logo' && $view_mode == 'default') {
+
+    // Calculate logo width adjustment
+    $width_adjust = $para->field_logo_width_adjust->getValue();
+    if($width_adjust) {
+      $width_adjust = 100 - (int)$width_adjust[0]['value'];
+      if($width_adjust < 100) {
+        $variables['width_adjust'] = $width_adjust;
+      }
+    }
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function omedia_preprocess_field(array &$variables, $hook) {
+  $name = $variables['element']['#field_name'];
+  $bundle = $variables['element']['#bundle'];
+  $view_mode = $variables['element']['#view_mode'];
+
+
+}
+
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+function omedia_preprocess_menu(&$variables) {
+
+  // Add classes to main menu by URL (used for targeting specific menu items with CSS/JS)
+  /*
+  if(!empty($variables['menu_name']) && $variables['menu_name'] == 'main') {
+    foreach($variables['items'] as $key => $item) {
+      $url = $item['url']->toString();
+      $url = explode('/', $url);
+      $keyword = end($url);
+      $variables['items'][$key]['attributes']->setAttribute('data-om-path', $keyword);
+    }
+  }
+  */
+}

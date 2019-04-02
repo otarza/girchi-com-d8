@@ -1,0 +1,21 @@
+uuid: 52f06cd0-a332-4396-9813-a6180f2612c2
+langcode: ka
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access kint'
+  - 'access site-wide contact form'
+  - 'access user profiles'
+  - 'search content'
+  - 'view error messages'
+  - 'view media'
+  - 'view status messages'
+  - 'view warning messages'

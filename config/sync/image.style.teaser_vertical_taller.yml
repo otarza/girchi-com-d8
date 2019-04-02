@@ -1,0 +1,15 @@
+uuid: c1e7c243-dc6a-4e95-94fc-32042cd59c54
+langcode: ka
+status: true
+dependencies: {  }
+name: teaser_vertical_taller
+label: 'Teaser Vertical Taller'
+effects:
+  91a65c13-a2d7-4b69-98f9-e33298bd4b27:
+    uuid: 91a65c13-a2d7-4b69-98f9-e33298bd4b27
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 445
+      height: 555
+      anchor: center-center

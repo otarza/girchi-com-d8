@@ -1,0 +1,15 @@
+uuid: 0f346117-3783-482a-9990-1f422c908e20
+langcode: ka
+status: true
+dependencies: {  }
+name: topic_icon_xs
+label: 'Topic Icon Xs'
+effects:
+  0dde7c44-3598-4de6-a76a-2a2b9dcda2e2:
+    uuid: 0dde7c44-3598-4de6-a76a-2a2b9dcda2e2
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 20
+      height: 20
+      anchor: center-center

@@ -1,0 +1,138 @@
+<?php
+
+/**
+ * @file
+ * Contains om_menu_parents_token.module.
+ */
+
+use Drupal\Core\Url;
+use Drupal\Core\Menu\MenuLinkInterface;
+use Drupal\Core\Render\BubbleableMetadata;
+use Drupal\menu_link_content\MenuLinkContentInterface;
+
+/**
+ * Implements hook_token_info().
+ */
+function om_menu_parents_token_token_info()
+{
+  $info = array();
+  $info['tokens']['menu-link']['om-parents-slugs'] = array(
+    'name' => t('Parents Slugs'),
+    'description' => t("Array of parent items field_url_slug values. Use with :join-path"),
+    'type' => 'array',
+  );
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function om_menu_parents_token_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata)
+{
+  $replacements = array();
+  $language_manager = \Drupal::languageManager();
+  if (isset($options['langcode'])) {
+    $langcode = $options['langcode'];
+  } else {
+    $langcode = $language_manager->getCurrentLanguage()->getId();
+  }
+
+  if ($type == 'menu-link' && !empty($data['menu-link'])) {
+    /** @var \Drupal\Core\Menu\MenuLinkInterface $link */
+    $link = $data['menu-link'];
+    /** @var \Drupal\Core\Menu\MenuLinkManagerInterface $menu_link_manager */
+    $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+
+    if ($link instanceof MenuLinkContentInterface) {
+      $link = $menu_link_manager->createInstance($link->getPluginId());
+    }
+
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'om-parents-slugs':
+          if ($parents = om_menu_parents_load_all_parents($link->getPluginId(), $langcode)) {
+            $replacements[$original] = token_render_array($parents, $options);
+          }
+          break;
+      }
+    }
+
+    // [menu-link:om-parents-slugs:*] chained tokens.
+    if ($parents_tokens = \Drupal::token()->findWithPrefix($tokens, 'om-parents-slugs')) {
+      if ($parents = om_menu_parents_load_all_parents($link->getPluginId(), $langcode)) {
+        $replacements += \Drupal::token()->generate('array', $parents_tokens, array('array' => $parents), $options, $bubbleable_metadata);
+      }
+    }
+  }
+  return $replacements;
+}
+
+
+/**
+ * Loads menu link slugs for all parents of a menu link plugin ID.
+ *
+ * @param string $plugin_id
+ *   The menu link plugin ID.
+ * @param string $langcode
+ *   The language code.
+ *
+ * @return string[]
+ *   List of menu link parent slugs.
+ */
+function om_menu_parents_load_all_parents($plugin_id, $langcode)
+{
+  $cache = &drupal_static(__FUNCTION__, array());
+
+  if (!isset($cache[$plugin_id][$langcode])) {
+    $cache[$plugin_id][$langcode] = array();
+    /** @var \Drupal\Core\Menu\MenuLinkManagerInterface $menu_link_manager */
+    $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+    $parent_ids = $menu_link_manager->getParentIds($plugin_id);
+    // Remove the current plugin ID from the parents.
+    unset($parent_ids[$plugin_id]);
+    foreach ($parent_ids as $parent_id) {
+      $parent = $menu_link_manager->createInstance($parent_id);
+      $cache[$plugin_id][$langcode] = array($parent_id => om_menu_parents_get_link_slug($parent, $langcode)) + $cache[$plugin_id][$langcode];
+    }
+  }
+
+  return $cache[$plugin_id][$langcode];
+}
+
+/**
+ * Returns the translated slug of a menu item entity.
+ * @param \Drupal\Core\Menu\MenuLinkInterface $menu_link
+ *   The menu link.
+ * @param string|null $langcode
+ *   (optional) The langcode, defaults to the current language.
+ *
+ * @return string
+ *   The menu link entity slug.
+ */
+function om_menu_parents_get_link_slug(MenuLinkInterface $menu_link, $langcode = NULL)
+{
+  $metadata = $menu_link->getMetaData();
+  if (isset($metadata['entity_id']) && $menu_link->getProvider() == 'menu_link_content') {
+    /** @var \Drupal\menu_link_content\MenuLinkContentInterface $entity */
+    $entity = \Drupal::entityTypeManager()->getStorage('menu_link_content')->load($metadata['entity_id']);
+    $entity = \Drupal::service('entity.repository')->getTranslationFromContext($entity, $langcode);
+
+    $internal_path = $entity->getUrlObject()->getInternalPath();
+    if ($internal_path) {
+      $internal_path = '/' . ltrim($internal_path, '/');
+      $params = Url::fromUri("internal:" . $internal_path)->getRouteParameters();
+      $entity_type = key($params);
+      $target_entity = \Drupal::entityTypeManager()->getStorage($entity_type)->load($params[$entity_type]);
+
+      if (!empty($target_entity->hasField('field_url_slug'))) {
+        return $target_entity->get('field_url_slug')->getString();
+      } else {
+        $menu_link_slug = Url::fromRoute($menu_link->getRouteName(), $menu_link->getRouteParameters())->toString();
+        $exploded_menu_link_slug = explode('/', $menu_link_slug);
+        return end($exploded_menu_link_slug);
+      }
+
+    }
+  }
+  return '';
+}

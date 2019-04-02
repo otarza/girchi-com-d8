@@ -1,0 +1,39 @@
+diff --git a/src/Controller/AjaxCommentsController.php b/src/Controller/AjaxCommentsController.php
+index ecc6654..bb99272 100644
+--- a/src/Controller/AjaxCommentsController.php
++++ b/src/Controller/AjaxCommentsController.php
+@@ -7,6 +7,7 @@ use Drupal\ajax_comments\TempStore;
+ use Drupal\ajax_comments\Utility;
+ use Drupal\comment\CommentInterface;
+ use Drupal\comment\Controller\CommentController;
++use Drupal\comment\Entity\Comment;
+ use Drupal\Core\Ajax\AfterCommand;
+ use Drupal\Core\Ajax\AjaxResponse;
+ use Drupal\Core\Ajax\AppendCommand;
+@@ -339,6 +340,24 @@ class AjaxCommentsController extends ControllerBase {
+         $comment->getCommentedEntity(),
+         $comment->get('field_name')->value
+       );
++
++      // OM: grab new comment, render it and append to modified 'insert' command data
++      // Applies only to child comments because root-level comments are printed
++      // in-place, ordered reverse chronologically
++      if ($comment->isNew()) {
++        $cid = $this->tempStore->getCid();
++        if(!empty($cid)) {
++          $comment_real_entity = Comment::load($cid);
++          $vb = \Drupal::entityTypeManager()->getViewBuilder('comment');
++          $new_comment_ra = $vb->view($comment_real_entity, 'full');
++
++          $commands = &$response->getCommands();
++          $commands[0]['command'] = 'om_comment_insert';
++          $commands[0]['comment'] = \Drupal::service('renderer')->renderRoot($new_comment_ra);
++
++          $commands[0]['parent_id'] = $comment_real_entity->get('pid')->target_id;
++        }
++      }
+     }
+     else {
+       $errors = TRUE;
+--
+2.11.0 (Apple Git-81)

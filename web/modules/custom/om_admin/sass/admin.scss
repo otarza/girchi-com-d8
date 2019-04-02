@@ -1,0 +1,171 @@
+
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin revert-visually-hidden {
+    clip: auto !important;
+    overflow: visible !important;
+    height: auto !important;
+    width: auto !important;
+    word-wrap: normal !important;
+}
+
+$blue: #0071b8;
+$line: #e6e4df;
+
+
+
+body {
+
+}
+
+
+/*
+    taxonomy forms
+ */
+
+// all
+.taxonomy-term-form {
+    //#edit-relations,
+    .field--name-description {
+        display: none;
+    }
+}
+
+// tournaments
+.taxonomy-term-tournaments-form {
+    .form-item-field-clubs {
+        .chosen-container {
+            max-width: 600px !important;
+            width: 100% !important;
+        }
+    }
+}
+
+
+// games view exposed filter
+.view-manage-games {
+    [name='field_tournament_target_id'] {
+        width: 390px;
+    }
+}
+
+
+// game form
+#node-game-form,
+#node-game-edit-form {
+    #edit-field-tournament {
+        width: 500px;
+    }
+}
+
+
+span.grippy {
+    content: '...';
+    width: 10px;
+    height: 16px;
+    display: inline-block;
+    overflow: hidden;
+    line-height: 5px;
+    padding: 3px 4px;
+    cursor: move;
+    vertical-align: middle;
+    margin-top: -.7em;
+    margin-right: .3em;
+    font-size: 12px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    color: #cccccc;
+    text-shadow: 1px 0 1px black;
+    white-space: normal;
+}
+span.grippy::after {
+    content: '.. .. ..';
+    white-space: normal;
+}
+
+
+
+#edit-field-table-adjustments-0-value {
+    display: none;
+}
+
+
+
+/*
+reusables
+ */
+
+.taxonomy-term-form #edit-parent {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+}
+
+
+
+.node-article-form,
+.node-article-edit-form {
+
+    .tagit {
+        background: #fff;
+    }
+
+
+
+    //
+    .field--name-field-video {
+        .description {
+            display: none;
+        }
+    }
+
+}
+
+
+
+
+.om-char-counter {
+    position: relative;
+
+    .form-text {
+        box-sizing: border-box;
+        width: 100%;
+        padding-right: 65px;
+    }
+    .occ-box {
+        background: #ececec;
+        position: absolute;
+        right: 0px;
+        top: 22px;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        font-size: 12px;
+        color: #bcbcbc;
+        white-space: nowrap;
+        padding: 5px;
+        line-height: 1;
+        border: 1px solid #cfcfcf;
+    }
+    .occ-now {
+        padding-right: 5px;
+        color: #6d6d6d;
+    }
+    .occ-max {
+        padding-left: 5px;
+        color: #6d6d6d;
+    }
+    .red {
+        color: #ff0000;
+    }
+}
+
+
+
+
+

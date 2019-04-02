@@ -1,0 +1,15 @@
+uuid: 42b1a8eb-6e6a-4685-aa90-611f01ab2ee1
+langcode: ka
+status: true
+dependencies: {  }
+name: article_full_thumb
+label: 'Article Full Thumb'
+effects:
+  52455954-e61b-4105-9d97-94a34b33b76b:
+    uuid: 52455954-e61b-4105-9d97-94a34b33b76b
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 730
+      height: 384
+      anchor: center-center
