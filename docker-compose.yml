@@ -277,12 +277,23 @@ services:
   traefik:
     image: traefik
     container_name: "${PROJECT_NAME}_traefik"
-    command: -c /dev/null --web --docker --logLevel=INFO
+    command: -c /dev/null --web --docker --logLevel=INFO --defaultEntryPoints='https,http' --entryPoints='Name:https Address::443 TLS:/certs/cert.pem,/certs/key.pem' --entryPoints='Name:http Address::80'
     ports:
-      - '8000:80'
-#      - '8080:8080' # Dashboard
+      - '80:80'
+      - '443:443'
+      - '8080:8080' # Dashboard
     volumes:
+      - ./certs:/certs/
       - /var/run/docker.sock:/var/run/docker.sock
+
+  omgwtfssl:
+    image: paulczar/omgwtfssl
+    container_name: "${PROJECT_NAME}_ssl"
+    environment:
+      SSL_SUBJECT: ${PROJECT_BASE_URL}
+    volumes:
+      - ./certs:/certs
+
 
 #volumes:
 ## Docker-sync for macOS users
