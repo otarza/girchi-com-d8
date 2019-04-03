@@ -1,0 +1,14 @@
+uuid: 007c3ddc-f32b-4c74-808f-31bd3171cb19
+langcode: ka
+status: true
+dependencies:
+  config:
+    - user.role.active
+  module:
+    - user
+id: user_remove_role_action.active
+label: 'Remove the Active role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: active

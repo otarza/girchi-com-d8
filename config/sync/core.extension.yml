@@ -111,6 +111,9 @@ module:
   serialization: 0
   shortcut: 0
   smart_trim: 0
+  social_api: 0
+  social_auth: 0
+  social_auth_facebook: 0
   statistics: 0
   straw: 0
   swiftmailer: 0

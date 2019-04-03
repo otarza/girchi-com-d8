@@ -1,0 +1,14 @@
+uuid: e9b7424d-263b-4761-91df-6ff75b29d581
+langcode: ka
+status: true
+dependencies:
+  config:
+    - user.role.passive
+  module:
+    - user
+id: user_add_role_action.passive
+label: 'Add the Passive role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: passive

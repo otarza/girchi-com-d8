@@ -245,6 +245,7 @@
     "drupal/search_api": "^1.0",
     "drupal/select_or_other": "^1.0@alpha",
     "drupal/smart_trim": "^1.0",
+    "drupal/social_auth_facebook": "^1.0",
     "drupal/static_server": "^1.2",
     "drupal/statistics_counter": "1.x-dev",
     "drupal/straw": "^1.0",

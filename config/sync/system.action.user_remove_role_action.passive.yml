@@ -1,0 +1,14 @@
+uuid: 8dd22172-4027-4c4d-9ccd-e04d30bc16ab
+langcode: ka
+status: true
+dependencies:
+  config:
+    - user.role.passive
+  module:
+    - user
+id: user_remove_role_action.passive
+label: 'Remove the Passive role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: passive

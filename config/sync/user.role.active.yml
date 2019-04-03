@@ -1,0 +1,9 @@
+uuid: 2795c871-e4f1-4a08-aabc-2ecff0c91d0c
+langcode: ka
+status: true
+dependencies: {  }
+id: active
+label: Active
+weight: 3
+is_admin: null
+permissions: {  }

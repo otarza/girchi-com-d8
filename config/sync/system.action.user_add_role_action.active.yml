@@ -1,0 +1,14 @@
+uuid: 983b0ece-945e-4060-b089-87b04cd8f762
+langcode: ka
+status: true
+dependencies:
+  config:
+    - user.role.active
+  module:
+    - user
+id: user_add_role_action.active
+label: 'Add the Active role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: active
