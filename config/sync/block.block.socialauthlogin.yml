@@ -1,0 +1,20 @@
+uuid: 26718425-fe23-46c4-85ce-ea614baf65db
+langcode: ka
+status: true
+dependencies:
+  module:
+    - social_auth
+  theme:
+    - bootstrap
+id: socialauthlogin
+theme: bootstrap
+region: navigation_collapsible
+weight: -4
+provider: null
+plugin: social_auth_login
+settings:
+  id: social_auth_login
+  label: 'Social Auth Login'
+  provider: social_auth
+  label_display: '0'
+visibility: {  }
