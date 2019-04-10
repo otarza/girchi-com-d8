@@ -3,7 +3,7 @@ langcode: ka
 status: true
 dependencies: {  }
 id: content_manager
-label: 'Content Manager'
+label: Editor
 weight: 3
 is_admin: null
 permissions:
@@ -11,6 +11,7 @@ permissions:
   - 'access browse_articles entity browser pages'
   - 'access browse_media entity browser pages'
   - 'access browse_media_for_editor entity browser pages'
+  - 'access content'
   - 'access content overview'
   - 'access contextual links'
   - 'access media overview'
