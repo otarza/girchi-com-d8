@@ -1,0 +1,12 @@
+auth:
+  social_auth_facebook:
+    route: social_auth_facebook.redirect_to_fb
+    img_path: modules/contrib/social_auth_facebook/img/facebook_logo.svg
+post_login: /user
+redirect_user_form: false
+disable_admin_login: true
+disabled_roles:
+  administrator: '0'
+  content_manager: '0'
+_core:
+  default_config_hash: 1tS3jCuYxV3TXQ2cq320XarjdXWprvWK5bru8DCsIUY

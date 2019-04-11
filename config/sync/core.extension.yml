@@ -51,6 +51,9 @@ module:
   role_delegation: 0
   serialization: 0
   shortcut: 0
+  social_api: 0
+  social_auth: 0
+  social_auth_facebook: 0
   statistics: 0
   swiftmailer: 0
   system: 0
