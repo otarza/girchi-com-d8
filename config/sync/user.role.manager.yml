@@ -1,0 +1,34 @@
+uuid: a334f1f1-1abd-4180-8bef-96ef5d9e3698
+langcode: en
+status: true
+dependencies: {  }
+id: manager
+label: Manager
+weight: -7
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access site reports'
+  - 'access toolbar'
+  - 'administer nodes'
+  - 'administer taxonomy'
+  - 'administer users'
+  - 'assign content_manager role'
+  - 'create article content'
+  - 'delete any article content'
+  - 'delete article revisions'
+  - 'delete own article content'
+  - 'edit any article content'
+  - 'edit any page content'
+  - 'edit own article content'
+  - 'edit own page content'
+  - 'revert article revisions'
+  - 'revert page revisions'
+  - 'view all revisions'
+  - 'view any unpublished article content'
+  - 'view article revisions'
+  - 'view own unpublished content'
+  - 'view page revisions'
+  - 'view the administration theme'
