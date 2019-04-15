@@ -73,4 +73,3 @@ else
 fi
 
 chmod 755 $SETTINGS_LOCAL
-chmod -w web/sites/default
