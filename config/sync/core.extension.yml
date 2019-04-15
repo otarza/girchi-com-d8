@@ -21,6 +21,8 @@ module:
   ctools: 0
   datetime: 0
   dblog: 0
+  devel: 0
+  devel_generate: 0
   dynamic_page_cache: 0
   editor: 0
   editor_file: 0
@@ -37,6 +39,7 @@ module:
   help: 0
   hierarchical_term_formatter: 0
   image: 0
+  kint: 0
   language: 0
   link: 0
   locale: 0
@@ -58,6 +61,7 @@ module:
   social_api: 0
   social_auth: 0
   social_auth_facebook: 0
+  static_server: 0
   statistics: 0
   swiftmailer: 0
   system: 0

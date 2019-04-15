@@ -7,6 +7,7 @@ redirect_user_form: false
 disable_admin_login: true
 disabled_roles:
   administrator: '0'
+  manager: '0'
   content_manager: '0'
 _core:
   default_config_hash: 1tS3jCuYxV3TXQ2cq320XarjdXWprvWK5bru8DCsIUY
