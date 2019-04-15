@@ -50,9 +50,6 @@ function girchi_referral_form_alter(&$form, FormStateInterface $form_state, $for
         if ($user) {
             //adding default value to field_referral
             $form['field_referral']['widget'][0]['target_id']['#default_value'] = $user;
-
-            $form['actions']['submit']['#submit'][] = 'girchi_referral_url_generator';
-
         }
     }
     if ($form_id == "user_form") {
