@@ -63,13 +63,13 @@ function girchi_referral_form_alter(&$form, FormStateInterface $form_state, $for
 
 
 /**
- * Implementing hook_ENTITY_TYPE_insert
+ * Implementing hook_user_login
  *
  * @param EntityInterface $entity
  *
  * @throws Drupal\Core\Entity\EntityStorageException
  */
-function girchi_referral_user_insert(EntityInterface $entity)
+function girchi_referral_user_login(EntityInterface $entity)
 {
     $uid = $entity->id();
     $host = Drupal::request()->getSchemeAndHttpHost();
