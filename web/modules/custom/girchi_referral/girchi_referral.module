@@ -73,9 +73,15 @@ function girchi_referral_user_login(EntityInterface $entity)
 {
     $uid = $entity->id();
     $host = Drupal::request()->getSchemeAndHttpHost();
-    $url = $host . '/user/register?referral=' . $uid;
-    $entity->set('field_referral_url', $url);
-    $entity->save();
+
+    //check if referral url exists
+    if (empty($entity->toArray()['field_referral_url'])) {
+        $url = $host . '/user/register?referral=' . $uid;
+        $entity->set('field_referral_url', $url);
+        $entity->save();
+    };
+
+
 }
 
 
