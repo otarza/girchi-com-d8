@@ -14,7 +14,6 @@
 1. `git clone git@github.com:Girchi/girchi-com-d8.git`;
 2. `cd girchi-com-d8`;
 3. `docker-compose up -d`;
-4. `./scripts/pre-install.sh`
 4. `docker-compose exec php composer install`;
 5. `docker-compose exec php drush si --existing-config --account-pass=1234 -y -vvv`
 
