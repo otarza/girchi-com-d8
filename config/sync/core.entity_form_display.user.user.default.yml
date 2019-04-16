@@ -9,6 +9,7 @@ dependencies:
     - field.field.user.user.field_phone
     - field.field.user.user.field_politician
     - field.field.user.user.field_referral
+    - field.field.user.user.field_referral_url
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -74,6 +75,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_referral_url:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   path:
     type: path
