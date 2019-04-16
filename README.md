@@ -17,7 +17,7 @@
 4. `./scripts/pre-install.sh`
 5. `docker-compose exec php composer install`;
 6. `docker-compose exec php drush si --existing-config --account-pass=1234 -y -vvv`
-7. `drush language-import`
+7. `docker-compose exec php drush language-import`
 
 ინსტალაციის შემდეგ პროექტის უნდა მუშაობდეს შემდეგ მისამართზე: [http://girchi.docker.localhost](http://girchi.docker.localhost)
 
