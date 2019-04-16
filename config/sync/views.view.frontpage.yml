@@ -1,5 +1,5 @@
-uuid: 604e0581-b075-4049-b923-9d827268db84
-langcode: ka
+uuid: f3a2e2f2-59ee-4e5e-8ee1-89294963b748
+langcode: en
 status: true
 dependencies:
   config:
@@ -9,7 +9,7 @@ dependencies:
     - node
     - user
 _core:
-  default_config_hash: GNfx9kN8-0_KgQ-xf3fjdXCCzZwXCI8T0IPFW8SIe7g
+  default_config_hash: ezK5Dw8P_4bqJdDQIiecSAJak9p1Wf1yDwHzTutGFuQ
 id: frontpage
 label: Frontpage
 module: node
@@ -31,7 +31,7 @@ display:
       empty:
         area_text_custom:
           admin_label: ''
-          content: 'No front page content has been created yet.'
+          content: 'No front page content has been created yet.<br/>Follow the <a target="_blank" href="https://www.drupal.org/docs/user_guide/en/index.html">User Guide</a> to start building your site.'
           empty: true
           field: area_text_custom
           group_type: group
@@ -181,8 +181,8 @@ display:
           tags:
             previous: '‹ Previous'
             next: 'Next ›'
-            first: '« პირველი'
-            last: 'ბოლო »'
+            first: '« First'
+            last: 'Last »'
           quantity: 9
       query:
         type: views_query

@@ -1,5 +1,5 @@
-uuid: c7cedd70-97a0-4c9e-9302-848ab3e7dadf
-langcode: ka
+uuid: e32fccc7-c8ab-430f-86d6-ff5b1fb2958a
+langcode: en
 status: true
 dependencies:
   module:
@@ -129,9 +129,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
           is_grouped: false
           group_info:
             label: ''

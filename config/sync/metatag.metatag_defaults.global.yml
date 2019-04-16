@@ -1,20 +1,11 @@
-uuid: c0cc463e-cc9f-415b-9af9-7a2ef8de94e7
-langcode: ka
+uuid: f2da5bf4-36f6-4f18-93e5-9422f710364e
+langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: 5rOnjIF_aDyGBmfXNhJnkPXxQMlem0CmVmggV-TF3Fg
+  default_config_hash: sL588ui1E_8-2c_UupwyYxcqX2OVyMFp3HTLbbFqvPc
 id: global
 label: Global
 tags:
-  canonical_url: '[current-page:url:absolute]'
-  image_src: '[site:om-url-abs]/og.png'
-  title: '[current-page:title] - [site:name]'
-  fb_pages: '1159313984168136'
-  og_image: '[site:om-url-abs]/og.png'
-  og_site_name: '[site:name]'
-  og_title: '[current-page:title]'
-  og_url: '[current-page:url:absolute]'
-  twitter_cards_page_url: '[current-page:url:absolute]'
-  twitter_cards_title: '[current-page:title]'
-  twitter_cards_type: summary_large_image
+  canonical_url: '[current-page:url]'
+  title: '[current-page:title] | [site:name]'

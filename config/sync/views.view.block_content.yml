@@ -1,12 +1,12 @@
-uuid: 71287ad8-1c36-4b7c-b247-dc7a61f190de
-langcode: ka
+uuid: 52fc06ef-9c14-4958-b00b-cb1e5ef5db73
+langcode: en
 status: true
 dependencies:
   module:
     - block_content
     - user
 _core:
-  default_config_hash: msYnighLW1IbiBfyQbwbQwb2cU-5LECiFryt60k0Nfk
+  default_config_hash: BmeDSOTSaTVy5QLgxgJ5ye_ZseG5t88JXRP1apFoBkk
 id: block_content
 label: 'Custom block library'
 module: views
@@ -179,72 +179,6 @@ display:
           field_api_classes: false
           entity_type: null
           entity_field: info
-          plugin_id: field
-        langcode:
-          id: langcode
-          table: block_content_field_data
-          field: langcode
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Language
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: language
-          settings:
-            link_to_entity: false
-            native_language: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: block_content
-          entity_field: langcode
           plugin_id: field
         type:
           id: type
@@ -444,7 +378,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -522,6 +455,8 @@ display:
             required: false
             remember: false
             multiple: false
+            remember_roles:
+              authenticated: authenticated
           is_grouped: false
           group_info:
             label: ''
@@ -551,7 +486,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: 'There are no custom blocks available. '
+          content: 'There are no custom blocks available.'
           plugin_id: text_custom
         block_content_listing_empty:
           admin_label: ''

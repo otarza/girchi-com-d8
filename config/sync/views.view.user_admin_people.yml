@@ -1,5 +1,5 @@
-uuid: 762913f4-14b0-4ca3-8943-b82ef18406f1
-langcode: ka
+uuid: 6ecd9687-0f4c-4651-a041-a2dab2072b62
+langcode: en
 status: true
 dependencies:
   module:
@@ -55,8 +55,8 @@ display:
           tags:
             previous: '‹ Previous'
             next: 'Next ›'
-            first: '« პირველი'
-            last: 'ბოლო »'
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -604,7 +604,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -813,9 +812,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
           is_grouped: false
           group_info:
             label: ''

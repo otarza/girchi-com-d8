@@ -1,12 +1,8 @@
-uuid: 14575350-5fe3-42a5-9ec7-b82af083c712
-langcode: en
+uuid: 7c5cd271-c014-46a7-bdbb-1273f7aaaaf9
+langcode: ka
 status: true
 dependencies: {  }
 id: node__article
-label: 'Content: Article'
+label: 'კონტენტი: Article'
 tags:
-  image_src: '[node:om-share-img]'
-  og_image: '[node:om-share-img]'
-  og_title: '[node:field_social_title]'
-  twitter_cards_image: '[node:om-share-img]'
-  twitter_cards_title: '[node:field_social_title]'
+  og_image: '[node:field_image]'

@@ -1,13 +1,12 @@
-uuid: 85075b78-74a5-47a1-81bc-7ad3e23dfc7d
-langcode: ka
+uuid: 14cc3895-0df1-4a04-9085-5489e4568579
+langcode: en
 status: true
 dependencies:
   module:
     - node
     - user
-    - view_unpublished
 _core:
-  default_config_hash: tDcmzGfShE0XJbfwJzyA6lJTUYC6X4iVu887dgoFfDg
+  default_config_hash: sqwEJaSgef4rCaRMf-JdNAdV_kCICU1SfQh5Wl2sUrc
 id: content_recent
 label: 'Recent content'
 module: node
