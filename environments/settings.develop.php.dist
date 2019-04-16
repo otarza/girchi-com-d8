@@ -150,3 +150,4 @@ $settings['trusted_host_patterns'][] = '^.+\.girchi\.com$';
  */
 $config['environment_indicator.indicator']['name'] = 'DEVELOPMENT';
 $config['config_split.config_split.dev']['status'] = TRUE;
+$settings['custom_translations_directory'] = '../custom-translations';
