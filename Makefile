@@ -1,6 +1,6 @@
 include .env
 
-.PHONY: up down stop prune ps shell drush logs
+.PHONY: up down stop prune ps shell drush logs install 
 
 default: up
 
@@ -33,6 +33,9 @@ drush:
 logs:
 	@docker-compose logs -f $(filter-out $@,$(MAKECMDGOALS))
 
+install:
+	./scripts/install.sh
+	
 # https://stackoverflow.com/a/6273809/1826109
 %:
 	@:
