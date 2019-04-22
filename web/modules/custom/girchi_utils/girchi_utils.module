@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @file
+ * Contains girchi_utils.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function girchi_utils_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the girchi_utils module.
+    case 'help.page.girchi_utils':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Contains custom extensions and overrides for Girchi project.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function girchi_utils_entity_form_display_alter(&$form_display, $context) {
+
+  if ($context['entity_type'] == 'user' && $context['form_mode'] == 'register') {
+
+    $user = \Drupal::currentUser();
+
+    if (in_array('missioner', $user->getRoles())) {
+      $storage = \Drupal::service('entity_type.manager')
+        ->getStorage('entity_form_display');
+
+      $form_display = $storage->loadUnchanged('user.user.supporters_registration');
+
+    }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ *
+ * @param $existing
+ * @param $type
+ * @param $theme
+ * @param $path
+ *
+ * @return array
+ */
+function girchi_utils_theme($existing, $type, $theme, $path) {
+  $templates = [
+    'supporter_registration' => [
+      'variables' =>
+        [
+          'form' => NULL,
+        ],
+      'template' => 'supporter_registration',
+      'render element' => 'form',
+    ],
+  ];
+
+  return $templates;
+}

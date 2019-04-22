@@ -1,0 +1,14 @@
+{
+  "name": "drupal/girchi_utils",
+  "type": "drupal-module",
+  "description": "Contains custom extensions and overrides for Girchi project.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/girchi_utils",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/girchi_utils",
+    "source": "http://cgit.drupalcode.org/girchi_utils"
+  },
+  "require": { }
+}

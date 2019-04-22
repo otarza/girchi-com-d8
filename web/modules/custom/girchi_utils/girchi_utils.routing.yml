@@ -1,0 +1,8 @@
+girchi_utils.supporters_registration_controller_registerPage:
+  path: '/girchi-utils/supporters-registration'
+  defaults:
+    _controller: '\Drupal\girchi_utils\Controller\SupportersRegistrationController::registerPage'
+    _title: 'supportes registration'
+  requirements:
+    _permission: 'access content'
+    # @TODO change this permission!
