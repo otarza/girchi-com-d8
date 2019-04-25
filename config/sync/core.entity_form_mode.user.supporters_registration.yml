@@ -1,0 +1,10 @@
+uuid: 98feb8cd-f803-4f78-ab96-1cfda53d4365
+langcode: ka
+status: true
+dependencies:
+  module:
+    - user
+id: user.supporters_registration
+label: 'Supporters registration'
+targetEntityType: user
+cache: true

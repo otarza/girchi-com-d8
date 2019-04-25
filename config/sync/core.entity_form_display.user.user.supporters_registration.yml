@@ -1,8 +1,9 @@
-uuid: 2ee9aa5c-2c0b-467e-b874-3716908f616e
+uuid: f68e94a9-ab26-4104-a6cd-dbb897942477
 langcode: ka
 status: true
 dependencies:
   config:
+    - core.entity_form_mode.user.supporters_registration
     - field.field.user.user.field_date_of_birth
     - field.field.user.user.field_first_name
     - field.field.user.user.field_ged
@@ -13,31 +14,28 @@ dependencies:
     - field.field.user.user.field_referral
     - field.field.user.user.field_referral_url
     - field.field.user.user.user_picture
-    - image.style.thumbnail
   module:
     - datetime
-    - image
-    - path
     - telephone
     - user
 _core:
   default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
-id: user.user.default
+id: user.user.supporters_registration
 targetEntityType: user
 bundle: user
-mode: default
+mode: supporters_registration
 content:
   account:
-    weight: 7
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_date_of_birth:
-    weight: 14
+    type: datetime_default
+    weight: 3
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: datetime_default
-    region: content
   field_first_name:
     weight: 1
     settings:
@@ -47,12 +45,12 @@ content:
     type: string_textfield
     region: content
   field_ged:
-    weight: 13
+    type: number
+    weight: 6
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_last_name:
     weight: 2
     settings:
@@ -62,7 +60,7 @@ content:
     type: string_textfield
     region: content
   field_personal_id:
-    weight: 3
+    weight: 0
     settings:
       size: 60
       placeholder: ''
@@ -76,50 +74,17 @@ content:
     third_party_settings: {  }
     type: telephone_default
     region: content
-  field_politician:
-    weight: 5
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_referral:
-    weight: 6
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_referral_url:
-    weight: 11
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  path:
-    type: path
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   timezone:
     weight: 6
     region: content
-  user_picture:
-    type: image_image
-    weight: 0
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
 hidden:
   contact: true
+  field_politician: true
+  field_referral: true
+  field_referral_url: true
   google_analytics: true
   langcode: true
   language: true
+  path: true
   translation: true
+  user_picture: true

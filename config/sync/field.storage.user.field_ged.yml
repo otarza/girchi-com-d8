@@ -1,0 +1,20 @@
+uuid: e9125a51-f44c-40d5-b4d9-dbff0fe79a45
+langcode: ka
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_ged
+field_name: field_ged
+entity_type: user
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

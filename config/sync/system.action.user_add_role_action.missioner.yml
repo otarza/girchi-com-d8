@@ -1,0 +1,14 @@
+uuid: 1ae4dc33-fb99-4d0c-a98c-3e1f44760320
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.missioner
+  module:
+    - user
+id: user_add_role_action.missioner
+label: 'Add the Missioner role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: missioner

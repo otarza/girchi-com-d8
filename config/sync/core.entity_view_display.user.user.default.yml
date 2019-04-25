@@ -3,7 +3,9 @@ langcode: ka
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_date_of_birth
     - field.field.user.user.field_first_name
+    - field.field.user.user.field_ged
     - field.field.user.user.field_last_name
     - field.field.user.user.field_personal_id
     - field.field.user.user.field_phone
@@ -13,6 +15,7 @@ dependencies:
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
+    - datetime
     - image
     - telephone
     - user
@@ -23,17 +26,35 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_date_of_birth:
+    weight: 16
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   field_first_name:
     weight: 1
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
+  field_ged:
+    weight: 15
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
   field_last_name:
     weight: 2
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -41,7 +62,7 @@ content:
     region: content
   field_personal_id:
     weight: 3
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -49,7 +70,7 @@ content:
     region: content
   field_phone:
     weight: 4
-    label: above
+    label: hidden
     settings:
       title: ''
     third_party_settings: {  }
@@ -57,7 +78,7 @@ content:
     region: content
   field_politician:
     weight: 5
-    label: above
+    label: hidden
     settings:
       format: unicode-yes-no
       format_custom_true: ''
@@ -67,7 +88,7 @@ content:
     region: content
   field_referral:
     weight: 6
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -75,7 +96,7 @@ content:
     region: content
   field_referral_url:
     weight: 13
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -97,4 +118,3 @@ content:
     label: hidden
 hidden:
   langcode: true
-  member_for: true

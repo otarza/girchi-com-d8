@@ -1,0 +1,14 @@
+uuid: 342b1b5f-8778-4482-9c55-61aed92596c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.missioner
+  module:
+    - user
+id: user_remove_role_action.missioner
+label: 'Remove the Missioner role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: missioner
