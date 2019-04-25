@@ -1,0 +1,91 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.1-apache-node-browsers
+      - image: circleci/mariadb:latest
+        environment:
+          - MYSQL_ROOT_HOST=%
+
+    working_directory: ~/drupal-circleci-behat
+
+    steps:
+      - checkout
+      - run: mkdir -p tests/behat/test-results
+      - run:
+          name: Download Selenium
+          command: curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
+      - run:
+          name: Start Selenium
+          command: java -jar selenium-server-standalone-3.5.3.jar -log tests/behat/test-results/selenium.log
+          background: true
+      - run:
+          name: Setup Apache
+          command: |
+            sudo cp .circleci/drupal-circleci-behat.conf /etc/apache2/sites-available/drupal-circleci-behat.conf
+            sudo a2ensite drupal-circleci-behat
+            sudo service apache2 start
+            echo 127.0.0.1 girchi.loc | sudo tee -a /etc/hosts
+            mkdir -p /tmp/screenshots
+
+      - run:
+          name: Setup tools
+          command: |
+            sudo apt-get -qq update && sudo apt-get -qqy upgrade
+            sudo apt-get -yqq install libpng-dev mariadb-client nano
+            sudo docker-php-ext-install gd mbstring mysqli pdo pdo_mysql
+            echo "memory_limit = 512M" | sudo tee /usr/local/etc/php/php.ini > /dev/null
+            sudo service apache2 restart
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "composer.lock" }}
+          - v1-dependencies-
+      - run:
+          name: Composer Install
+          command: |
+            composer install -n --prefer-dist
+            echo 'export PATH=$HOME/drupal-circleci-behat/vendor/bin:$PATH' >> $BASH_ENV
+            source /home/circleci/.bashrc
+      - save_cache:
+          paths:
+            - ./vendor
+          key: v1-dependencies-{{ checksum "composer.lock" }}
+      - run:
+          name: Preparing databases
+          command: |
+            cd web
+            sudo cp ../.circleci/settings.php sites/default/settings.php
+            if [ -e ~/mysql_dump.sql ]
+            then
+              echo "Restoring databases dump"
+              drush sql:create -y
+              drush sql:cli < ~/mysql_dump.sql
+            else
+              drush si config_installer -y --account-name=admin --account-pass=admin
+              drush config-set "system.site" uuid "1923ead1-256f-47e5-a279-485bec0ce51d" -y
+              drush ev '\Drupal::entityManager()->getStorage("shortcut_set")->load("default")->delete();' -y
+            fi
+      - run:
+          name: Drupal config
+          command: |
+            cd web
+            drush cim -y
+            drush cim -y
+            drush updb -y
+            drush cr -y
+            drush sql:dump > ~/mysql_dump.sql
+      - save_cache:
+          key: mysql-dump-v6-{{ checksum "config/sync/core.extension.yml" }}
+          paths:
+            - ~/mysql_dump.sql
+      - run:
+          name: Tests
+          command: |
+            cd tests/behat
+            mkdir -p test-results/junit
+            composer install
+            ./bin/behat --config behat.circle.yml --no-snippets -f pretty -o std -f junit -o test-results/junit/junit.xml
+      - store_test_results:
+          path: tests/behat/test-results
+      - store_artifacts:
+          path: /tmp/screenshots

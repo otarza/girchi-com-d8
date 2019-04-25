@@ -278,11 +278,14 @@
     "webmozart/path-util": "^2.3"
   },
   "require-dev": {
+    "behat/behat": "^3.5",
     "behat/mink": "~1.7",
     "behat/mink-goutte-driver": "~1.2",
+    "drupal/drupal-extension": "^3.4",
     "jcalderonzumba/gastonjs": "~1.0.2",
     "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
     "mikey179/vfsstream": "~1.2",
+    "nuvoleweb/drupal-behat": "^1.1",
     "phpunit/phpunit": ">=4.8.28 <5",
     "symfony/css-selector": "~2.8"
   },
@@ -298,7 +301,10 @@
   "autoload": {
     "classmap": [
       "scripts/composer/ScriptHandler.php"
-    ]
+    ],
+    "psr-4": {
+      "Girchi\\tests\\behat\\": "./tests/behat/src"
+    }
   },
   "scripts": {
     "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
