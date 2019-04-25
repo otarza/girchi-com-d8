@@ -12,36 +12,34 @@ use Drupal\user\Entity\User;
 /**
  * Implements hook_help().
  */
-function girchi_utils_help($route_name, RouteMatchInterface $route_match)
-{
-    switch ($route_name) {
-        // Main module help for the girchi_utils module.
-        case 'help.page.girchi_utils':
-            $output = '';
-            $output .= '<h3>' . t('About') . '</h3>';
-            $output .= '<p>' . t('Contains custom extensions and overrides for Girchi project.') . '</p>';
-            return $output;
+function girchi_utils_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the girchi_utils module.
+    case 'help.page.girchi_utils':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Contains custom extensions and overrides for Girchi project.') . '</p>';
+      return $output;
 
-        default:
-    }
+    default:
+  }
 }
 
-function girchi_utils_entity_form_display_alter(&$form_display, $context)
-{
+function girchi_utils_entity_form_display_alter(&$form_display, $context) {
 
-    if ($context['entity_type'] == 'user' && $context['form_mode'] == 'register') {
+  if ($context['entity_type'] == 'user' && $context['form_mode'] == 'register') {
 
-        $user = \Drupal::currentUser();
+    /** @var \Drupal\Core\Session\AccountProxy $user */
+    $user = \Drupal::currentUser();
 
-        if (in_array('missioner', $user->getRoles())
-            || $user->id() == 1) {
-            $storage = \Drupal::service('entity_type.manager')
-                ->getStorage('entity_form_display');
+    if ($user->hasPermission('access supporters registration')) {
+      $storage = \Drupal::service('entity_type.manager')
+        ->getStorage('entity_form_display');
 
-            $form_display = $storage->loadUnchanged('user.user.supporters_registration');
+      $form_display = $storage->loadUnchanged('user.user.supporters_registration');
 
-        }
     }
+  }
 }
 
 /**
@@ -54,67 +52,71 @@ function girchi_utils_entity_form_display_alter(&$form_display, $context)
  *
  * @return array
  */
-function girchi_utils_theme($existing, $type, $theme, $path)
-{
-    $templates = [
-        'supporter_registration' => [
-            'variables' =>
-                [
-                    'form' => NULL,
-                ],
-            'template' => 'supporter_registration',
-            'render element' => 'form',
+function girchi_utils_theme($existing, $type, $theme, $path) {
+  $templates = [
+    'supporter_registration' => [
+      'variables' =>
+        [
+          'form' => NULL,
         ],
-    ];
+      'template' => 'supporter_registration',
+      'render element' => 'form',
+    ],
+  ];
 
-    return $templates;
+  return $templates;
 }
 
 
-function girchi_utils_form_alter(&$form, &$form_state, $form_id)
-{
+function girchi_utils_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
 
-    if ($form_id == "user_register_form") {
-        unset($form['account']['mail']['#title']);
-        unset($form['account']['mail']['#description']);
+  if ($form_id == "user_register_form") {
+    unset($form['account']['mail']['#title']);
+    unset($form['account']['mail']['#description']);
 
 
-        $form['account']['mail']['#attributes']['class'][] = 'form-control form-control-lg login';
-        $form['account']['mail']['#attributes']['id'][] = 'email';
-        $form['account']['mail']['#attributes']['placeholder'][] = t('Enter Email');
+    $form['account']['mail']['#attributes']['class'][] = 'form-control form-control-lg login';
+    $form['account']['mail']['#attributes']['id'][] = 'email';
+    $form['account']['mail']['#attributes']['placeholder'][] = t('Enter Email');
 
-        unset($form['field_referral']['widget'][0]['target_id']['#title']);
-        unset($form['field_referral']['widget'][0]['target_id']['#description']);
-        unset($form['field_referral']['widget']['#title']);
-        unset($form['field_referral']['widget']['#description']);
+    unset($form['field_referral']['widget'][0]['target_id']['#title']);
+    unset($form['field_referral']['widget'][0]['target_id']['#description']);
+    unset($form['field_referral']['widget']['#title']);
+    unset($form['field_referral']['widget']['#description']);
 
-        $form['field_referral']['widget'][0]['target_id']['#attributes']['class'][] = 'form-control form-control-lg login';
-        $form['field_referral']['widget'][0]['target_id']['#attributes']['id'][] = 'referral';
-        $form['field_referral']['widget'][0]['target_id']['#attributes']['placeholder'][] = 'მიუთითეთ Referral-ი';
+    $form['field_referral']['widget'][0]['target_id']['#attributes']['class'][] = 'form-control form-control-lg login';
+    $form['field_referral']['widget'][0]['target_id']['#attributes']['id'][] = 'referral';
+    $form['field_referral']['widget'][0]['target_id']['#attributes']['placeholder'][] = 'მიუთითეთ Referral-ი';
 
-        $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-warning text-uppercase mt-4 login';
-        $form['#after_build'][] = 'girchi_utils_after_build';
-    }
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-warning text-uppercase mt-4 login';
+    $form['#after_build'][] = 'girchi_utils_after_build';
+
+
+  }
 
 
 }
 
-function girchi_utils_after_build($form, &$form_state)
-{
+function girchi_utils_after_build($form, &$form_state) {
+  if ($form_state->getFormObject()->getFormDisplay($form_state)->getMode()
+    === 'supporters_registration') {
+    $form['field_date_of_birth']['widget'][0]['value']['date']['#attributes']['class'][] = 'form-control form-control-lg fix';
+  }
 
-    unset($form['account']['pass']['pass1']['#title']);
-    unset($form['account']['pass']['#attached']['drupalSettings']['password']['showStrengthIndicator']);
+  unset($form['account']['pass']['pass1']['#title']);
+  unset($form['account']['pass']['#attached']['drupalSettings']['password']['showStrengthIndicator']);
 
-    $form['account']['pass']['pass1']['#attributes']['class'][] = 'form-control form-control-lg login';
-    $form['account']['pass']['pass1']['#attributes']['id'][] = 'password';
-    $form['account']['pass']['pass1']['#attributes']['placeholder'][] = t('Enter password');
+  $form['account']['pass']['pass1']['#attributes']['class'][] = 'form-control form-control-lg login';
+  $form['account']['pass']['pass1']['#attributes']['id'][] = 'password';
+  $form['account']['pass']['pass1']['#attributes']['placeholder'][] = t('Enter password');
 
 
-    unset($form['account']['pass']['pass2']['#title']);
-    $form['account']['pass']['pass2']['#attributes']['class'][] = 'form-control form-control-lg login';
-    $form['account']['pass']['pass2']['#attributes']['id'][] = 'password2';
-    $form['account']['pass']['pass2']['#attributes']['placeholder'][] = t('Enter password');
+  unset($form['account']['pass']['pass2']['#title']);
+  $form['account']['pass']['pass2']['#attributes']['class'][] = 'form-control form-control-lg login';
+  $form['account']['pass']['pass2']['#attributes']['id'][] = 'password2';
+  $form['account']['pass']['pass2']['#attributes']['placeholder'][] = t('Enter password');
 
-    return $form;
+
+  return $form;
 }
