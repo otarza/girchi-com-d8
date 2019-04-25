@@ -7,6 +7,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\user\Entity\User;
 
 /**
  * Implements hook_help().
@@ -30,7 +31,8 @@ function girchi_utils_entity_form_display_alter(&$form_display, $context) {
 
     $user = \Drupal::currentUser();
 
-    if (in_array('missioner', $user->getRoles())) {
+    if (in_array('missioner', $user->getRoles())
+      || $user->id()==1) {
       $storage = \Drupal::service('entity_type.manager')
         ->getStorage('entity_form_display');
 
@@ -68,9 +70,11 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
 
 function girchi_utils_form_alter(&$form, &$form_state, $form_id) {
   $form['#after_build'][] = 'girchi_utils_after_build';
+
+
 }
 
-function girchi_utils_after_build($form, &$form_state){
-  $form['field_date_of_birth']['widget'][0]['value']['date']['#attributes']['class'][] = 'form-control form-control-lg';
+function girchi_utils_after_build($form, &$form_state) {
+  $form['field_date_of_birth']['widget'][0]['value']['date']['#attributes']['class'][] = 'form-control form-control-lg fix';
   return $form;
 }

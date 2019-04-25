@@ -1,7 +1,7 @@
 girchi_utils.supporters_registration_controller_registerPage:
-  path: '/girchi-utils/supporters-registration'
+  path: '/supporters-registration'
   defaults:
     _controller: '\Drupal\girchi_utils\Controller\SupportersRegistrationController::registerPage'
-    _title: 'supportes registration'
+    _title: 'supporters registration'
   requirements:
-    _permission: 'access content'
+    _permission: 'access supporters registration'

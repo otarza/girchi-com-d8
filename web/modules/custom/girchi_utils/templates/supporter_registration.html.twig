@@ -34,7 +34,7 @@
 <hr class="card-divider my-0"/>
 <div class="row">
     <div class="col-xs-12 col-md-7 col-lg-4 m-auto">
-        <form class="my-4" {{ attributes }}>
+        <form {{ attributes }} method="post" action="{{ url("girchi_utils.supporters_registration_controller_registerPage") }}">
             {{ form.form_build_id }}
             {{ form.form_token }}
             {{ form.form_id }}
@@ -85,22 +85,7 @@
                 >
             {{ form.field_ged }}
             </div>
-            {#{{ form.account.status }}#}
-            {#{{ form.account.notify}}#}
             {{ form.actions.submit }}
-            {#<button#}
-                    {#type="submit"#}
-                    {#class="btn btn-lg btn-block btn-warning text-uppercase mt-4"#}
-            {#>#}
-                {#რეგისტრაცია#}
-            {#</button>#}
-            {#<hr class="my-4 mx-n5" />#}
-            {#<a#}
-                    {#href="#"#}
-                    {#class="btn btn-lg btn-block btn-success text-uppercase"#}
-            {#>#}
-                {#დარეგისტრირებულთა სია#}
-            {#</a>#}
         </form>
     </div>
 </div>
