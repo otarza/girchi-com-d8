@@ -67,8 +67,10 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
 
 
 function girchi_utils_form_alter(&$form, &$form_state, $form_id) {
+  $form['#after_build'][] = 'girchi_utils_after_build';
 }
 
 function girchi_utils_after_build($form, &$form_state){
+  $form['field_date_of_birth']['widget'][0]['value']['date']['#attributes']['class'][] = 'form-control form-control-lg';
   return $form;
 }

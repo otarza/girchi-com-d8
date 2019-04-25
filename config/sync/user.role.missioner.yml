@@ -3,9 +3,10 @@ langcode: en
 status: true
 dependencies: {  }
 id: missioner
-label: Missioner
+label: მისიონერი
 weight: -5
 is_admin: null
 permissions:
   - 'access all views'
+  - 'access supporters registration'
   - 'administer users'

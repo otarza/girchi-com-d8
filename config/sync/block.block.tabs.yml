@@ -1,12 +1,12 @@
 uuid: 419828eb-e61e-4d60-b790-e2f9132c578f
 langcode: ka
-status: true
+status: false
 dependencies:
   theme:
     - girchi
 id: tabs
 theme: girchi
-region: content_top
+region: header
 weight: -1
 provider: null
 plugin: local_tasks_block

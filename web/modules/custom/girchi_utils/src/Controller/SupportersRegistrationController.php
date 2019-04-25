@@ -67,19 +67,18 @@ class SupportersRegistrationController extends ControllerBase {
     unset($form['account']['pass']['pass2']['#title']);
     unset($form['field_ged']['widget']['0']['value']['#title']);
 
-    $form['field_personal_id']['#attributes']['class'][] = 'form-control form-control-lg';
-    $form['field_first_name']['#attributes']['class'][] = 'form-control form-control-lg';
-    $form['field_last_name']['#attributes']['class'][] = 'form-control form-control-lg';
-    $form['field_date_of_birth']['#attributes']['class'][] = 'form-control form-control-lg';
-    $form['field_phone']['#attributes']['class'][] = 'form-control form-control-lg';
+    $form['field_personal_id']['widget'][0]['value']['#attributes']['class'][] = 'form-control form-control-lg';
+    $form['field_first_name']['widget'][0]['value']['#attributes']['class'][] = 'form-control form-control-lg';
+    $form['field_last_name']['widget'][0]['value']['#attributes']['class'][] = 'form-control form-control-lg';
+    $form['field_phone']['widget'][0]['value']['#attributes']['class'][] = 'form-control form-control-lg';
     $form['account']['mail']['#attributes']['class'][] = 'form-control form-control-lg';
     $form['account']['pass']['pass1']['#attributes']['class'][] = 'form-control form-control-lg';
     $form['account']['pass']['pass2']['#attributes']['class'][] = 'form-control form-control-lg';
-    $form['field_ged']['#attributes']['class'][] = 'form-control form-control-lg';
+    $form['field_ged']['widget'][0]['value']['#attributes']['class'][] = 'form-control form-control-lg';
     $form['field_referral']['widget'][0]['target_id']['#default_value'] = Drupal::currentUser()->getAccount();
     $form['actions']['submit']['#attributes']['class'][] = 'btn btn-lg btn-block btn-warning text-uppercase mt-4';
 
-//    dump($form);
+    
 
     return [
       '#theme' => 'supporter_registration',

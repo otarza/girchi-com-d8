@@ -1,6 +1,6 @@
 uuid: 7375c902-65b4-4648-8817-ece29a5c1377
 langcode: ka
-status: true
+status: false
 dependencies:
   config:
     - system.menu.main
@@ -10,7 +10,7 @@ dependencies:
     - girchi
 id: mainnavigation
 theme: girchi
-region: header_nav
+region: header
 weight: -4
 provider: null
 plugin: 'system_menu_block:main'
