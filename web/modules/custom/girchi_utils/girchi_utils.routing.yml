@@ -5,4 +5,3 @@ girchi_utils.supporters_registration_controller_registerPage:
     _title: 'supportes registration'
   requirements:
     _permission: 'access content'
-    # @TODO change this permission!
