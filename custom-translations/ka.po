@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-04-16 07:06+0000\n"
-"PO-Revision-Date: 2019-04-16 07:06+0000\n"
+"POT-Creation-Date: 2019-04-25 10:30+0000\n"
+"PO-Revision-Date: 2019-04-25 10:30+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -308,7 +308,7 @@ msgid "Account Name"
 msgstr "მომხმარებლის სახელი"
 
 msgid "Password"
-msgstr "პაროლი"
+msgstr "მიუთითეთ პაროლი"
 
 msgid "Block settings"
 msgstr "ბლოკის პარამეტრები"
@@ -569,7 +569,7 @@ msgid "Configure"
 msgstr "კონფიგურირება"
 
 msgid "Email"
-msgstr "ელ. ფოსტა"
+msgstr "მიუთითეთ ელ. ფოსტა"
 
 msgid "Files"
 msgstr "ფაილები"
@@ -2641,7 +2641,7 @@ msgstr ""
 "სავალდებულოა."
 
 msgid "Confirm password"
-msgstr "პაროლის დადასტურება"
+msgstr "გაიმეორეთ პაროლი"
 
 msgid "Run cron"
 msgstr "კრონის  გაშვება"
@@ -3136,4 +3136,32 @@ msgstr ""
 "პაროლის აღდგენის "
 "ინსტრუქციის სანახავად "
 "შეამოწმეთ თქვენი ელ.ფოსტა"
+
+msgid "Personal ID"
+msgstr "მიუთითეთ პირადი ნომერი"
+
+msgid "First Name"
+msgstr "სახელი"
+
+msgid "Last Name"
+msgstr "გვარი"
+
+msgid "First name"
+msgstr "მიუთითეთ სახელი"
+
+msgid "Last name"
+msgstr "მიუთითეთ გვარი"
+
+msgid "Date of birth"
+msgstr ""
+"მიუთითეთ დაბადების "
+"თარიღი"
+
+msgid "Phone number"
+msgstr ""
+"მიუთითეთ ტელეფონის "
+"ნომერი"
+
+msgid "Amount of GeD"
+msgstr "მიუთითეთ GeD-ების რაოდენობა"
 
