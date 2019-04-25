@@ -1,0 +1,24 @@
+uuid: 74eafa2d-859e-43b4-a855-74d2f9662775
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_ged
+  module:
+    - user
+id: user.user.field_ged
+field_name: field_ged
+entity_type: user
+bundle: user
+label: GeD
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

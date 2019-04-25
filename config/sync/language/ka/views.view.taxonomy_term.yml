@@ -8,5 +8,9 @@ display:
         options:
           expose:
             items_per_page_options_all_label: '- ყველა -'
+      arguments:
+        tid:
+          exception:
+            title: ყველა
   page_1:
     display_title: გვერდი

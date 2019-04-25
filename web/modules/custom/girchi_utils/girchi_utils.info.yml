@@ -1,0 +1,5 @@
+name: 'Girchi Utils'
+type: module
+description: 'Contains custom extensions and overrides for Girchi project.'
+core: 8.x
+package: 'Custom'

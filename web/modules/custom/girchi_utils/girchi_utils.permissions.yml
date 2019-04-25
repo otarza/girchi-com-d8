@@ -1,0 +1,4 @@
+access supporters registration:
+  title: 'Supporters registration'
+  description: 'Gives permission to missioners to create a new user account'
+  restrict access: TRUE

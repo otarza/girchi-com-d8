@@ -1,6 +1,6 @@
 uuid: df6ea150-9285-4201-ae44-87faf5416bb2
 langcode: ka
-status: true
+status: false
 dependencies:
   config:
     - system.menu.footer
@@ -10,7 +10,7 @@ dependencies:
     - girchi
 id: footer
 theme: girchi
-region: footer
+region: header
 weight: 0
 provider: null
 plugin: 'system_menu_block:footer'

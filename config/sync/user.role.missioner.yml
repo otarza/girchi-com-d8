@@ -1,0 +1,12 @@
+uuid: a875230f-048e-4fd3-acea-bc8d3bc84ca9
+langcode: en
+status: true
+dependencies: {  }
+id: missioner
+label: მისიონერი
+weight: -5
+is_admin: null
+permissions:
+  - 'access all views'
+  - 'access supporters registration'
+  - 'administer users'

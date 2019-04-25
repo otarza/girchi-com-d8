@@ -1,6 +1,6 @@
 uuid: a34e8216-89f8-4832-a162-da80c7b6ff35
 langcode: ka
-status: true
+status: false
 dependencies:
   module:
     - social_auth
@@ -8,7 +8,7 @@ dependencies:
     - girchi
 id: socialauthlogin_2
 theme: girchi
-region: content_top
+region: header
 weight: 0
 provider: null
 plugin: social_auth_login
