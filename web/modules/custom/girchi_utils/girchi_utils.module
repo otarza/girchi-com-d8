@@ -85,6 +85,13 @@ function girchi_utils_form_alter(&$form, FormStateInterface $form_state, $form_i
     unset($form['field_referral']['widget']['#title']);
     unset($form['field_referral']['widget']['#description']);
 
+      if ($form_state->getFormObject()->getFormDisplay($form_state)->getMode()
+          === 'supporters_registration') {
+          $form['field_referral']['widget']['#access'] = false;
+
+          $form['field_referral']['widget'][0]['target_id']['#default_value'] = User::load(Drupal::currentUser()->id());
+      }
+
     $form['field_referral']['widget'][0]['target_id']['#attributes']['class'][] = 'form-control form-control-lg login';
     $form['field_referral']['widget'][0]['target_id']['#attributes']['id'][] = 'referral';
     $form['field_referral']['widget'][0]['target_id']['#attributes']['placeholder'][] = 'მიუთითეთ Referral-ი';
@@ -101,6 +108,7 @@ function girchi_utils_form_alter(&$form, FormStateInterface $form_state, $form_i
 function girchi_utils_after_build($form, &$form_state) {
   if ($form_state->getFormObject()->getFormDisplay($form_state)->getMode()
     === 'supporters_registration') {
+
     $form['field_date_of_birth']['widget'][0]['value']['date']['#attributes']['class'][] = 'form-control form-control-lg fix';
   }
 
