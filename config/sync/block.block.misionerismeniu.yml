@@ -1,41 +1,38 @@
-uuid: dd3b6280-15eb-4317-974c-eb84846768dc
+uuid: ac7bf0b6-c9e9-4745-9599-40e15a124e69
 langcode: ka
 status: true
 dependencies:
   config:
-    - system.menu.account
+    - system.menu.supporter-menu
   module:
     - system
     - user
   theme:
     - girchi
-id: useraccountmenu
+id: misionerismeniu
 theme: girchi
-region: content_bottom
+region: header_nav
 weight: -3
 provider: null
-plugin: 'system_menu_block:account'
+plugin: 'system_menu_block:supporter-menu'
 settings:
-  id: 'system_menu_block:account'
-  label: 'User account menu'
+  id: 'system_menu_block:supporter-menu'
+  label: 'მისიონერის მენიუ'
   provider: system
   label_display: '0'
   level: 1
   depth: 0
 visibility:
-  request_path:
-    id: request_path
-    pages: '/user/*'
-    negate: false
-    context_mapping: {  }
   user_role:
     id: user_role
     roles:
-      authenticated: authenticated
       administrator: administrator
-      manager: manager
-      content_manager: content_manager
       missioner: missioner
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
+  request_path:
+    id: request_path
+    pages: "/user/*\r\n/supporters-registration"
+    negate: false
+    context_mapping: {  }
