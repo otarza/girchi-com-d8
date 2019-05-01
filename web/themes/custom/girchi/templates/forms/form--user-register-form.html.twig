@@ -22,13 +22,14 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-md-7 col-lg-4 m-auto">
-                            <a href="{{ url('social_auth_facebook.redirect_to_fb') }}"
-                               class="btn btn-block d-flex align-items-center justify-content-center btn-with-icon btn-lg btn-purple text-uppercase my-4"
+                            <a
+                                    href="{{ url('social_auth_facebook.redirect_to_fb') }}"
+                                    class="btn btn-block d-flex align-items-center justify-content-center btn-with-icon btn-lg btn-purple text-uppercase my-3 my-sm-4 text-nowrap"
                             >
                                 <i
-                                        class="icon-social-facebook-circular-button font-size-4"
+                                        class="icon-social-facebook-circular-button font-size-5 font-size-sm-7 mr-2"
                                 ></i>
-                                FACEBOOK {{ 'Authorisation'|t }}
+                                {{ 'FACEBOOK ' ~ 'Register'|t }}
                             </a>
                         </div>
                     </div>
@@ -85,7 +86,6 @@
                                       >{{ 'I read and agree to the terms and conditions'|t }}</label>
                                     </span>
                                 </div>
-
 
                                 {{ element.actions.submit }}
 
