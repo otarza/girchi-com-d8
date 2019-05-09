@@ -36,7 +36,7 @@ variant_settings:
   weight: 0
   layout: one_column
   layout_settings: {  }
-  page_title: ''
+  page_title: პორტალი
   storage_type: page_manager
   storage_id: front_page-panels_variant-0
   builder: standard
