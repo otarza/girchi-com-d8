@@ -36,6 +36,8 @@ mounts:
 # Configuration of the build of this application.
 build:
   flavor: composer
+  dependencies:
+    nodejs
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
