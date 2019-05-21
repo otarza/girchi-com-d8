@@ -713,6 +713,12 @@ $settings['file_scan_ignore_directories'] = [
  */
 $settings['install_profile'] = 'minimal';
 $config_directories['sync'] = '../config/sync';
+
+// Automatic Platform.sh settings.
+if (file_exists($app_root . '/' . $site_path . '/settings.platformsh.php')) {
+  include $app_root . '/' . $site_path . '/settings.platformsh.php';
+}
+
 /**
  * Load local development override configuration, if available.
  *
