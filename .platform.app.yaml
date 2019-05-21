@@ -69,10 +69,10 @@ hooks:
   deploy: |
     set -e
     cd web
+    drush si --existing-config --account-pass=1234  -y -vvv
+    drush language-import -y
+    drush cim -y -vvv
     drush -y cache-rebuild
-    drush -y updatedb
-    drush -y config-import
-    drush -y entup
 # The configuration of app when it is exposed to the web.
 web:
   # Specific parameters for different URL prefixes.
