@@ -19,6 +19,9 @@ relationships:
 #  solr: 'solrsearch:solr'
 #    redis: 'rediscache:redis'
 
+dependencies:
+  nodejs
+
 # The size of the persistent disk of the application (in MB).
 disk: 2048
 
@@ -36,8 +39,6 @@ mounts:
 # Configuration of the build of this application.
 build:
   flavor: composer
-  dependencies:
-    nodejs
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
