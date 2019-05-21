@@ -1,0 +1,13 @@
+facebook_url: ''
+twitter_url: ''
+youtube_url: ''
+instagram_url: ''
+linkedin_url: ''
+footer_text: ''
+langcode: en
+_core:
+  default_config_hash: NkdNpcz0u9s1KM7wnP-gPGF_HA8Yz_hZhCXkWOeroNQ
+politician_text:
+  value: "<h6>რას ნიშნავს “მინდა პოლიტიკოსობა”?</h6>\r\n\r\n<div>\r\n<p>გთხოვთ გაითვალისწინოთ, რომ რეგისტრაციის დროს მითითებული ელ-ფოსტის შეცვლის შემთხვევაში საჭირო იქნება ხელახალი ვერიფიკაცია.</p>\r\n\r\n<p>ასევე გაითვალისწინეთ, რომ რეგისტრაციის დროს შევსებული ველების გარდა, სავალდებულო არც ერთი ველის შევსება არ არის.</p>\r\n</div>\r\n"
+  format: basic_html
+accreditation_email_text: ''
