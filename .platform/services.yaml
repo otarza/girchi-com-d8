@@ -5,3 +5,4 @@
 
 mysqldb:
   type: mysql:10.2
+  disk: 1000
