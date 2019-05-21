@@ -61,10 +61,8 @@ hooks:
     mkdir -p web/themes/custom/girchi/dist/images
     mkdir -p web/themes/custom/girchi/dist/fonts
 
-    cp front/dist/css/bundle-*.css web/themes/custom/girchi/dist/css/global.css
-    cp front/dist/css/bundle-*.js.map web/themes/custom/girchi/dist/css/custom.css.map
-    cp front/dist/js/bundle-*.js web/themes/custom/girchi/dist/js/script.js
-    cp front/dist/js/bundle-*.js.map web/themes/custom/girchi/dist/js/script.js.map
+    cp front/dist/bundle-*.css web/themes/custom/girchi/dist/css/global.css
+    cp front/dist/bundle-*.js web/themes/custom/girchi/dist/js/script.js
     cp front/dist/images/* web/themes/custom/girchi/dist/images/
     cp front/dist/fonts/* web/themes/custom/girchi/dist/fonts/
   # The deploy hook runs after your application has been deployed and started.
