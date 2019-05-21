@@ -178,12 +178,15 @@ function girchi_utils_form_alter(&$form, FormStateInterface $form_state, $form_i
            unset($form['field_personal_id']['widget']['0']['value']['#title']);
            unset($form['field_address']['widget']['0']['value']['#title']);
            unset($form['field_politician']['widget']['value']['#title']);
+           unset($form['account']['current_pass']['#title']);
 
            /** Unset descriptions */
            unset($form['account']['mail']['#description']);
+           unset($form['account']['current_pass']['#description']);
 
            /** Set classes for inputs */
            $form['account']['mail']['#attributes']['class'][] = 'form-control form-control-lg fix';
+           $form['account']['current_pass']['#attributes']['class'][] = 'form-control form-control-lg fix';
            $form['account']['mail']['#attributes']['id'][] = 'email';
            $form['account']['mail']['#attributes']['placeholder'][] = t('Enter Email');
            $form['field_personal_id']['widget'][0]['value']['#attributes']['class'][] = 'form-control form-control-lg fix';
@@ -207,7 +210,10 @@ function girchi_utils_form_alter(&$form, FormStateInterface $form_state, $form_i
                '#markup' => $config->get('politician_text')['value'],
                '#theme' => ''
            );
+
            $form['actions']['submit']['#submit'][] = 'girchi_utils_user_form_submit';
+           $form['#after_build'][] = 'girchi_utils_after_build';
+
 
        }
     }
