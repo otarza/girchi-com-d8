@@ -87,9 +87,10 @@ class SiteSettingsForm extends ConfigFormBase {
     $schema = $this->configStorageSchema->read('om_site_settings.schema');
 
     $types = [
-      'string' => 'textfield',
-      'label' => 'textfield',
-      'text' => 'textarea',
+        'string' => 'textfield',
+        'label' => 'textfield',
+        'text' => 'textarea',
+        'full_html' => 'text_format'
     ];
 
     if (!empty($schema['om_site_settings.site_settings']['mapping'])) {
@@ -97,10 +98,15 @@ class SiteSettingsForm extends ConfigFormBase {
         if ((isset($field['skip_auto_form']) && $field['skip_auto_form']) || !isset($types[$field['type']])) {
           continue;
         }
+
+
+        $default_value =  $types[$field['type']] == 'text_format' ?  $config->get($field_key)['value'] : $config->get($field_key);
+
+
         $form[$field_key] = [
           '#type' => $types[$field['type']],
           '#title' => $field['label'],
-          '#default_value' => $config->get($field_key),
+          '#default_value' =>  $default_value,
         ];
       }
     }

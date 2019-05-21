@@ -22,3 +22,6 @@ om_site_settings.site_settings:
     footer_text:
       type: label
       label: 'Footer text'
+    politician_text:
+      type: full_html
+      label: 'Want to be polotician text'
