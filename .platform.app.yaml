@@ -40,7 +40,7 @@ build:
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
   build: |
-    git clone git@github.com:Girchi/girchi-com-ui.git front
+    git clone https://github.com/Girchi/girchi-com-ui.git front
     yarn && yarn build
 
     mkdir -p web/themes/custom/girchi/dist
