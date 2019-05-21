@@ -68,6 +68,7 @@ hooks:
   # The deploy hook runs after your application has been deployed and started.
   deploy: |
     set -e
+    ./scripts/pre-install.sh
     cd web
     drush si --existing-config --account-pass=1234  -y -vvv
     drush language-import -y
