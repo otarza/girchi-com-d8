@@ -1,0 +1,93 @@
+{% set politican_checked = element.field_politician.widget.value['#checked'] %}
+<div class="card-body pb-5 px-3 px-md-4">
+    <form {{ attributes }}>
+        {{ element.form_build_id }}
+        {{ element.form_token }}
+        {{ element.form_id }}
+        <div class="hidden">
+            {{ element.user_picture }}
+        </div>
+        <div class="row">
+            <div class="col-lg-7">
+                <div
+                        class="mx-auto mb-4 mt-1 overflow-hidden rounded-circle max-w-210 max-w-xl-240 w-100 position-relative"
+                >
+                    <img
+                            width="100%"
+                            src="{{ image_style_url(element.user_picture.widget.0.preview['#uri'], 'avatar_image') }}"
+                            alt="Avatar"
+                            id="avatar-image"
+                    />
+                    <button
+                            id="avatar-trigger"
+                            type="button"
+                            class="position-absolute position-bottom-0 w-100 bg-transparent border-0 overlay-240 font-size-3 py-3 text-uppercase text-white"
+                    >
+                        შეცვლა
+                    </button>
+                    <input
+                            type="file"
+                            name="avatar"
+                            id="avatar-input"
+                            class="d-none"
+                    />
+                </div>
+                <div
+                        class="border bg-dark-white border-dashed rounded px-3 pt-3 px-sm-4 pt-sm-4">
+                    <div class="form-group mb-0">
+                          <span class="form-checkbox">
+                    <span class="form-checkbox-input {% if politican_checked %} checked {% endif %}">
+                    {{ element.field_politician }}
+                    </span>
+                              <label
+                                      class="form-checkbox-label text-success font-size-3 text-uppercase w-auto"
+                                      for="exampleCheck1"
+                              >მინდა პოლიტიკოსობა</label
+                              >
+                          </span>
+                    </div>
+                    <hr class="border-secondary my-2 my-sm-3"/>
+                    {{   element.politician_text }}
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="px-0 px-sm-8 pl-xl-0 pr-xl-4 mt-4 my-lg-0">
+                    <div class="form-group mb-2">
+                        <label class="form-label" for="first-name"
+                        >სახელი</label
+                        >
+                        {{ element.field_first_name }}
+                    </div>
+                    <div class="form-group mb-2">
+                        <label class="form-label" for="last-name"
+                        >გვარი</label
+                        >
+                        {{ element.field_last_name }}
+                    </div>
+                    <div class="form-group mb-2">
+                        <label class="form-label" for="id-number"
+                        >პირადი ნომერი</label
+                        >
+                        {{ element.field_personal_id }}
+                    </div>
+                    <div class="form-group mb-2">
+                        <label class="form-label" for="email">ელ.ფოსტა</label>
+                        {{ element.account.mail }}
+                    </div>
+                    <div class="form-group mb-2">
+                        <label class="form-label" for="address"
+                        >მისამართი</label>
+                        {{ element.field_address }}
+                    </div>
+                    <div class="form-group mb-2">
+                        <label class="form-label" for="phone"
+                        >ტელეფონის ნომერი</label
+                        >
+                        {{ element.field_phone }}
+                    </div>
+                    {{ element.actions.submit }}
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
