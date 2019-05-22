@@ -39,3 +39,6 @@
 #block-useraccountmenu ul a {
     color: green;
 }
+html{
+    scroll-behavior: smooth;
+}
