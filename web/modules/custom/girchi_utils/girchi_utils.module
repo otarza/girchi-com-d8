@@ -74,6 +74,7 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
             'variables' =>
                 [
                     'categories' => NULL,
+                    'current_category' => NULL
                 ],
             'template' => 'categories-block',
         ],
