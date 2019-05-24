@@ -91,6 +91,19 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
                 ],
             'template' => 'tags-block',
         ],
+      'user_profile' => [
+        'variables' =>
+          [
+            'user_id' =>NULL,
+            'user_first_name' =>NULL,
+            'user_last_name' =>NULL,
+            'user_ged' =>NULL,
+            'user_profile_picture' =>NULL,
+            'ged' => NULL,
+            'member' => NULL
+          ],
+        'template' => 'user_profile',
+      ],
     ];
 
   return $templates;

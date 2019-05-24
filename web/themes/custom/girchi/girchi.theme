@@ -18,6 +18,7 @@ function girchi_preprocess_html(array &$variables) {
   /*if (isset($variables['head_title_array']['title']) && isset($variables['head_title_array']['name']) && ($variables['head_title_array']['title'] == $variables['head_title_array']['name'])) {
     $variables['head_title'] = $variables['head_title_array']['name'];
   }*/
+
 }
 
 /**
@@ -41,7 +42,18 @@ function girchi_page_attachments_alter(array &$page) {
  */
 function girchi_preprocess_page(array &$variables) {
 
+
+
 }
+
+/**
+ * Implements hook_preprocess_user() for page.html.twig.
+ */
+function girchi_preprocess_user(array &$variables) {
+
+
+}
+
 
 /**
  * Implements hook_theme_suggestions_page_alter().
