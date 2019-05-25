@@ -11,8 +11,8 @@ dependencies:
     - girchi
 id: useraccountmenu
 theme: girchi
-region: content_bottom
-weight: -3
+region: sidebar_primary
+weight: -5
 provider: null
 plugin: 'system_menu_block:account'
 settings:

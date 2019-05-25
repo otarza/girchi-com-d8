@@ -1,0 +1,22 @@
+uuid: cc30bb25-ae56-4f06-af3e-cf0cf43d07c7
+langcode: ka
+status: true
+dependencies:
+  module:
+    - girchi_utils
+  theme:
+    - girchi
+id: userprofile
+theme: girchi
+region: sidebar_primary
+weight: -6
+provider: null
+plugin: user_profile
+settings:
+  id: user_profile
+  label: 'User profile'
+  provider: girchi_utils
+  label_display: '0'
+  ged: 1
+  member: 1
+visibility: {  }

@@ -1,5 +1,12 @@
 {% set politican_checked = element.field_politician.widget.value['#checked'] %}
 {% set avatar = element.user_picture.widget.0.preview['#uri'] %}
+<div class="card mb-2 mb-lg-3">
+    <h5
+            class="card-header font-size-3 text-uppercase font-weight-bold d-flex px-3 px-lg-4"
+    >
+        {{ 'Edit user' | t }}
+    </h5>
+</div>
 <div class="card-body pb-5 px-3 px-md-4">
     <form {{ attributes }}>
         {{ element.form_build_id }}
@@ -105,9 +112,9 @@
                     {{ element.actions.submit }}
                 </div>
             </div>
-
         </div>
+    </form>
 </div>
-</div>
-</form>
-</div>
+    
+
+
