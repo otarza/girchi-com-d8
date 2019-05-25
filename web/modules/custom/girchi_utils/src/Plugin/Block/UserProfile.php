@@ -49,14 +49,18 @@ class UserProfile extends BlockBase {
     $currentUser = User::load($currentUserId);
     $currentUserFirstName = $currentUser->get('field_first_name')->value;
     $currentUserLastName = $currentUser->get('field_last_name')->value;
-    $currentUserGed = $currentUser->get('field_ged')->value;
+    $currentUserGed = $currentUser->get('field_ged')->value ?  $currentUser->get('field_ged')->value : 0 ;
     $avatarEntity = $currentUser->get('user_picture')->entity;
+    $numberOfUsers = \Drupal::entityQuery('user')
+          ->sort('created', 'DESC')
+          ->count()
+          ->execute();
 
     if($avatarEntity) {
       $currentUserAvatar = $avatarEntity->url();
     }else{
       //for testing
-      $currentUserAvatar = 'https://banner2.kisspng.com/20180705/kwk/kisspng-computer-icons-user-avatar-clip-art-simple-icon-5b3dc2f094d281.3228171615307742566096.jpg';
+      $currentUserAvatar = file_create_url( drupal_get_path('theme', 'girchi') . '/images/avatar.png');
     }
 
     $build = [];
@@ -73,6 +77,7 @@ class UserProfile extends BlockBase {
       '#user_last_name' => $currentUserLastName,
       '#user_ged' => $currentUserGed,
       '#user_profile_picture' => $currentUserAvatar,
+      '#user_count' => $numberOfUsers,
     );
   }
 
