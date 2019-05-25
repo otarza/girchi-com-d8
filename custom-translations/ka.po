@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-05-25 09:29+0000\n"
-"PO-Revision-Date: 2019-05-25 09:29+0000\n"
+"POT-Creation-Date: 2019-05-25 12:14+0000\n"
+"PO-Revision-Date: 2019-05-25 12:14+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -3247,6 +3247,20 @@ msgstr "შენახვა"
 msgid "Reset password"
 msgstr "პაროლის აღდგენა"
 
+<<<<<<< HEAD
+msgid "Become a politician"
+msgstr "გახდი პოლიტიკოსი"
+
+msgid "Become a politician, get enough votes and get into the party list"
+msgstr ""
+"გახდი პოლიტიკოსი, "
+"დააგროვე ხმების "
+"საკმარისი რაოდენობა და "
+"მოხვდი პარტიულ სიაში"
+
+msgid "Want to be politician"
+msgstr "მინდა პოლიტიკოსობა"
+=======
 msgid "The changes have been saved."
 msgstr ""
 "ცვლილებები წარმატებით "
@@ -3307,4 +3321,21 @@ msgstr ""
 
 msgid "Social Media"
 msgstr "სოციალური მედია"
+>>>>>>> dev
+
+msgid "Become a politician"
+msgstr "გახდი პოლიტიკოსი"
+
+msgid "Become a politician, get enough votes and get into the party list"
+msgstr ""
+"გახდი პოლიტიკოსი, "
+"დააგროვე ხმების "
+"საკმარისი რაოდენობა და "
+"მოხვდი პარტიულ სიაში"
+
+msgid "Want to be politician"
+msgstr "მინდა პოლიტიკოსობა"
+
+msgid "Edit user"
+msgstr "პარამეტრების შეცვლა"
 
