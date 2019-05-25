@@ -5,6 +5,8 @@
  * Functions to support theming in the girchi theme.
  */
 
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
 include drupal_get_path('theme', 'girchi') . '/girchi.theme-suggestions.inc';
 
 /**
@@ -54,6 +56,37 @@ function girchi_preprocess_page(array &$variables) {
         'youtube' => $config->get('social_media_youtube'),
     ];
 
+    // Redirect from user profile
+
+    // Get current route name
+    $route_name = \Drupal::routeMatch()->getRouteName();
+
+    // If current route is user page and user exists
+    if ($route_name === 'entity.user.canonical'
+        && $user = \Drupal::routeMatch()->getParameter('user')
+    ) {
+        // Get uid from route
+        $uid = (int)$user->id();
+        // Get current uid
+        $current_uid = (int)$user = \Drupal::currentUser()->id();
+
+        // If the uid from the URL matches with the current uid,
+        // redirect to the user edit form, otherwise - to the main page
+        if ($uid === $current_uid) {
+            $redirect_path = \Drupal\Core\Url::fromRoute(
+                'entity.user.edit_form',
+                ['user' => $current_uid]
+            )->toString();
+        } else {
+            $redirect_path = '/';
+        }
+
+        // Redirect to given utl
+        $response = new RedirectResponse($redirect_path);
+        $response->send();
+    }
+
+    // End Redirect from user profile
 }
 
 /**
