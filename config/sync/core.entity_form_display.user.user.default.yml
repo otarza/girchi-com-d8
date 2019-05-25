@@ -3,6 +3,7 @@ langcode: ka
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_address
     - field.field.user.user.field_date_of_birth
     - field.field.user.user.field_first_name
     - field.field.user.user.field_ged
@@ -13,7 +14,7 @@ dependencies:
     - field.field.user.user.field_referral
     - field.field.user.user.field_referral_url
     - field.field.user.user.user_picture
-    - image.style.thumbnail
+    - image.style.avatar_image
   module:
     - datetime
     - image
@@ -32,6 +33,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_address:
+    weight: 15
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_date_of_birth:
     weight: 14
     settings: {  }
@@ -114,8 +123,8 @@ content:
     weight: 0
     region: content
     settings:
+      preview_image_style: avatar_image
       progress_indicator: throbber
-      preview_image_style: thumbnail
     third_party_settings: {  }
 hidden:
   contact: true

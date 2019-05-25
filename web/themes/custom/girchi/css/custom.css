@@ -39,6 +39,18 @@
 #block-useraccountmenu ul a {
     color: green;
 }
+
 html{
     scroll-behavior: smooth;
 }
+
+.user-form .form-checkbox-input div {
+    width: 100%;
+    height: 100%;
+}
+
+.user-form .form-checkbox-input div input {
+    width: 100%;
+    height: 100%;
+}
+

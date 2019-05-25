@@ -18,6 +18,7 @@ function girchi_preprocess_html(array &$variables) {
   /*if (isset($variables['head_title_array']['title']) && isset($variables['head_title_array']['name']) && ($variables['head_title_array']['title'] == $variables['head_title_array']['name'])) {
     $variables['head_title'] = $variables['head_title_array']['name'];
   }*/
+
 }
 
 /**
@@ -41,7 +42,28 @@ function girchi_page_attachments_alter(array &$page) {
  */
 function girchi_preprocess_page(array &$variables) {
 
+    //get config from site settings
+    $config = \Drupal::config('om_site_settings.site_settings');
+
+    $variables['footer_config'] = [
+        'phone' => $config->get('contact_info_phone'),
+        'email' => $config->get('contact_info_email'),
+        'facebook' => $config->get('social_media_facebook'),
+        'twitter' => $config->get('social_media_twitter'),
+        'instagram' => $config->get('social_media_instagram'),
+        'youtube' => $config->get('social_media_youtube'),
+    ];
+
 }
+
+/**
+ * Implements hook_preprocess_user() for page.html.twig.
+ */
+function girchi_preprocess_user(array &$variables) {
+
+
+}
+
 
 /**
  * Implements hook_theme_suggestions_page_alter().
@@ -73,8 +95,16 @@ function girchi_theme_suggestions_fieldset_alter(array &$suggestions, array $var
  * Implements hook_preprocess_node().
  */
 function girchi_preprocess_node(array &$variables) {
-  // Default to turning off byline/submitted.
-  //$variables['display_submitted'] = FALSE;
+    // Default to turning off byline/submitted.
+    //$variables['display_submitted'] = FALSE;
+    if ($variables['node']->getType() == 'article' && $variables['view_mode'] == 'teaser') {
+        $terms = [];
+        $taxonomy_terms = $variables['node']->get('field_category')->referencedEntities();
+        foreach ($taxonomy_terms as $term) {
+            $terms[$term->getName()] = $term->id();
+        }
+        $variables['terms']  = $terms;
+    }
 }
 
 /**
@@ -113,3 +143,9 @@ function girchi_preprocess_details(array &$variables) {
 function girchi_preprocess_menu_local_task(array &$variables) {
   //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
 }
+
+function girchi_preprocess_taxonomy_term(&$variables) {
+    $term_id = $variables['elements']['#taxonomy_term']->id();
+    $variables['term_id'] = $term_id;
+}
+

@@ -27,10 +27,11 @@ class  CategoryFilterBlock extends BlockBase
     public function build()
     {
         $categories_tree =  Drupal::service('girchi_utils.taxonomy_term_tree')->load('news_categories');
-
+        $current_category = \Drupal::request()->query->get('category');
         return array(
                 '#theme' => 'categories_block',
                 '#categories' => $categories_tree,
+                '#current_category' => $current_category
             );
 
     }

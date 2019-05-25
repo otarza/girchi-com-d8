@@ -1,0 +1,15 @@
+uuid: 463bd545-94de-41a8-98e9-0c2d4ac10d49
+langcode: ka
+status: true
+dependencies: {  }
+name: avatar_image
+label: 'Avatar image'
+effects:
+  f59dc3e8-7e40-40c4-821b-fb5694b388c5:
+    uuid: f59dc3e8-7e40-40c4-821b-fb5694b388c5
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 240
+      height: 240
+      anchor: center-center

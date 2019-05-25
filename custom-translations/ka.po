@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-05-22 09:29+0000\n"
-"PO-Revision-Date: 2019-05-22 09:29+0000\n"
+"POT-Creation-Date: 2019-05-25 09:29+0000\n"
+"PO-Revision-Date: 2019-05-25 09:29+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -3241,9 +3241,13 @@ msgstr "ვიდეო ბლოგი"
 msgid "All videos"
 msgstr "ყველა ვიდეო"
 
+msgid "Save"
+msgstr "შენახვა"
+
 msgid "Reset password"
 msgstr "პაროლის აღდგენა"
 
+<<<<<<< HEAD
 msgid "Become a politician"
 msgstr "გახდი პოლიტიკოსი"
 
@@ -3256,4 +3260,66 @@ msgstr ""
 
 msgid "Want to be politician"
 msgstr "მინდა პოლიტიკოსობა"
+=======
+msgid "The changes have been saved."
+msgstr ""
+"ცვლილებები წარმატებით "
+"შეინახა"
+
+msgid "Contact phone"
+msgstr "საკონტაქტო ნომერი"
+
+msgid "Enter your contact phone number"
+msgstr ""
+"შეიყვანეთ საკონტაქტო "
+"ტელეფონის ნომერი"
+
+msgid "Contact Email"
+msgstr "საკონტაქტო ელ-ფოსტა"
+
+msgid "Enter your contact email address"
+msgstr ""
+"შეიყვანეთ საკონტაქტო "
+"ელ-ფოსტის მისმართი"
+
+msgid "Contact information"
+msgstr "საკონტაქტო ინფორმაცია"
+
+msgid "Facebook page url"
+msgstr ""
+"\r\n"
+"Facebook გვერდის მისამართი"
+
+msgid "Enter your facebook page url"
+msgstr ""
+"შეიყვანეთ facebook გვერდის "
+"მისამართი"
+
+msgid "Twitter profile url"
+msgstr "Twitter პროფილის მისამართი"
+
+msgid "Enter your twitter page url"
+msgstr ""
+"შეიყვანეთ twitter გვერდის "
+"მისამართი"
+
+msgid "Instagram profile url"
+msgstr "Instagram გვერდის მისამართი"
+
+msgid "Enter your instagram page url"
+msgstr ""
+"შეიყვანეთ instagram  გვერდის "
+"მისამართი"
+
+msgid "Youtube chanel url"
+msgstr "Youtube არხის მისამართი"
+
+msgid "Enter your youtube channel url"
+msgstr ""
+"შეიყვანეთ youtube არხის  "
+"მისამართი"
+
+msgid "Social Media"
+msgstr "სოციალური მედია"
+>>>>>>> dev
 
