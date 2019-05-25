@@ -101,7 +101,8 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
             'user_ged' =>NULL,
             'user_profile_picture' =>NULL,
             'ged' => NULL,
-            'member' => NULL
+            'member' => NULL,
+            'user_count' => NULL
           ],
         'template' => 'user_profile',
       ],

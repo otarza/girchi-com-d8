@@ -49,8 +49,12 @@ class UserProfile extends BlockBase {
     $currentUser = User::load($currentUserId);
     $currentUserFirstName = $currentUser->get('field_first_name')->value;
     $currentUserLastName = $currentUser->get('field_last_name')->value;
-    $currentUserGed = $currentUser->get('field_ged')->value;
+    $currentUserGed = $currentUser->get('field_ged')->value ?  $currentUser->get('field_ged')->value : 0 ;
     $avatarEntity = $currentUser->get('user_picture')->entity;
+    $numberOfUsers = \Drupal::entityQuery('user')
+          ->sort('created', 'DESC')
+          ->count()
+          ->execute();
 
     if($avatarEntity) {
       $currentUserAvatar = $avatarEntity->url();
@@ -73,6 +77,7 @@ class UserProfile extends BlockBase {
       '#user_last_name' => $currentUserLastName,
       '#user_ged' => $currentUserGed,
       '#user_profile_picture' => $currentUserAvatar,
+      '#user_count' => $numberOfUsers,
     );
   }
 
