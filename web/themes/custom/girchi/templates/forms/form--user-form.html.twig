@@ -93,6 +93,12 @@
                             >
                             {{ element.field_phone }}
                         </div>
+                        <hr class="border-secondary my-2 my-sm-3">
+                        <h5
+                                class="font-size-3 text-uppercase font-weight-bold d-flex px-3 px-lg-4"
+                        >
+                            {{ 'Change Password' | t }}
+                        </h5>
                         <div class="form-group mb-2">
                             <label class="form-label" for="address"
                             >მიმდინარე პაროლი</label>
@@ -108,10 +114,8 @@
                             >გაიმეორეთ პაროლი</label>
                             {{ element.account.pass.pass2 }}
                         </div>
-                        {{ element.actions.submit }}
                     </div>
                 </div>
-            </div>
         </form>
     </div>
 </div>
