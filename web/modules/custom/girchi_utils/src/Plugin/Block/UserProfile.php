@@ -56,7 +56,7 @@ class UserProfile extends BlockBase {
       $currentUserAvatar = $avatarEntity->url();
     }else{
       //for testing
-      $currentUserAvatar = 'https://banner2.kisspng.com/20180705/kwk/kisspng-computer-icons-user-avatar-clip-art-simple-icon-5b3dc2f094d281.3228171615307742566096.jpg';
+      $currentUserAvatar = file_create_url( drupal_get_path('theme', 'girchi') . '/images/avatar.png');
     }
 
     $build = [];
