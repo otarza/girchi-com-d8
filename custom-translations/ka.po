@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-05-25 12:14+0000\n"
-"PO-Revision-Date: 2019-05-25 12:14+0000\n"
+"POT-Creation-Date: 2019-05-25 13:19+0000\n"
+"PO-Revision-Date: 2019-05-25 13:19+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -640,8 +640,8 @@ msgstr ""
 "კონტენტის ტიპი შვილობილი "
 "გვერდებისთვის"
 
-msgid "All"
-msgstr "ყველა"
+msgid "Active"
+msgstr "აქტიური"
 
 msgid "Done"
 msgstr "დასრულება"
@@ -1249,11 +1249,6 @@ msgstr "კომენტარები"
 
 msgid "Full"
 msgstr "სრული"
-
-msgid "1 new"
-msgid_plural "@count new"
-msgstr[0] "1 ახალი"
-msgstr[1] "@count ახალი"
 
 msgid "Condition"
 msgstr "პირობა"
@@ -1868,9 +1863,6 @@ msgstr "დაიწერა"
 
 msgid "Hidden"
 msgstr "დამალული"
-
-msgid "Show"
-msgstr "ჩვენება"
 
 msgid "Site language"
 msgstr "საიტის ენა"
@@ -2535,9 +2527,6 @@ msgstr "გვერდი ვერ მოიძებნა"
 msgid "More help"
 msgstr "მეტი დახმარება"
 
-msgid "Sizes"
-msgstr "ზომები"
-
 msgid "Add terms"
 msgstr "ტერმინების დამატება"
 
@@ -3056,8 +3045,19 @@ msgstr "მონაცემთა ბაზის სისტემა"
 msgid "Database system version"
 msgstr "მონაცემთა ბაზის ვერსია"
 
-msgid "Active"
-msgstr "აქტიური"
+msgid "All"
+msgstr "ყველა"
+
+msgid "1 new"
+msgid_plural "@count new"
+msgstr[0] "1 ახალი"
+msgstr[1] "@count ახალი"
+
+msgid "Show"
+msgstr "ჩვენება"
+
+msgid "Sizes"
+msgstr "ზომები"
 
 msgid "Enter your email address or username."
 msgstr ""
@@ -3247,7 +3247,6 @@ msgstr "შენახვა"
 msgid "Reset password"
 msgstr "პაროლის აღდგენა"
 
-<<<<<<< HEAD
 msgid "Become a politician"
 msgstr "გახდი პოლიტიკოსი"
 
@@ -3260,7 +3259,7 @@ msgstr ""
 
 msgid "Want to be politician"
 msgstr "მინდა პოლიტიკოსობა"
-=======
+
 msgid "The changes have been saved."
 msgstr ""
 "ცვლილებები წარმატებით "
@@ -3321,7 +3320,6 @@ msgstr ""
 
 msgid "Social Media"
 msgstr "სოციალური მედია"
->>>>>>> dev
 
 msgid "Become a politician"
 msgstr "გახდი პოლიტიკოსი"
@@ -3338,4 +3336,7 @@ msgstr "მინდა პოლიტიკოსობა"
 
 msgid "Edit user"
 msgstr "პარამეტრების შეცვლა"
+
+msgid "Change Password"
+msgstr "პაროლის შეცვლა"
 
