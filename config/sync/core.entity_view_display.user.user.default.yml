@@ -3,6 +3,7 @@ langcode: ka
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_address
     - field.field.user.user.field_date_of_birth
     - field.field.user.user.field_first_name
     - field.field.user.user.field_ged
@@ -13,7 +14,7 @@ dependencies:
     - field.field.user.user.field_referral
     - field.field.user.user.field_referral_url
     - field.field.user.user.user_picture
-    - image.style.thumbnail
+    - image.style.avatar_image
   module:
     - datetime
     - image
@@ -26,6 +27,14 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_address:
+    weight: 51
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_date_of_birth:
     weight: 16
     label: above
@@ -117,7 +126,7 @@ content:
     weight: 0
     region: content
     settings:
-      image_style: thumbnail
+      image_style: avatar_image
       image_link: content
     third_party_settings: {  }
     label: above

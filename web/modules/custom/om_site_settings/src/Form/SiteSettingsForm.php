@@ -12,6 +12,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @package Drupal\om_site_settings\Form
  */
+
 class SiteSettingsForm extends ConfigFormBase
 {
     /**
@@ -143,6 +144,17 @@ class SiteSettingsForm extends ConfigFormBase
             '#title' => t('Youtube chanel url'),
             '#default_value' => $config->get('social_media_youtube')
         ];
+        $form['general_settings'] = [
+            '#type' => 'details',
+            '#open' => true,
+            '#title' => t('General settings'),
+        ];
+        $form['general_settings']['politician_checkbox_text'] = [
+            '#description' => t('Enter want to be politician text'),
+            '#type' => 'text_format',
+            '#title' => t('Want to be politician text'),
+            '#default_value' => $config->get('politician_checkbox_text')['value']
+        ];
 
         return parent::buildForm($form, $form_state);
     }
@@ -168,6 +180,7 @@ class SiteSettingsForm extends ConfigFormBase
             'social_media_twitter',
             'social_media_instagram',
             'social_media_youtube',
+            'politician_checkbox_text',
         ];
 
         foreach ($fields as $field_key) {

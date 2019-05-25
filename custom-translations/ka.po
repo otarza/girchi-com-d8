@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-05-24 12:32+0000\n"
-"PO-Revision-Date: 2019-05-24 12:32+0000\n"
+"POT-Creation-Date: 2019-05-25 09:29+0000\n"
+"PO-Revision-Date: 2019-05-25 09:29+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -333,6 +333,9 @@ msgstr "სურათი"
 
 msgid "Types"
 msgstr "ტიპები"
+
+msgid "Hierarchy"
+msgstr "იერარქია"
 
 msgid "Required"
 msgstr "სავალდებულო"
@@ -2535,6 +2538,9 @@ msgstr "მეტი დახმარება"
 msgid "Sizes"
 msgstr "ზომები"
 
+msgid "Add terms"
+msgstr "ტერმინების დამატება"
+
 msgid "« first"
 msgstr "« პირველი"
 
@@ -2808,6 +2814,15 @@ msgstr "საიტის ინსტალაცია"
 msgid "Finish translations"
 msgstr "თარგმანის დასრულება"
 
+msgid ""
+"By default, dates in this site will be displayed in the chosen time "
+"zone."
+msgstr ""
+"ნაგულისხმევად, ამ საიტზე "
+"თარიღები გამოჩნდება "
+"არჩეული დროის სარტყლის "
+"შესაბამისად."
+
 msgid "Update notifications"
 msgstr "განახლების შეტყობინებები"
 
@@ -3044,21 +3059,6 @@ msgstr "მონაცემთა ბაზის ვერსია"
 msgid "Active"
 msgstr "აქტიური"
 
-msgid "Hierarchy"
-msgstr "იერარქია"
-
-msgid "Add terms"
-msgstr "ტერმინების დამატება"
-
-msgid ""
-"By default, dates in this site will be displayed in the chosen time "
-"zone."
-msgstr ""
-"ნაგულისხმევად, ამ საიტზე "
-"თარიღები გამოჩნდება "
-"არჩეული დროის სარტყლის "
-"შესაბამისად."
-
 msgid "Enter your email address or username."
 msgstr ""
 "შეიყვანეთ თქვენი "
@@ -3241,8 +3241,35 @@ msgstr "ვიდეო ბლოგი"
 msgid "All videos"
 msgstr "ყველა ვიდეო"
 
+msgid "Save"
+msgstr "შენახვა"
+
 msgid "Reset password"
 msgstr "პაროლის აღდგენა"
+
+msgid "The changes have been saved."
+msgstr ""
+"ცვლილებები წარმატებით "
+"შეინახა"
+
+msgid "Contact phone"
+msgstr "საკონტაქტო ნომერი"
+
+msgid "Enter your contact phone number"
+msgstr ""
+"შეიყვანეთ საკონტაქტო "
+"ტელეფონის ნომერი"
+
+msgid "Contact Email"
+msgstr "საკონტაქტო ელ-ფოსტა"
+
+msgid "Enter your contact email address"
+msgstr ""
+"შეიყვანეთ საკონტაქტო "
+"ელ-ფოსტის მისმართი"
+
+msgid "Contact information"
+msgstr "საკონტაქტო ინფორმაცია"
 
 msgid "Facebook page url"
 msgstr ""
@@ -3273,30 +3300,11 @@ msgstr ""
 msgid "Youtube chanel url"
 msgstr "Youtube არხის მისამართი"
 
-msgid "Social Media"
-msgstr "სოციალური მედია"
-
 msgid "Enter your youtube channel url"
 msgstr ""
 "შეიყვანეთ youtube არხის  "
 "მისამართი"
 
-msgid "Contact phone"
-msgstr "საკონტაქტო ნომერი"
-
-msgid "Enter your contact phone number"
-msgstr ""
-"შეიყვანეთ საკონტაქტო "
-"ტელეფონის ნომერი"
-
-msgid "Contact information"
-msgstr "საკონტაქტო ინფორმაცია"
-
-msgid "Enter your contact email address"
-msgstr ""
-"შეიყვანეთ საკონტაქტო "
-"ელ-ფოსტის მისმართი"
-
-msgid "Contact Email"
-msgstr "საკონტაქტო ელ-ფოსტა"
+msgid "Social Media"
+msgstr "სოციალური მედია"
 
