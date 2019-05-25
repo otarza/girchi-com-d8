@@ -3247,6 +3247,20 @@ msgstr "შენახვა"
 msgid "Reset password"
 msgstr "პაროლის აღდგენა"
 
+<<<<<<< HEAD
+msgid "Become a politician"
+msgstr "გახდი პოლიტიკოსი"
+
+msgid "Become a politician, get enough votes and get into the party list"
+msgstr ""
+"გახდი პოლიტიკოსი, "
+"დააგროვე ხმების "
+"საკმარისი რაოდენობა და "
+"მოხვდი პარტიულ სიაში"
+
+msgid "Want to be politician"
+msgstr "მინდა პოლიტიკოსობა"
+=======
 msgid "The changes have been saved."
 msgstr ""
 "ცვლილებები წარმატებით "
@@ -3307,4 +3321,5 @@ msgstr ""
 
 msgid "Social Media"
 msgstr "სოციალური მედია"
+>>>>>>> dev
 

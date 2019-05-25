@@ -92,6 +92,13 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
                 ],
             'template' => 'tags-block',
         ],
+        'politician_block' => [
+            'variables' =>
+                [
+                    'language' => NULL,
+                ],
+            'template' => 'politician-block',
+        ],
       'user_profile' => [
         'variables' =>
           [
