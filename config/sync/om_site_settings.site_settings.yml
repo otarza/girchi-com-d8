@@ -7,7 +7,10 @@ footer_text: ''
 langcode: en
 _core:
   default_config_hash: NkdNpcz0u9s1KM7wnP-gPGF_HA8Yz_hZhCXkWOeroNQ
-politician_text:
-  value: "<h6>რას ნიშნავს “მინდა პოლიტიკოსობა”?</h6>\r\n\r\n<div>\r\n<p>გთხოვთ გაითვალისწინოთ, რომ რეგისტრაციის დროს მითითებული ელ-ფოსტის შეცვლის შემთხვევაში საჭირო იქნება ხელახალი ვერიფიკაცია.</p>\r\n\r\n<p>ასევე გაითვალისწინეთ, რომ რეგისტრაციის დროს შევსებული ველების გარდა, სავალდებულო არც ერთი ველის შევსება არ არის.</p>\r\n</div>\r\n"
-  format: basic_html
-accreditation_email_text: ''
+contact_info_phone: '+995 551 677 772'
+contact_info_email: INFO@GIRCHI.COM
+social_media_facebook: 'https://www.facebook.com/GirchiParty/'
+social_media_twitter: ''
+social_media_instagram: 'https://www.instagram.com/girchiparty/'
+social_media_youtube: 'https://www.youtube.com/channel/UC6o6176a756vk1nZuzAXy5g'
+
