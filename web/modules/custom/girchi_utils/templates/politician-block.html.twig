@@ -18,9 +18,12 @@
             </p>
         </div>
         <a
-                href="/{% if(language == 'en') %}en/{% endif %}user/{{ user.id }}/edit#avatar-image"
+                {% if logged_in %}
+                    href="/{% if(language == 'en') %}en/{% endif %}user/{{ user.id }}/edit#avatar-image"
+                {% else %}
+                    href="{{ url("user.login") }}"
+                {% endif %}
                 class="btn btn-warning text-uppercase btn-lg mx-0 mt-3 mt-md-0 ml-md-auto text-nowrap"
-
         >
             {{ "Want to be politician" | t }}
         </a>
