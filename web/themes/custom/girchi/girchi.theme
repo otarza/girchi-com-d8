@@ -6,6 +6,7 @@
  */
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\user\Entity\User;
 
 include drupal_get_path('theme', 'girchi') . '/girchi.theme-suggestions.inc';
 
@@ -87,6 +88,24 @@ function girchi_preprocess_page(array &$variables) {
     }
 
     // End Redirect from user profile
+
+    // Logged in use header
+   if($currentUserId = \Drupal::currentUser()->id()){
+       $account = User::load($currentUserId);
+       $avatarEntity = $account->{'user_picture'}->entity;
+       if($avatarEntity) {
+           $currentUserAvatar = $avatarEntity->url();
+       }else{
+           $currentUserAvatar = file_create_url( drupal_get_path('theme', 'girchi') . '/images/avatar.png');
+       }
+       $variables['user_header'] = [
+           'first_name' => $account->{'field_first_name'}->value,
+           'last_name' => $account->{'field_last_name'}->value,
+           'ged' => $account->{'field_ged'}->value ? $account->{'field_ged'}->value : 0,
+           'user_picture' => $currentUserAvatar,
+           'user_name' => $account->{'name'}->value
+       ];
+   }
 }
 
 /**
