@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - girchi_utils
+    - system
   theme:
     - girchi
 id: politicianblock
@@ -17,4 +18,9 @@ settings:
   label: 'Politician block'
   provider: girchi_utils
   label_display: visible
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/en/user/*/edit*\r\n/user/*/edit*"
+    negate: false
+    context_mapping: {  }
