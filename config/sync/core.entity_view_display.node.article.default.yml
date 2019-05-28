@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.field_comments
     - field.field.node.article.field_image
     - field.field.node.article.field_is_video
+    - field.field.node.article.field_show_internal_image
     - field.field.node.article.field_tags
     - field.field.node.article.field_video_url
     - node.type.article
@@ -55,6 +56,16 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
+  field_show_internal_image:
+    weight: 7
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_tags:
     weight: 6
     label: above
