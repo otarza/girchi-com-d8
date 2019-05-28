@@ -39,6 +39,7 @@ content:
     region: content
 hidden:
   contact: true
+  field_address: true
   field_date_of_birth: true
   field_first_name: true
   field_ged: true
