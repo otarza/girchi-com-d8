@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.article.field_comments
     - field.field.node.article.field_image
     - field.field.node.article.field_is_video
+    - field.field.node.article.field_show_internal_image
     - field.field.node.article.field_tags
     - field.field.node.article.field_video_url
     - node.type.article
@@ -32,7 +33,7 @@ content:
     region: content
   field_category:
     type: entity_reference_label
-    weight: 5
+    weight: 6
     region: content
     label: above
     settings:
@@ -40,7 +41,7 @@ content:
     third_party_settings: {  }
   field_comments:
     type: facebook_comments_formatter
-    weight: 6
+    weight: 7
     region: content
     label: above
     settings:
@@ -58,9 +59,19 @@ content:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
+  field_show_internal_image:
+    type: boolean
+    weight: 3
+    region: content
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
   field_tags:
     type: entity_reference_label
-    weight: 4
+    weight: 5
     region: content
     label: above
     settings:
@@ -68,7 +79,7 @@ content:
     third_party_settings: {  }
   field_video_url:
     type: video_embed_field_video
-    weight: 3
+    weight: 4
     region: content
     label: hidden
     settings:
