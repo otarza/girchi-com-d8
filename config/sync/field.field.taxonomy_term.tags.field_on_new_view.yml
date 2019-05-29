@@ -1,0 +1,21 @@
+uuid: ba941010-e0e1-43a7-a2f0-f0c263d1f789
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_on_new_view
+    - taxonomy.vocabulary.tags
+id: taxonomy_term.tags.field_on_new_view
+field_name: field_on_new_view
+entity_type: taxonomy_term
+bundle: tags
+label: 'On new view'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: ჩართვა
+  off_label: გამორთვა
+field_type: boolean
