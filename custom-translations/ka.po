@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-05-25 13:19+0000\n"
-"PO-Revision-Date: 2019-05-25 13:19+0000\n"
+"POT-Creation-Date: 2019-05-29 08:50+0000\n"
+"PO-Revision-Date: 2019-05-29 08:50+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -334,9 +334,6 @@ msgstr "სურათი"
 msgid "Types"
 msgstr "ტიპები"
 
-msgid "Hierarchy"
-msgstr "იერარქია"
-
 msgid "Required"
 msgstr "სავალდებულო"
 
@@ -640,8 +637,8 @@ msgstr ""
 "კონტენტის ტიპი შვილობილი "
 "გვერდებისთვის"
 
-msgid "Active"
-msgstr "აქტიური"
+msgid "All"
+msgstr "ყველა"
 
 msgid "Done"
 msgstr "დასრულება"
@@ -1249,6 +1246,11 @@ msgstr "კომენტარები"
 
 msgid "Full"
 msgstr "სრული"
+
+msgid "1 new"
+msgid_plural "@count new"
+msgstr[0] "1 ახალი"
+msgstr[1] "@count ახალი"
 
 msgid "Condition"
 msgstr "პირობა"
@@ -1863,6 +1865,9 @@ msgstr "დაიწერა"
 
 msgid "Hidden"
 msgstr "დამალული"
+
+msgid "Show"
+msgstr "ჩვენება"
 
 msgid "Site language"
 msgstr "საიტის ენა"
@@ -2527,8 +2532,8 @@ msgstr "გვერდი ვერ მოიძებნა"
 msgid "More help"
 msgstr "მეტი დახმარება"
 
-msgid "Add terms"
-msgstr "ტერმინების დამატება"
+msgid "Sizes"
+msgstr "ზომები"
 
 msgid "« first"
 msgstr "« პირველი"
@@ -2803,15 +2808,6 @@ msgstr "საიტის ინსტალაცია"
 msgid "Finish translations"
 msgstr "თარგმანის დასრულება"
 
-msgid ""
-"By default, dates in this site will be displayed in the chosen time "
-"zone."
-msgstr ""
-"ნაგულისხმევად, ამ საიტზე "
-"თარიღები გამოჩნდება "
-"არჩეული დროის სარტყლის "
-"შესაბამისად."
-
 msgid "Update notifications"
 msgstr "განახლების შეტყობინებები"
 
@@ -3045,19 +3041,23 @@ msgstr "მონაცემთა ბაზის სისტემა"
 msgid "Database system version"
 msgstr "მონაცემთა ბაზის ვერსია"
 
-msgid "All"
-msgstr "ყველა"
+msgid "Active"
+msgstr "აქტიური"
 
-msgid "1 new"
-msgid_plural "@count new"
-msgstr[0] "1 ახალი"
-msgstr[1] "@count ახალი"
+msgid "Hierarchy"
+msgstr "იერარქია"
 
-msgid "Show"
-msgstr "ჩვენება"
+msgid "Add terms"
+msgstr "ტერმინების დამატება"
 
-msgid "Sizes"
-msgstr "ზომები"
+msgid ""
+"By default, dates in this site will be displayed in the chosen time "
+"zone."
+msgstr ""
+"ნაგულისხმევად, ამ საიტზე "
+"თარიღები გამოჩნდება "
+"არჩეული დროის სარტყლის "
+"შესაბამისად."
 
 msgid "Enter your email address or username."
 msgstr ""
@@ -3321,22 +3321,20 @@ msgstr ""
 msgid "Social Media"
 msgstr "სოციალური მედია"
 
-msgid "Become a politician"
-msgstr "გახდი პოლიტიკოსი"
-
-msgid "Become a politician, get enough votes and get into the party list"
-msgstr ""
-"გახდი პოლიტიკოსი, "
-"დააგროვე ხმების "
-"საკმარისი რაოდენობა და "
-"მოხვდი პარტიულ სიაში"
-
-msgid "Want to be politician"
-msgstr "მინდა პოლიტიკოსობა"
-
 msgid "Edit user"
 msgstr "პარამეტრების შეცვლა"
 
 msgid "Change Password"
 msgstr "პაროლის შეცვლა"
+
+msgid "Display user interface"
+msgstr ""
+"მომხარებლის ინტერფეისის "
+"გამოჩენა"
+
+msgid "Display user login/register buttons"
+msgstr ""
+"მომხმარებლის "
+"შესვლა/რეგისტრაცია "
+"ღილაკების გამოჩენა "
 

@@ -13,3 +13,8 @@ social_media_facebook: 'https://www.facebook.com/GirchiParty/'
 social_media_twitter: ''
 social_media_instagram: 'https://www.instagram.com/girchiparty/'
 social_media_youtube: 'https://www.youtube.com/channel/UC6o6176a756vk1nZuzAXy5g'
+politician_checkbox_text:
+  value: ''
+  format: basic_html
+ui_config: 0
+enable_user_ui: 1
