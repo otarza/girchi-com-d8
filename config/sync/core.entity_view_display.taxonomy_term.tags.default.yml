@@ -3,7 +3,7 @@ langcode: ka
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.tags.field_on_new_view
+    - field.field.taxonomy_term.tags.field_featured
     - taxonomy.vocabulary.tags
   module:
     - text
@@ -19,8 +19,8 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_on_new_view:
-    weight: 1
+  field_featured:
+    weight: 2
     label: above
     settings:
       format: default

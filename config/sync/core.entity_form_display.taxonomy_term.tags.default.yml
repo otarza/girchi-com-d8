@@ -3,7 +3,7 @@ langcode: ka
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.tags.field_on_new_view
+    - field.field.taxonomy_term.tags.field_featured
     - taxonomy.vocabulary.tags
   module:
     - path
@@ -21,8 +21,8 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_on_new_view:
-    weight: 31
+  field_featured:
+    weight: 32
     settings:
       display_label: true
     third_party_settings: {  }

@@ -1,11 +1,11 @@
-uuid: 36753ff9-2a18-4693-a5b1-8c0024ca66f5
+uuid: 4f2c2698-209e-459a-9608-f2220040d34e
 langcode: ka
 status: true
 dependencies:
   module:
     - taxonomy
-id: taxonomy_term.field_on_new_view
-field_name: field_on_new_view
+id: taxonomy_term.field_featured
+field_name: field_featured
 entity_type: taxonomy_term
 type: boolean
 settings: {  }

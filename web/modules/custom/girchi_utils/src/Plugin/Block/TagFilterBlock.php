@@ -31,7 +31,7 @@ class  TagFilterBlock extends BlockBase
         $tags_tree = [];
         $query = \Drupal::entityQuery('taxonomy_term')
             ->condition('vid', 'tags')
-            ->condition('field_on_new_view', '1')
+            ->condition('field_featured', '1')
             ->range(0,10)
             ->condition('status', 1);
 
