@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-05-28 18:57+0000\n"
-"PO-Revision-Date: 2019-05-28 18:57+0000\n"
+"POT-Creation-Date: 2019-05-29 08:18+0000\n"
+"PO-Revision-Date: 2019-05-29 08:18+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -3325,6 +3325,11 @@ msgstr "პარამეტრების შეცვლა"
 msgid "Change Password"
 msgstr "პაროლის შეცვლა"
 
+msgid "General settings for this site."
+msgstr ""
+"საიტის ზოგადი "
+"პარამეტრები."
+
 msgid "Login"
 msgstr "შესვლა"
 
@@ -3421,4 +3426,7 @@ msgstr ""
 "გაიგზავნა თქვენი "
 "ელექტრონული ფოსტის "
 "მისამართით."
+
+msgid "General settings"
+msgstr "ძირითადი პარამეტრები."
 
