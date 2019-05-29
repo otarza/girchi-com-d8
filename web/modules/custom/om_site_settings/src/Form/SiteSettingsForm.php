@@ -149,6 +149,12 @@ class SiteSettingsForm extends ConfigFormBase
             '#open' => true,
             '#title' => t('General settings'),
         ];
+        $form['general_settings']['enable_user_ui'] = [
+            '#description' => t('Display user login/register buttons'),
+            '#type' => 'checkbox',
+            '#title' => t('Display user interface'),
+            '#default_value' => $config->get('enable_user_ui')
+        ];
         $form['general_settings']['politician_checkbox_text'] = [
             '#description' => t('Enter want to be politician text'),
             '#type' => 'text_format',
@@ -181,6 +187,7 @@ class SiteSettingsForm extends ConfigFormBase
             'social_media_instagram',
             'social_media_youtube',
             'politician_checkbox_text',
+            'enable_user_ui'
         ];
 
         foreach ($fields as $field_key) {

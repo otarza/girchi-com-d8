@@ -74,12 +74,13 @@
                                      height="50">
                             </a>
                             <h6 class="text-uppercase line-height-1-2 font-size-3 font-size-xl-base mb-0 mx-2 mx-xl-3">
-                                <a href="{{ url("user.page") }}" class="text-decoration-none d-inline-block text-hover-success">
+                                <a href="{{ url("user.page") }}"
+                                   class="text-decoration-none d-inline-block text-hover-success">
                                     {% if user_header.first_name %}
-                                    {{ user_header.first_name }}
-                                    <span class="font-weight-bold">{{ user_header.last_name }}</span>
+                                        {{ user_header.first_name }}
+                                        <span class="font-weight-bold">{{ user_header.last_name }}</span>
                                     {% else %}
-                                    <span class="font-weight-bold">{{ user_header.user_name }}</span>
+                                        <span class="font-weight-bold">{{ user_header.user_name }}</span>
                                     {% endif %}
                                     <span class="d-flex align-items-center font-size-3 text-success"><i
                                                 class="icon-ged line-height-1-1"></i>
@@ -101,6 +102,17 @@
                     <a href="{{ url("user.register") }}" class="btn btn-warning text-uppercase">
                         {{ "Register" | t}}
                     </a>
+                        {% if header_config.enable_user_ui %}
+                            <a
+                                    href="{{ url("user.login") }}"
+                                    class="btn btn-success mr-lg-2 text-uppercase"
+                            >
+                                შესვლა
+                            </a>
+                            <a href="{{ url("user.register") }}" class="btn btn-warning text-uppercase">
+                                რეგისტრაცია
+                            </a>
+                        {% endif %}
                     {% endif %}
                 </div>
             </div>

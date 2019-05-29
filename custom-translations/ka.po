@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-05-29 08:18+0000\n"
-"PO-Revision-Date: 2019-05-29 08:18+0000\n"
+"POT-Creation-Date: 2019-05-29 08:50+0000\n"
+"PO-Revision-Date: 2019-05-29 08:50+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -333,9 +333,6 @@ msgstr "სურათი"
 
 msgid "Types"
 msgstr "ტიპები"
-
-msgid "Hierarchy"
-msgstr "იერარქია"
 
 msgid "Required"
 msgstr "სავალდებულო"
@@ -2814,15 +2811,6 @@ msgstr "საიტის ინსტალაცია"
 msgid "Finish translations"
 msgstr "თარგმანის დასრულება"
 
-msgid ""
-"By default, dates in this site will be displayed in the chosen time "
-"zone."
-msgstr ""
-"ნაგულისხმევად, ამ საიტზე "
-"თარიღები გამოჩნდება "
-"არჩეული დროის სარტყლის "
-"შესაბამისად."
-
 msgid "Update notifications"
 msgstr "განახლების შეტყობინებები"
 
@@ -3058,6 +3046,21 @@ msgstr "მონაცემთა ბაზის ვერსია"
 
 msgid "Active"
 msgstr "აქტიური"
+
+msgid "Hierarchy"
+msgstr "იერარქია"
+
+msgid "Add terms"
+msgstr "ტერმინების დამატება"
+
+msgid ""
+"By default, dates in this site will be displayed in the chosen time "
+"zone."
+msgstr ""
+"ნაგულისხმევად, ამ საიტზე "
+"თარიღები გამოჩნდება "
+"არჩეული დროის სარტყლის "
+"შესაბამისად."
 
 msgid "Enter your email address or username."
 msgstr ""
@@ -3429,4 +3432,15 @@ msgstr ""
 
 msgid "General settings"
 msgstr "ძირითადი პარამეტრები."
+
+msgid "Display user interface"
+msgstr ""
+"მომხარებლის ინტერფეისის "
+"გამოჩენა"
+
+msgid "Display user login/register buttons"
+msgstr ""
+"მომხმარებლის "
+"შესვლა/რეგისტრაცია "
+"ღილაკების გამოჩენა "
 
