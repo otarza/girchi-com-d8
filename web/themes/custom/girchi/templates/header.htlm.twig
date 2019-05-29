@@ -51,7 +51,7 @@
                 <i class="icon-girchi-logo navbar-brand-lg mr-lg-4"></i>
                 <span
                         class="navbar-text text-success text-uppercase font-weight-bold d-none d-lg-inline"
-                >გირჩი</span
+                >{{ "Girchi"|t}}</span
                 >
             </a>
             <button
@@ -93,6 +93,15 @@
                             </a>
                         </div>
                     {% else %}
+                    <a
+                            href="{{ url("user.login") }}"
+                            class="btn btn-success mr-lg-2 text-uppercase"
+                    >
+                        {{ "Log in" | t}}
+                    </a>
+                    <a href="{{ url("user.register") }}" class="btn btn-warning text-uppercase">
+                        {{ "Register" | t}}
+                    </a>
                         {% if header_config.enable_user_ui %}
                             <a
                                     href="{{ url("user.login") }}"
