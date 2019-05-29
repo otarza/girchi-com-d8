@@ -25,14 +25,12 @@
                       ></i>
                       {{ node.getCreatedTime| format_date('article_short') }}</span
                     >
-                        {% for category in  content.field_category %}
-                            {% if category['#title'] %}
 
+                        {% for categoryName,id in  terms %}
                                 <a
-                                        href="#"
+                                        href="{{ path('view.news.page_1') }}?category={{ id }}"
                                         class="font-size-1 text-grey font-weight-bold border-dark-silver pl-2 ml-1 border-left"
-                                >{{ category }}</a>
-                            {% endif %}
+                                >{{ categoryName }}</a>
                         {% endfor %}
 
                     </div>
