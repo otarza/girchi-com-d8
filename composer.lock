@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a8ee8016a6a74110bbcaee05a8a6c52f",
+    "content-hash": "d2d29432500a80c18fbe50283cf3e6ee",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4253,12 +4253,11 @@
                     "replace": false,
                     "merge-extra": false
                 },
-
                 "patches_applied": {
-                    "Fix Entity reference autocomplete with fields": "https://www.drupal.org/files/issues/2018-03-09/drupal-use_view_output_for_entityreference_options-2174633-206.patch",
-                    "Access user emails ": "https://www.drupal.org/files/issues/2018-12-04/role_based_email_access-drupal-8-6-2799049-17.patch",
-                    "Fix ajax erorr in views relationships": "https://www.drupal.org/files/issues/2018-08-22/2457999-183.patch"
-               }
+                    "Access user emails ": "https://www.drupal.org/files/issues/2019-04-26/drupal-2799049-30-new-permission-view-user-mail.patch",
+                    "Fix Entity reference autocomplete with fields": "https://www.drupal.org/files/issues/2019-04-16/2174633-views-273.patch",
+                    "Fix ajax error in views relationships": "https://www.drupal.org/files/issues/2019-05-04/2457999-194.patch"
+                }
             },
             "autoload": {
                 "psr-4": {
@@ -5115,8 +5114,7 @@
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
                     }
-                },
-                "patches_applied": []
+                }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
@@ -5979,6 +5977,67 @@
             "support": {
                 "source": "https://git.drupal.org/project/google_analytics.git",
                 "issues": "https://www.drupal.org/project/issues/google_analytics"
+            }
+        },
+        {
+            "name": "drupal/google_map_field",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/google_map_field.git",
+                "reference": "8.x-1.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/google_map_field-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "f92789eeac5ed1984f8749eea754441f9446cfe4"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.5",
+                    "datestamp": "1519597603",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Paulo Gomes",
+                    "homepage": "https://www.drupal.org/u/pauloamgomes",
+                    "email": "pauloamgomes@gmail.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Scot Hubbard",
+                    "homepage": "https://www.drupal.org/u/scothubbard",
+                    "email": "scot@scotserve.net",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "See contributors",
+                    "homepage": "https://www.drupal.org/node/1531046/committers"
+                }
+            ],
+            "description": "Defines a field type for Google Maps.",
+            "homepage": "http://drupal.org/project/google_map_field",
+            "support": {
+                "source": "http://cgit.drupalcode.org/google_map_field",
+                "issues": "http://drupal.org/project/google_map_field",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
             }
         },
         {
@@ -7196,6 +7255,9 @@
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
                     }
+                },
+                "patches_applied": {
+                    "Fix title change bug": "https://www.drupal.org/files/issues/2018-04-17/page_manager-page-label-not-editable-2830464-10.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -8653,6 +8715,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "iframe fix": "https://www.drupal.org/files/issues/2019-05-13/facebook_embed_field.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

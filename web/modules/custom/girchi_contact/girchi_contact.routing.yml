@@ -1,0 +1,8 @@
+
+girchi_contact.contact_page_controller_index:
+  path: '/offices'
+  defaults:
+    _controller: '\Drupal\girchi_contact\Controller\ContactPageController::index'
+    _title: 'Office'
+  requirements:
+    _permission: 'access content'
