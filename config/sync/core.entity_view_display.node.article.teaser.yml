@@ -57,6 +57,7 @@ content:
 hidden:
   body: true
   field_comments: true
+  field_show_internal_image: true
   field_video_url: true
   langcode: true
   links: true
