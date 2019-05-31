@@ -1,0 +1,19 @@
+uuid: a4b62383-cfe0-4c27-acfe-735842d84f7e
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_working_days
+    - node.type.office
+id: node.office.field_working_days
+field_name: field_working_days
+entity_type: node
+bundle: office
+label: 'Working Days'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
