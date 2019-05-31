@@ -3444,6 +3444,7 @@ msgstr ""
 "შესვლა/რეგისტრაცია "
 "ღილაკების გამოჩენა "
 
+
 msgid "ძებნა..."
 msgstr "Search..."
 
@@ -3452,4 +3453,8 @@ msgstr "ძებნა..."
 
 msgid "All news"
 msgstr "ყველა სიახლე"
+
+msgid "News"
+msgstr "სიახლეები"
+
 
