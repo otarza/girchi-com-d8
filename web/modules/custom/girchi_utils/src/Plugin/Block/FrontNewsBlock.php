@@ -29,6 +29,7 @@ class FrontNewsBlock extends BlockBase
     {
         $vid = 'news_categories';
         $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
+        $term_data = [];
         foreach ($terms as $term) {
             $term_data[$term->tid] = $term->name;
         }
