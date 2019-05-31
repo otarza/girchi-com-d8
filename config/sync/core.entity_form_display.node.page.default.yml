@@ -3,17 +3,10 @@ langcode: ka
 status: true
 dependencies:
   config:
-    - field.field.node.page.field_header_image
-    - field.field.node.page.field_icon
-    - field.field.node.page.field_image
-    - field.field.node.page.field_redirect
-    - field.field.node.page.field_show_sidebar
-    - field.field.node.page.field_url_slug
-    - image.style.thumbnail
+    - field.field.node.page.field_paragraphs
     - node.type.page
   module:
-    - image
-    - link
+    - paragraphs
     - path
 _core:
   default_config_hash: sWCotip3wyA0CvZUxyo-StTDU8TyTAhx5fcfOiHS6s4
@@ -28,52 +21,17 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_header_image:
-    weight: 126
+  field_paragraphs:
+    type: entity_reference_paragraphs
+    weight: 122
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
     third_party_settings: {  }
-    type: image_image
-    region: content
-  field_icon:
-    weight: 125
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_image:
-    weight: 129
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
-    region: content
-  field_redirect:
-    weight: 127
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
-  field_show_sidebar:
-    weight: 128
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_url_slug:
-    weight: 2
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
   langcode:
     type: language_select

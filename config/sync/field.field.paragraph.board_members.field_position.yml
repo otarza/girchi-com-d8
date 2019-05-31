@@ -1,0 +1,19 @@
+uuid: a885230f-da8a-49c0-9a5b-eca59c91f492
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_position
+    - paragraphs.paragraphs_type.board_members
+id: paragraph.board_members.field_position
+field_name: field_position
+entity_type: paragraph
+bundle: board_members
+label: Position
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

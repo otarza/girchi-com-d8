@@ -1,12 +1,12 @@
-uuid: c52ffa59-ae0b-4d7b-a3a0-ecd8a52c9a53
-langcode: ka
+uuid: 67c39730-8346-4b5b-8a5f-a80366cb6301
+langcode: en
 status: true
 dependencies:
   module:
-    - node
-id: node.field_icon
-field_name: field_icon
-entity_type: node
+    - paragraphs
+id: paragraph.field_position
+field_name: field_position
+entity_type: paragraph
 type: string
 settings:
   max_length: 255
