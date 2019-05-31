@@ -81,7 +81,6 @@ class FrontNewsBlock extends BlockBase
             $articles = Node::loadMultiple($lastest_articles);
             krsort($articles);
 
-
             return array(
                 '#theme' => 'front_page_articles',
                 '#articles' => $articles,
