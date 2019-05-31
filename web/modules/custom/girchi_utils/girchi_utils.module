@@ -99,6 +99,7 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
                 ],
             'template' => 'politician-block',
         ],
+
       'user_profile' => [
         'variables' =>
           [
@@ -113,6 +114,13 @@ function girchi_utils_theme($existing, $type, $theme, $path) {
           ],
         'template' => 'user_profile',
       ],
+        'front_page_articles' => [
+            'variables' =>
+                [
+                    'articles' => NULL,
+                ],
+            'template' => 'front-page-articles',
+        ],
     ];
 
   return $templates;
