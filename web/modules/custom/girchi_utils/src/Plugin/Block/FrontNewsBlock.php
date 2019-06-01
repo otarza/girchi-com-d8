@@ -62,6 +62,7 @@ class FrontNewsBlock extends BlockBase
             $lastest_articles = $node_storage->getQuery()
                 ->condition('type', 'article')
                 ->condition('status', 1)
+                ->condition('field_is_video', '0')
                 ->sort('created',"DESC")
                 ->range(0,10)
                 ->execute();
@@ -70,6 +71,7 @@ class FrontNewsBlock extends BlockBase
                 ->condition('type', 'article')
                 ->condition('status', 1)
                 ->condition('field_category', $category_id, '=')
+                ->condition('field_is_video', '0')
                 ->sort('created',"DESC")
                 ->range(0,10)
                 ->execute();
