@@ -1,0 +1,34 @@
+uuid: aeefff09-241b-4bad-b796-c20b4617b7a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: office
+label: Office
+type: 'canonical_entities:node'
+pattern: '/office/[node:nid]'
+selection_criteria:
+  4d1bf1b8-e526-4c4f-ae3b-c158b0897f33:
+    id: node_type
+    bundles:
+      office: office
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 4d1bf1b8-e526-4c4f-ae3b-c158b0897f33
+  c83ee536-e51a-4827-9fb9-b08f974b91ac:
+    id: language
+    langcodes:
+      en: en
+      ka: ka
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: c83ee536-e51a-4827-9fb9-b08f974b91ac
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language
