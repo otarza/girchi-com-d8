@@ -1,0 +1,15 @@
+uuid: 4af4c5c2-ba4a-4ce4-9f22-26694819ae30
+langcode: en
+status: true
+dependencies: {  }
+name: partner_image
+label: 'Partner image'
+effects:
+  db841499-cdb9-45d4-a71d-3f628fc243a3:
+    uuid: db841499-cdb9-45d4-a71d-3f628fc243a3
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 50
+      height: 50
+      anchor: center-center

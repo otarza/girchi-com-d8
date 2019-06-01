@@ -199,6 +199,7 @@
     "drupal/ckeditor_uploadimage": "^1.4",
     "drupal/coffee": "^1.0@beta",
     "drupal/comments_order": "^1.0@beta",
+    "drupal/config_default_image": "^1.0",
     "drupal/config_installer": "^1.8",
     "drupal/config_split": "^1.4",
     "drupal/console": "1.8",

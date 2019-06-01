@@ -1,0 +1,20 @@
+uuid: 7961c3ad-9371-4fb6-83a8-9bca8aadf1a2
+langcode: ka
+status: false
+dependencies:
+  module:
+    - girchi_utils
+  theme:
+    - girchi
+id: leadpartner
+theme: girchi
+region: content
+weight: 0
+provider: null
+plugin: lead_partner
+settings:
+  id: lead_partner
+  label: 'Lead partner'
+  provider: girchi_utils
+  label_display: visible
+visibility: {  }
