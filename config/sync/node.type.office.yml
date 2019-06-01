@@ -1,0 +1,18 @@
+uuid: dbf5aae6-a67a-4fac-bde9-41b6d80a94f1
+langcode: ka
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Office
+type: office
+description: 'Content type for offices'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,120 @@
+<div class="row">
+    <div class="col-md-12 col-lg-8">
+        <div class="card mb-3 mb-lg-0">
+            <div
+                class="card-header font-size-2 text-uppercase text-grey font-weight-bold d-flex px-3 px-lg-4"
+            >
+                {{ "საკონტაქტო ინფორმაცია"|t }}
+            </div>
+            <div class="card-body pt-2 p-3 p-md-4">
+                {% if cities %}
+                <ul
+                    class="nav nav-tabs nav-justified flex-column flex-sm-row"
+                    id="myTab"
+                    role="tablist"
+                >
+                    {% for city in cities %}
+                        <li class="nav-item">
+                            <a
+                                class="nav-link  text-uppercase py-3 {{ loop.first ? 'active' : '' }}"
+                                id="{{ city }}-tab"
+                                data-toggle="tab"
+                                href="#{{ city }}"
+                                role="tab"
+                                aria-controls="{{ city }}"
+                                aria-selected="{{ loop.first ? 'true' : '' }}"
+                            >{{ city|t }}</a
+                            >
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="tab-content pt-4 pt-md-7" id="myTabContent">
+                    {% for officeNumber in offices %}
+                    <div
+                        class="tab-pane fade show {{ loop.first ? 'active' : '' }}"
+                        id="{{ officeNumber.0.title }}"
+                        role="tabpanel"
+                        aria-labelledby="{{ office.title }}-tab"
+                    >
+                        {% for office in officeNumber %}
+
+                                <address
+                                    class="d-flex align-items-center m-0 py-2 flex-wrap"
+                                >
+                                    <div class="d-flex mb-3 mb-sm-0">
+                                        <i
+                                            class="icon-pin font-size-8 line-height-1-0 mt-n1 mr-2 text-success"
+                                        ></i>
+                                        <span>
+                          <span
+                              class="d-block font-weight-bold font-size-3 line-height-1-2 text-uppercase"
+                          >{{ office.addr1 }}</span
+                          >
+                          <span
+                              class="d-block font-size-2 line-height-1-2 text-grey"
+                          >{{ office.addr2 }}</span
+                          >
+                        </span>
+                                    </div>
+                                    <i
+                                        class="d-none d-sm-inline-block icon-angle-arrow-pointing-to-right text-dark-silver font-size-3 mx-4  mx-xl-5"
+                                    ></i>
+                                    <div>
+                        <span
+                            class="d-block font-size-2 line-height-1-2 text-grey"
+                        >{{ office.wd }}</span
+                        >
+                                        <span
+                                            class="d-block font-size-3 line-height-1-2 text-success font-weight-bold"
+                                        >{{ office.wh }}</span
+                                        >
+                                    </div>
+                                    <div class="ml-4">
+                        <span
+                            class="d-block font-size-2 line-height-1-2 text-grey"
+                        >{{ office.wwd }}</span
+                        >
+                                        <span
+                                            class="d-block font-size-3 line-height-1-2 text-success font-weight-bold"
+                                        >{{ office.wwh }}</span
+                                        >
+                                    </div>
+                                </address>
+                                <hr/>
+                                <ul class="list-unstyled d-flex font-size-4 flex-wrap">
+                                    <li class="navbar-list-item">
+                                        <i
+                                            class="icon-smartphone text-success font-size-5 font-size-sm-7 font-size-lg-8"
+                                        ></i>
+                                        <a
+                                            href="tel:+995551677772"
+                                            class="mx-2 mx-sm-3 font-size-sm-base font-size-2 font-weight-bold text-decoration-none"
+                                        >{{ office.phone }}</a
+                                        >
+                                    </li>
+                                    <li class="navbar-list-item">
+                                        <i
+                                            class="icon-envelope text-success font-size-5 font-size-sm-7 font-size-lg-8 ml-n1 ml-sm-0"
+                                        ></i>
+                                        <a
+                                            href="mailto:info@girchi.com"
+                                            class="text-uppercase  mx-1 mx-sm-3 font-size-sm-base font-size-2 font-weight-bold text-decoration-none"
+                                        >{{ office.email }}</a
+                                        >
+                                    </li>
+                                </ul>
+                            <hr>
+                            {{ office.map }}
+                        {% endfor %}
+                    </div >
+                    {% endfor %}
+                </div>
+                {% else %}
+                <h5>{{ 'Add officies'|t }}</h5>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,21 @@
+uuid: ba7d8cfd-2199-4ec6-a75d-0baaa9b6197f
+langcode: ka
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.office
+  module:
+    - user
+id: node.office.teaser
+targetEntityType: node
+bundle: office
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
