@@ -3378,6 +3378,11 @@ msgstr "პირადი ნომერი"
 msgid "Address"
 msgstr "მისამართი"
 
+
+msgid "Current password"
+msgstr "მიმდინარე პაროლი"
+
+
 msgid "New password"
 msgstr "ახალი პაროლი"
 
@@ -3386,6 +3391,11 @@ msgstr "გაიმეორეთ პაროლი"
 
 msgid "members in total"
 msgstr "წევრს შორის"
+
+
+msgid "Girchi"
+msgstr "გირჩი"
+
 
 msgid "More Freedom"
 msgstr "მეტი თავისუფლება"
@@ -3444,7 +3454,6 @@ msgstr ""
 "შესვლა/რეგისტრაცია "
 "ღილაკების გამოჩენა "
 
-
 msgid "ძებნა..."
 msgstr "Search..."
 
@@ -3453,6 +3462,7 @@ msgstr "ძებნა..."
 
 msgid "All news"
 msgstr "ყველა სიახლე"
+
 
 msgid "News"
 msgstr "სიახლეები"
