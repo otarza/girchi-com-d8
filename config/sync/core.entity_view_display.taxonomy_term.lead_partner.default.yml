@@ -1,0 +1,53 @@
+uuid: cf431dc0-b84d-4ced-a4f2-14f87b28b3a1
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.lead_partner.field_donated_amount
+    - field.field.taxonomy_term.lead_partner.field_image
+    - field.field.taxonomy_term.lead_partner.field_weight
+    - taxonomy.vocabulary.lead_partner
+  module:
+    - image
+    - text
+id: taxonomy_term.lead_partner.default
+targetEntityType: taxonomy_term
+bundle: lead_partner
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_donated_amount:
+    weight: 5
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_image:
+    weight: 3
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_weight:
+    weight: 4
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden:
+  langcode: true

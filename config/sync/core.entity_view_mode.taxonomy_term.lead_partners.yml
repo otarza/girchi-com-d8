@@ -1,0 +1,10 @@
+uuid: 7595944a-196f-49fd-93f8-63adb40e18e0
+langcode: ka
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.lead_partners
+label: 'Lead Partners'
+targetEntityType: taxonomy_term
+cache: true

@@ -1,0 +1,11 @@
+uuid: e612ae4a-f92c-4c53-8ffe-28f6f069cf7a
+langcode: ka
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.lead_partner
+id: taxonomy_term.lead_partner
+target_entity_type_id: taxonomy_term
+target_bundle: lead_partner
+default_langcode: site_default
+language_alterable: false
