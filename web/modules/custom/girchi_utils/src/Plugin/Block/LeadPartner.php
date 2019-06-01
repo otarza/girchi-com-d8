@@ -2,7 +2,9 @@
 
 namespace Drupal\girchi_utils\Plugin\Block;
 
+use Drupal\Console\Bootstrap\Drupal;
 use Drupal\Core\Block\BlockBase;
+use Drupal\field\Entity\FieldConfig;
 use Drupal\taxonomy\Entity\Term;
 
 /**
@@ -32,10 +34,17 @@ class LeadPartner extends BlockBase {
           $name = $partner->getName();
           $weight = $partner->get('field_weight')->value;
           $donation = $partner->get('field_donated_amount')->value;
-          $img = $partner->get('field_image')->get(0)->entity->getFileUri();
+          $field_image_entity = $partner->get('field_image')->entity;
+          if ($field_image_entity) {
+            $img = $field_image_entity->getFileUri();
+          } else {
+            $field_info = FieldConfig::loadByName('taxonomy_term', 'lead_partner', 'field_image');
+            $image_uuid = $field_info->getSetting('default_image')['uuid'];
+            $image = \Drupal::service('entity.repository')->loadEntityByUuid('file', $image_uuid);
+            $img = $image->getFileUri();
+          }
           $final_partners[] = ['name' => $name, "weight" => $weight, 'donation' => $donation, 'img' => $img ];
       }
-
       return array(
           '#theme' => 'lead_partners',
           '#leadPartner' => $final_partners,
