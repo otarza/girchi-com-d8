@@ -1,0 +1,19 @@
+uuid: 877776b4-f778-4656-9b1a-f597bfc53bd8
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address_1
+    - node.type.office
+id: node.office.field_address_1
+field_name: field_address_1
+entity_type: node
+bundle: office
+label: 'Address 1'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

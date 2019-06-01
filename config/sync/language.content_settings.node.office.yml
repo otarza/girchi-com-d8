@@ -1,0 +1,16 @@
+uuid: dffa8f54-7ab1-4dc7-a1c7-49a34fc5df8c
+langcode: ka
+status: true
+dependencies:
+  config:
+    - node.type.office
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.office
+target_entity_type_id: node
+target_bundle: office
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,21 @@
+uuid: 82918f0b-cc37-4a5f-a65a-37f436675d4b
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_map
+    - node.type.office
+  module:
+    - google_map_field
+id: node.office.field_map
+field_name: field_map
+entity_type: node
+bundle: office
+label: Map
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: google_map_field
