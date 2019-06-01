@@ -37,9 +37,11 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  girchi_contact: 0
   girchi_referral: 0
   girchi_utils: 0
   google_analytics: 0
+  google_map_field: 0
   google_tag: 0
   hal: 0
   help: 0

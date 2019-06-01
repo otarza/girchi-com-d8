@@ -1,0 +1,19 @@
+uuid: 25443da6-5df9-4e5a-84a6-edb4d1934656
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weekend_working_days
+    - node.type.office
+id: node.office.field_weekend_working_days
+field_name: field_weekend_working_days
+entity_type: node
+bundle: office
+label: 'Weekend Working Days'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Contains girchi_contact.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function girchi_contact_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the girchi_contact module.
+    case 'help.page.girchi_contact':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Girchi module for contact page') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function girchi_contact_theme() {
+  return [
+    'girchi_contact' => [
+      'render element' => 'children',
+      'variables' =>
+        [
+          'cities' => NULL,
+          'offices' => Null,
+        ],
+    ],
+  ];
+}

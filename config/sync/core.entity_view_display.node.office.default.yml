@@ -1,0 +1,99 @@
+uuid: 0b059578-22f9-41ee-a939-24109b020cb0
+langcode: ka
+status: true
+dependencies:
+  config:
+    - field.field.node.office.field_address_1
+    - field.field.node.office.field_address_2
+    - field.field.node.office.field_email
+    - field.field.node.office.field_map
+    - field.field.node.office.field_phone
+    - field.field.node.office.field_weekend_working_days
+    - field.field.node.office.field_weekend_working_hours
+    - field.field.node.office.field_working_days
+    - field.field.node.office.field_working_hours
+    - node.type.office
+  module:
+    - google_map_field
+    - user
+id: node.office.default
+targetEntityType: node
+bundle: office
+mode: default
+content:
+  field_address_1:
+    weight: 101
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_address_2:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_email:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_map:
+    weight: 109
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: google_map_field_default
+    region: content
+  field_phone:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_weekend_working_days:
+    weight: 112
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_weekend_working_hours:
+    weight: 113
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_working_days:
+    weight: 111
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_working_hours:
+    weight: 110
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
