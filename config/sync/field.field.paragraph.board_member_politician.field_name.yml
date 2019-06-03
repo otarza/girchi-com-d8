@@ -1,14 +1,14 @@
-uuid: c32b7e1b-1bbe-4499-93a4-6dee944ea43d
-langcode: en
+uuid: 632e80b5-0b24-4374-a640-b9669ec42ef6
+langcode: ka
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_name
-    - paragraphs.paragraphs_type.board_members
-id: paragraph.board_members.field_name
+    - paragraphs.paragraphs_type.board_member_politician
+id: paragraph.board_member_politician.field_name
 field_name: field_name
 entity_type: paragraph
-bundle: board_members
+bundle: board_member_politician
 label: Name
 description: ''
 required: false

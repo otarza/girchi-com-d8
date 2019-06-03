@@ -15,5 +15,6 @@ bundle: page
 mode: page_header
 content: {  }
 hidden:
+  field_paragraphs: true
   langcode: true
   links: true

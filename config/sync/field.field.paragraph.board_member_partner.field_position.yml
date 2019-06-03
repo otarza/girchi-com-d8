@@ -1,14 +1,14 @@
-uuid: a885230f-da8a-49c0-9a5b-eca59c91f492
-langcode: en
+uuid: 2cbd43b7-5a85-483d-84e1-86039dafdc64
+langcode: ka
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_position
-    - paragraphs.paragraphs_type.board_members
-id: paragraph.board_members.field_position
+    - paragraphs.paragraphs_type.board_member_partner
+id: paragraph.board_member_partner.field_position
 field_name: field_position
 entity_type: paragraph
-bundle: board_members
+bundle: board_member_partner
 label: Position
 description: ''
 required: false

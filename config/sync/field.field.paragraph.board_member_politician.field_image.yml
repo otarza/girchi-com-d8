@@ -1,10 +1,10 @@
-uuid: b5c4e0a0-568e-4bef-9770-e2f2633a1069
-langcode: en
+uuid: e4180e8c-ac11-4cdf-836c-16843b4347f0
+langcode: ka
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_image
-    - paragraphs.paragraphs_type.board_members
+    - paragraphs.paragraphs_type.board_member_politician
   module:
     - content_translation
     - image
@@ -14,10 +14,10 @@ third_party_settings:
       file: '0'
       alt: '0'
       title: '0'
-id: paragraph.board_members.field_image
+id: paragraph.board_member_politician.field_image
 field_name: field_image
 entity_type: paragraph
-bundle: board_members
+bundle: board_member_politician
 label: Image
 description: ''
 required: false
@@ -31,7 +31,7 @@ settings:
   max_resolution: ''
   min_resolution: ''
   alt_field: false
-  alt_field_required: false
+  alt_field_required: true
   title_field: false
   title_field_required: false
   default_image:

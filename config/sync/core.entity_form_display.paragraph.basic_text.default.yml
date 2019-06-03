@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.basic_text.field_body
     - field.field.paragraph.basic_text.field_tags
+    - field.field.paragraph.basic_text.field_title
     - paragraphs.paragraphs_type.basic_text
   module:
     - text
@@ -29,6 +30,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
 hidden:
   created: true

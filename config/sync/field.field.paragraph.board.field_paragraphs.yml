@@ -21,7 +21,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     negate: 0
-    target_bundles: null
+    target_bundles: {  }
     target_bundles_drag_drop:
       board:
         weight: 5
@@ -32,6 +32,9 @@ settings:
       team:
         weight: 7
         enabled: false
+      board_members:
+        enabled: true
+        weight: 8
       team_member:
         weight: 8
         enabled: false
