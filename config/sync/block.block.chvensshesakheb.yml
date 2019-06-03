@@ -1,22 +1,22 @@
-uuid: df6ea150-9285-4201-ae44-87faf5416bb2
+uuid: 20d8441e-55be-4d37-83e2-0eeeb407f0f4
 langcode: ka
 status: false
 dependencies:
   config:
-    - system.menu.footer
+    - system.menu.about-us
   module:
     - system
   theme:
     - girchi
-id: footer
+id: chvensshesakheb
 theme: girchi
-region: header
+region: sidebar_primary
 weight: -6
 provider: null
-plugin: 'system_menu_block:footer'
+plugin: 'system_menu_block:about-us'
 settings:
-  id: 'system_menu_block:footer'
-  label: Footer
+  id: 'system_menu_block:about-us'
+  label: 'ჩვენს შესახებ'
   provider: system
   label_display: '0'
   level: 1

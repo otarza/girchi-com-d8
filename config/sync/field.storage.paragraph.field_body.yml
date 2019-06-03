@@ -1,16 +1,16 @@
-uuid: fb7fbae1-5f77-4e7c-9d79-dc07bc9b6d2d
+uuid: 5ad35ecd-0c69-4c13-bb4b-2b576f8f0d96
 langcode: en
 status: true
 dependencies:
   module:
-    - link
-    - node
-id: node.field_redirect
-field_name: field_redirect
-entity_type: node
-type: link
+    - paragraphs
+    - text
+id: paragraph.field_body
+field_name: field_body
+entity_type: paragraph
+type: text_long
 settings: {  }
-module: link
+module: text
 locked: false
 cardinality: 1
 translatable: true
