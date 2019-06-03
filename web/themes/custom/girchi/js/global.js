@@ -1,4 +1,12 @@
 $(document).ready(function () {
+    $('#edit-field-politician-value').on('change', (e) => {
+        if (e.target.checked) {
+            $('.form-checkbox-input').addClass('checked');
+        } else {
+            $('.form-checkbox-input').removeClass('checked');
+        }
+    })
+
     // Video blog carousel
     const videoCarousel = $('.front-news-carousel').owlCarousel({
         margin: 10,
