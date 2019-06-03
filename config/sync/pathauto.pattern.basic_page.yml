@@ -8,17 +8,17 @@ dependencies:
 id: basic_page
 label: 'Basic page'
 type: 'canonical_entities:node'
-pattern: '/page/[node:title]'
+pattern: '/about/[node:title]'
 selection_criteria:
-  a7cbaf51-db38-434f-89b2-1f961c3578d7:
+  7be5fd4f-afc2-495e-8468-b2bdcdf3082e:
     id: node_type
     bundles:
       page: page
     negate: false
     context_mapping:
       node: node
-    uuid: a7cbaf51-db38-434f-89b2-1f961c3578d7
-  2463fdd2-fd42-47b1-b380-8e2069a4debe:
+    uuid: 7be5fd4f-afc2-495e-8468-b2bdcdf3082e
+  36672c28-624b-4904-aa03-b1d7ed819fb5:
     id: language
     langcodes:
       en: en
@@ -26,7 +26,7 @@ selection_criteria:
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: 2463fdd2-fd42-47b1-b380-8e2069a4debe
+    uuid: 36672c28-624b-4904-aa03-b1d7ed819fb5
 selection_logic: and
 weight: -10
 relationships:
