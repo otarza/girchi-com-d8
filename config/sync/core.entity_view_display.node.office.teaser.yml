@@ -18,4 +18,13 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_address_1: true
+  field_address_2: true
+  field_email: true
+  field_map: true
+  field_phone: true
+  field_weekend_working_days: true
+  field_weekend_working_hours: true
+  field_working_days: true
+  field_working_hours: true
   langcode: true

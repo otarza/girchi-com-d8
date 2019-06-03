@@ -26,6 +26,7 @@ module:
   drush_language: 0
   dynamic_page_cache: 0
   editor: 0
+  editor_advanced_link: 0
   editor_file: 0
   email_registration: 0
   embed: 0
