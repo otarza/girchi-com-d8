@@ -5,6 +5,9 @@ dependencies:
   config:
     - field.storage.node.field_paragraphs
     - node.type.page
+    - paragraphs.paragraphs_type.basic_text
+    - paragraphs.paragraphs_type.board
+    - paragraphs.paragraphs_type.team
   module:
     - entity_reference_revisions
 id: node.page.field_paragraphs
@@ -21,5 +24,27 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     negate: 0
-    target_bundles: null
+    target_bundles:
+      basic_text: basic_text
+      board: board
+      team: team
+    target_bundles_drag_drop:
+      basic_text:
+        enabled: true
+        weight: 7
+      board:
+        enabled: true
+        weight: 8
+      board_member_partner:
+        weight: 9
+        enabled: false
+      board_member_politician:
+        weight: 10
+        enabled: false
+      team:
+        enabled: true
+        weight: 11
+      team_member:
+        weight: 12
+        enabled: false
 field_type: entity_reference_revisions

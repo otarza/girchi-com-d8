@@ -34,8 +34,11 @@ settings:
       board:
         weight: 7
         enabled: false
-      board_members:
-        weight: 8
+      board_member_partner:
+        weight: 9
+        enabled: false
+      board_member_politician:
+        weight: 10
         enabled: false
       team_member:
         enabled: true
