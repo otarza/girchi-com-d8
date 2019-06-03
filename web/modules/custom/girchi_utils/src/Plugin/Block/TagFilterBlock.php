@@ -49,6 +49,7 @@ class  TagFilterBlock extends BlockBase
                 ->condition('vid', 'tags')
                 ->range(0,10)
                 ->condition('status', 1);
+            $tids = $query->execute();
         }
 
         if(!empty($tids)) {
