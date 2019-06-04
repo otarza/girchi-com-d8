@@ -7,6 +7,7 @@ namespace Drupal\girchi_utils\Plugin\Block;
 use Drupal\Core\Annotation\Translation;
 use Drupal\Core\Block\Annotation\Block;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeStorage;
 
@@ -62,9 +63,10 @@ class TopVideosBlock extends BlockBase
 
     }
 
-    public function getCacheMaxAge()
-    {
-        // set block cache max age 3 hours and then invalidate.
-        return 10800;
+    /**
+     * {@inheritdoc}
+     */
+    public function getCacheTags() {
+        return Cache::mergeTags(parent::getCacheTags(), ['node_list']);
     }
 }
