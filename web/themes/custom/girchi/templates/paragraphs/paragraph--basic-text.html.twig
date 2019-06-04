@@ -1,4 +1,11 @@
 <div class="card mt-3 mt-lg-0 mb-3 font-size-3">
+    {% if data.img_uri %}
+        <img
+                src="{{ image_style_url(data.img_uri , 'full_page_image') }}"
+                class="w-100"
+                alt=""
+        />
+    {% endif %}
     <div class="card-body p-3 p-lg-4">
         <div class="mb-3 mb-lg-4">
                   <span
@@ -12,13 +19,13 @@
                   >
             <span
                     class="font-size-1 text-grey font-weight-bold border-dark-silver pl-2 ml-1 border-left"
-            >{{ data.label }}</span
+            >{{ content.field_title }}</span
             >
         </div>
         <h4
                 class="font-size-5 font-size-lg-7 font-weight-bold line-height-1-2 text-uppercase"
         >
-            {{ content.field_title }}
+            {{ data.label }}
         </h4>
         <div class="my-3 my-lg-4">
             {{ content.field_body }}

@@ -1,4 +1,7 @@
+{% set body_classes = show_sidebar ? 'col-md-12 col-lg-9' : 'col-md-12 col-lg-12' %}
+
 <div class="row flex-column-reverse flex-lg-row">
+    {% if show_sidebar %}
     <div class="col-md-12 col-lg-3">
         <!-- Start of card -->
         <div class="card overflow-hidden d-none d-lg-block">
@@ -30,7 +33,8 @@
                 </div>
             </div>
         </div>
-    <div class="col-md-12 col-lg-9">
+    {% endif %}
+    <div {{ attributes.addClass(body_classes) }}>
         {{ content }}
     </div>
 </div>

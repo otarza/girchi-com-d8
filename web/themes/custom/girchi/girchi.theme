@@ -177,6 +177,17 @@ function girchi_preprocess_node(array &$variables) {
         }
         $variables['terms']  = $terms;
     }
+  if ($variables['node']->getType() == 'page') {
+    $current_url = Url::fromRoute('<current>');
+    $path = $current_url->toString();
+    $show_sidebar = false;
+    $splited_path = explode('/', $path);
+    if(in_array('about', $splited_path)) {
+      $show_sidebar = true;
+    }
+    $variables['show_sidebar'] = $show_sidebar;
+  }
+
 }
 
 /**
@@ -245,9 +256,12 @@ function girchi_preprocess_paragraph(&$variables)
   if ($paragraph->getParagraphType()->id() == 'basic_text') {
     $label = $paragraph->getParentEntity()->label();
     $created_date = $paragraph->getParentEntity()->getCreatedTime();
+    $img_uri = $paragraph->field_image && $paragraph->field_image->first() ? $paragraph->field_image->first()->entity->getFileUri() : '';
+    $img_url = file_create_url($img_uri);
     $variables['data'] = [
         'label' => $label,
-        'created_date' => $created_date
+        'created_date' => $created_date,
+        'img_uri' => $img_uri
     ];
   }
 
