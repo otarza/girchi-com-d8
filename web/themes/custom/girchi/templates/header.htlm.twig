@@ -54,6 +54,8 @@
                 >{{ "Girchi"|t}}</span
                 >
             </a>
+
+
             <button
                     class="navbar-toggler"
                     type="button"
@@ -63,8 +65,11 @@
                     aria-expanded="false"
                     aria-label="Toggle navigation"
             >
+                {% if header_config.enable_user_ui %}
                 <span class="icon-user auth-toggler-icon"></span>
+                {% endif %}
             </button>
+
             <div class="collapse navbar-collapse" id="navbarAuth">
                     {% if logged_in %}
                         <div class="d-flex align-items-center ml-auto py-3 py-lg-0 border-top-1 border-top-lg-0">
