@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // Video blog carousel
+    // Video blog carouselCore
     const videoCarousel = $('.front-news-carousel').owlCarousel({
         margin: 10,
         dotsContainer: $('.front-news-carousel-dots'),
