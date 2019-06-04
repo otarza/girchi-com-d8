@@ -78,23 +78,21 @@ class FrontNewsBlock extends BlockBase
                 ->execute();
         }
 
-
-
-        if (!empty($lastest_articles)) {
-
             $articles = Node::loadMultiple($lastest_articles);
             krsort($articles);
 
-            return array(
+            $template = [
                 '#theme' => 'front_page_articles',
                 '#articles' => $articles,
+            ];
 
-            );
-        }else {
-            return array(
-                '#theme' => 'top_videos'
-            );
-        }
+            $category = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($category_id);
+            if($category) {
+                $template['#category'] = $category->getName();
+            }
+
+            return $template;
+
     }
 
     /**
