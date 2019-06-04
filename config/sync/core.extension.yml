@@ -14,6 +14,7 @@ module:
   ckeditor_uploadimage: 0
   coffee: 0
   config: 0
+  config_default_image: 0
   config_filter: 0
   config_split: 0
   config_translation: 0
@@ -25,6 +26,7 @@ module:
   drush_language: 0
   dynamic_page_cache: 0
   editor: 0
+  editor_advanced_link: 0
   editor_file: 0
   email_registration: 0
   embed: 0
@@ -36,9 +38,11 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  girchi_contact: 0
   girchi_referral: 0
   girchi_utils: 0
   google_analytics: 0
+  google_map_field: 0
   google_tag: 0
   hal: 0
   help: 0
@@ -70,6 +74,8 @@ module:
   panels_ipe: 0
   path: 0
   role_delegation: 0
+  search_api: 0
+  search_api_db: 0
   serialization: 0
   shortcut: 0
   social_api: 0

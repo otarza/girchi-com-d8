@@ -1,0 +1,30 @@
+uuid: ba7d8cfd-2199-4ec6-a75d-0baaa9b6197f
+langcode: ka
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.office
+  module:
+    - user
+id: node.office.teaser
+targetEntityType: node
+bundle: office
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_address_1: true
+  field_address_2: true
+  field_email: true
+  field_map: true
+  field_phone: true
+  field_weekend_working_days: true
+  field_weekend_working_hours: true
+  field_working_days: true
+  field_working_hours: true
+  langcode: true

@@ -24,7 +24,9 @@ function girchi_preprocess_html(array &$variables) {
   }*/
 
     $route_name = \Drupal::routeMatch()->getRouteName();
-    if ($route_name === 'view.news.page_1'){
+    $current_uri = \Drupal::request()->getRequestUri();
+
+    if ($route_name === 'view.news.page_1') {
 
         if (empty(\Drupal::request()->query->get('category') == false)) {
 
@@ -38,7 +40,12 @@ function girchi_preprocess_html(array &$variables) {
 
         }
     }
-
+    if ($route_name = 'entity.node.canonical') {
+        if (preg_match("/\/office\/([0-9]+)$/", $current_uri)) {
+            $response = new RedirectResponse('/offices');
+            $response->send();
+        }
+    }
 }
 
 /**
