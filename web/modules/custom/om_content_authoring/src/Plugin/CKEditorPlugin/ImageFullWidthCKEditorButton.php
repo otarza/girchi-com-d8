@@ -19,7 +19,6 @@ use Drupal\editor\Entity\Editor;
  */
 class ImageFullWidthCKEditorButton extends CKEditorPluginBase {
 
-
   /**
    * {@inheritdoc}
    *

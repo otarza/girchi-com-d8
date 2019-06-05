@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\om_code_embed\Plugin\CKEditorPlugin\OmCode.
- */
-
 namespace Drupal\om_code_embed\Plugin\CKEditorPlugin;
 
 use Drupal\editor\Entity\Editor;
@@ -32,11 +27,11 @@ class OmCode extends EmbedCKEditorPluginBase {
    * {@inheritdoc}
    */
   public function getConfig(Editor $editor) {
-    return array(
+    return [
       'OmCode_dialogTitleAdd' => t('Insert Embed Code'),
       'OmCode_dialogTitleEdit' => t('Edit Embed Code'),
       'OmCode_buttons' => $this->getButtons(),
-    );
+    ];
   }
 
 }

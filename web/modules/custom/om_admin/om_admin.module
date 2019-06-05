@@ -5,24 +5,21 @@
  * Contains om_admin.module.
  */
 
-use Drupal\block_content\Entity\BlockContent;
-use Drupal\Core\Entity\EntityInterface;
+use Drupal\taxonomy\Entity\Term;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\node\Entity\Node;
+use Drupal\Core\Entity\EntityInterface;
 
 /**
  * Implements hook_page_attachments().
  */
-function om_admin_page_attachments(array &$attachments)
-{
-  // Add custom CSS and JS to admin theme only
-
+function om_admin_page_attachments(array &$attachments) {
+  // Add custom CSS and JS to admin theme only.
   $config = \Drupal::config('system.theme');
   $admin_theme = $config->get('admin');
 
   $active_theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
 
-  if($active_theme == $admin_theme) {
+  if ($active_theme == $admin_theme) {
     $attachments['#attached']['library'][] = 'om_admin/global-styling';
   }
 
@@ -62,18 +59,23 @@ function om_admin_node_delete(EntityInterface $entity
 
 }
 
-
+/**
+ *
+ */
 function _get_random_color() {
   $cols = '9e7e7e,9e847e,9e897e,9e8e7e,9e947e,9e997e,9e9e7e,999e7e,949e7e,'
-    .'8e9e7e,899e7e,849e7e,7e9e7e,7e9e84,7e9e89,7e9e8e,7e9e94,7e9e99,7e9e9e,7e999e,'
-    .'7e949e,7e8e9e,7e899e,7e849e,7e7e9e,847e9e,897e9e,8e7e9e,947e9e,997e9e,9e7e9e,'
-    .'9e7e99,9e7e94,9e7e8e';
+    . '8e9e7e,899e7e,849e7e,7e9e7e,7e9e84,7e9e89,7e9e8e,7e9e94,7e9e99,7e9e9e,7e999e,'
+    . '7e949e,7e8e9e,7e899e,7e849e,7e7e9e,847e9e,897e9e,8e7e9e,947e9e,997e9e,9e7e9e,'
+    . '9e7e99,9e7e94,9e7e8e';
 
   $cols_arr = explode(',', $cols);
 
   return $cols_arr[array_rand($cols_arr, 1)];
 }
 
+/**
+ *
+ */
 function create_slug($slug) {
   mb_regex_encoding("UTF-8");
   $slug = trim($slug);
@@ -119,40 +121,37 @@ function create_slug($slug) {
   return $slug;
 }
 
-
 /**
  * Implements hook_form_alter().
  */
-function om_admin_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
-  if(isset($form['#id']) && $form['#id'] == 'views-exposed-form-manage-games-page-1'){
-    // make tournament selector hyerarchical
+function om_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['#id']) && $form['#id'] == 'views-exposed-form-manage-games-page-1') {
+    // Make tournament selector hyerarchical.
     $old_options = $form['field_tournament_target_id']['#options'];
     $new_options = ['All' => $old_options['All']];
 
     $term_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
     $tournaments = $term_storage->loadTree('tournaments');
 
-    foreach($tournaments as $term){
+    foreach ($tournaments as $term) {
       $name = $term->name;
-      if(!empty($term->parents[0])){
-        // root level
-        $name = '-- '.$name;
+      if (!empty($term->parents[0])) {
+        // Root level.
+        $name = '-- ' . $name;
       }
       $new_options[$term->tid] = $name;
     }
     $form['field_tournament_target_id']['#options'] = $new_options;
   }
 
-  if($form_id == 'node_game_form') {
-    $set_tournament = (int)\Drupal::request()->query->get('tournament');
-    $set_tournament_term = \Drupal\taxonomy\Entity\Term::load($set_tournament);
+  if ($form_id == 'node_game_form') {
+    $set_tournament = (int) \Drupal::request()->query->get('tournament');
+    $set_tournament_term = Term::load($set_tournament);
     if ($set_tournament_term) {
       $form['field_tournament']['widget'][0]['target_id']['#default_value'] = $set_tournament_term;
     }
   }
-  if($form_id == 'node_game_form' || $form_id == 'node_game_edit_form') {
-    //$form['field_tournament']['widget']['#size'] = 15;
+  if ($form_id == 'node_game_form' || $form_id == 'node_game_edit_form') {
+    // $form['field_tournament']['widget']['#size'] = 15;
   }
 }
-
-

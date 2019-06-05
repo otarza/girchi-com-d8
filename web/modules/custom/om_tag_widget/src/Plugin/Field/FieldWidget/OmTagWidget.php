@@ -9,7 +9,6 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Url;
 
-
 /**
  * A widget bar.
  *
@@ -39,23 +38,23 @@ class OmTagWidget extends EntityReferenceAutocompleteTagsWidget {
     $element = parent::formElement($items, $delta, $element, $form,
       $form_state);
 
-    // Create autocomplete url
+    // Create autocomplete url.
     $target_type = $this->getFieldSetting('target_type');
     $selection_handler = $this->getFieldSetting('handler');
     $selection_settings = $element['target_id']['#selection_settings'];
 
-    // Serialize data to crypt it with site hash salt
+    // Serialize data to crypt it with site hash salt.
     $serialize_data = serialize($selection_settings) . $target_type . $selection_handler;
     $selection_settings_key = Crypt::hmacBase64($serialize_data,
       Settings::getHashSalt());
 
-    // Get KeyValueStorage and check if this key exists, if not exists add it
+    // Get KeyValueStorage and check if this key exists, if not exists add it.
     $key_value_storage = \Drupal::keyValue('entity_autocomplete');
     if (!$key_value_storage->has($selection_settings_key)) {
       $key_value_storage->set($selection_settings_key, $selection_settings);
     }
 
-    // generate autocomplete url from this settings
+    // Generate autocomplete url from this settings.
     $url = Url::fromRoute('system.entity_autocomplete',
       [
         'target_type' => $target_type,
@@ -68,10 +67,11 @@ class OmTagWidget extends EntityReferenceAutocompleteTagsWidget {
       '#attached' => [
         'library' => [
           'om_tag_widget/tagging-js',
-        ]
+        ],
       ],
     ];
 
     return $element;
   }
+
 }

@@ -5,7 +5,7 @@ namespace Drupal\girchi_utils;
 use Drupal\Core\Entity\EntityTypeManager;
 
 /**
- * Loads taxonomy terms in a tree
+ * Loads taxonomy terms in a tree.
  */
 class TaxonomyTermTree {
 
@@ -27,7 +27,7 @@ class TaxonomyTermTree {
    * Loads the tree of a vocabulary.
    *
    * @param string $vocabulary
-   *   Machine name
+   *   Machine name.
    *
    * @return array
    */
@@ -66,9 +66,10 @@ class TaxonomyTermTree {
     foreach ($children as $child) {
       foreach ($child_tree_objects as $child_tree_object) {
         if ($child_tree_object->tid == $child->id()) {
-         $this->buildTree($object_children, $child_tree_object, $vocabulary);
+          $this->buildTree($object_children, $child_tree_object, $vocabulary);
         }
       }
     }
   }
+
 }

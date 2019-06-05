@@ -1,13 +1,6 @@
 <?php
 
-/**
- * @file
- * Contains Drupal\om_code_embed\OmCodeEmbed.
- */
-
 namespace Drupal\om_code_embed;
-
-use Embed\Embed;
 
 /**
  * A service class for handling Code embeds.
@@ -45,7 +38,7 @@ class OmCodeEmbed {
    */
   public function getEmbed($request, array $config = []) {
     return 'embeeeed';
-    //return Embed::create($request, $config ?: $this->config);
+    // Return Embed::create($request, $config ?: $this->config);.
   }
 
 }

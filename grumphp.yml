@@ -1,0 +1,28 @@
+parameters:
+    ascii:
+        failed: ~
+        succeeded: ~
+    tasks:
+        phpcs:
+            standard: vendor/drupal/coder/coder_sniffer/Drupal/
+            ignore_patterns:
+                - vendor/
+                - tests/
+                - node_modules/
+                - web/core/
+                - web/autoload.php
+                - web/libraries/
+                - web/modules/contrib/
+                - web/profiles/
+                - web/sites/
+                - web/themes/
+                - .circleci/
+                - drush/
+                - scripts/
+            triggered_by:
+                - php
+                - module
+                - install
+                - inc
+                - theme
+                - js

@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\om_content_authoring\Plugin\Filter\TextTransformFilter.
- */
-
 namespace Drupal\om_content_authoring\Plugin\Filter;
 
 use Drupal\Component\Utility\Html;
@@ -62,9 +57,8 @@ class TextTransformFilter extends FilterBase implements ContainerFactoryPluginIn
       $dom = Html::load($text);
       $xpath = new \DOMXPath($dom);
 
-      // Wrap URL embeds in div.url-embed-wrapper
-
-      if(strpos($text, 'data-embed-url') !== FALSE) {
+      // Wrap URL embeds in div.url-embed-wrapper.
+      if (strpos($text, 'data-embed-url') !== FALSE) {
         $wrapper = $dom->createElement('div');
         $wrapper->setAttribute('class', 'url-embed-wrapper');
 
@@ -78,9 +72,8 @@ class TextTransformFilter extends FilterBase implements ContainerFactoryPluginIn
 
       // Wrap aligned but non-captioned images into the same figure as captioned ones have.
       // Captioned ones have <figure class="align-... inline-image"> wrappers.
-      // inline-image class is added in this .module file
-
-      if(strpos($text, '<img') !== FALSE) {
+      // inline-image class is added in this .module file.
+      if (strpos($text, '<img') !== FALSE) {
         $wrapper = $dom->createElement('figure');
 
         foreach ($xpath->query("//img[contains(concat(' ', normalize-space(@class)), ' align-')][not(ancestor::figure)]") as $node) {
@@ -88,13 +81,14 @@ class TextTransformFilter extends FilterBase implements ContainerFactoryPluginIn
           $new_wrapper = $wrapper->cloneNode();
           $classes = $node->getAttribute('class');
           $node->removeAttribute('class');
-          $new_wrapper->setAttribute('class', $classes.' inline-image');
+          $new_wrapper->setAttribute('class', $classes . ' inline-image');
 
-          if($node->parentNode->tagName == 'a') {
+          if ($node->parentNode->tagName == 'a') {
             $link_node = $node->parentNode;
             $link_node->parentNode->replaceChild($new_wrapper, $link_node);
             $new_wrapper->appendChild($link_node);
-          } else {
+          }
+          else {
             $node->parentNode->replaceChild($new_wrapper, $node);
             $new_wrapper->appendChild($node);
           }
@@ -110,30 +104,30 @@ class TextTransformFilter extends FilterBase implements ContainerFactoryPluginIn
       // Good luck figuring this code out :)
       $wrapper = $dom->createElement('div');
       foreach($xpath->query("//figure[contains(concat(' ', normalize-space(@class), ' '), ' embedded-entity ')]") as $node) {
-        $new_wrapper = $wrapper->cloneNode();
-        $new_wrapper->setAttribute('class', $node->getAttribute('class'));
-        if($node->hasChildNodes()) {
-          while($node->childNodes->length > 0) {
-            $new_wrapper->appendChild($node->childNodes->item(0));
-          }
-        }
-        foreach($new_wrapper->getElementsByTagName('figcaption') as $figcaption) {
-          if($figcaption->parentNode->nodeName != 'figure') {
-            $figure = $new_wrapper->getElementsByTagName('figure');
-            if ($figure->length > 0) {
-              $existing_figcaption = $figure->item(0)->getElementsByTagName('figcaption');
-              if($existing_figcaption->length > 0) {
-                $existing_figcaption->item(0)->insertBefore($figcaption->childNodes->item(0), $existing_figcaption->item(0)->getElementsByTagName('em')->item(0));
-                $figcaption->parentNode->removeChild($figcaption);
-              } else {
-                $figure->item(0)->appendChild($figcaption);
-              }
-            }
-          }
-        }
-        $node->parentNode->replaceChild($new_wrapper, $node);
+      $new_wrapper = $wrapper->cloneNode();
+      $new_wrapper->setAttribute('class', $node->getAttribute('class'));
+      if($node->hasChildNodes()) {
+      while($node->childNodes->length > 0) {
+      $new_wrapper->appendChild($node->childNodes->item(0));
       }
-      */
+      }
+      foreach($new_wrapper->getElementsByTagName('figcaption') as $figcaption) {
+      if($figcaption->parentNode->nodeName != 'figure') {
+      $figure = $new_wrapper->getElementsByTagName('figure');
+      if ($figure->length > 0) {
+      $existing_figcaption = $figure->item(0)->getElementsByTagName('figcaption');
+      if($existing_figcaption->length > 0) {
+      $existing_figcaption->item(0)->insertBefore($figcaption->childNodes->item(0), $existing_figcaption->item(0)->getElementsByTagName('em')->item(0));
+      $figcaption->parentNode->removeChild($figcaption);
+      } else {
+      $figure->item(0)->appendChild($figcaption);
+      }
+      }
+      }
+      }
+      $node->parentNode->replaceChild($new_wrapper, $node);
+      }
+       */
 
       $html = Html::serialize($dom);
       $result->setProcessedText($html);

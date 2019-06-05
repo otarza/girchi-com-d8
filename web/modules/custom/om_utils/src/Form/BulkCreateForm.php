@@ -7,14 +7,11 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\menu_link_content\Entity\MenuLinkContent;
 use Drupal\node\Entity\Node;
-use Drupal\node\Entity\NodeType;
-use Drupal\system\Entity\Menu;
 
 /**
  * Class BulkCreateForm.
  */
 class BulkCreateForm extends FormBase {
-
 
   /**
    * {@inheritdoc}
@@ -30,11 +27,10 @@ class BulkCreateForm extends FormBase {
 
     $node_types_list = \Drupal::service('entity.manager')->getStorage('node_type')->loadMultiple();
     $node_types = [];
-    /**
-     * @var string $machine_name
-     * @var NodeType $item
-     */
-    foreach($node_types_list as $machine_name => $item){
+
+    // @var string $machine_name
+    // @var \Drupal\node\Entity\NodeType $item
+    foreach ($node_types_list as $machine_name => $item) {
       $node_types[$machine_name] = $item->label();
     }
 
@@ -43,11 +39,10 @@ class BulkCreateForm extends FormBase {
 
     $menus_list = \Drupal::service('entity.manager')->getStorage('menu')->loadMultiple();
     $menus = [];
-    /**
-     * @var string $machine_name
-     * @var Menu $item
-     */
-    foreach($menus_list as $machine_name => $item){
+
+    // @var string $machine_name
+    // @var \Drupal\system\Entity\Menu $item
+    foreach ($menus_list as $machine_name => $item) {
       $menus[$machine_name] = $item->label();
     }
 
@@ -56,8 +51,8 @@ class BulkCreateForm extends FormBase {
       'none' => 'Don\'t expand on any level',
       '1' => 'Expand only on level 1',
     ];
-    for($i = 2; $i <= 6; $i++){
-      $expand_options[$i] = 'Expand on levels 1-'.$i;
+    for ($i = 2; $i <= 6; $i++) {
+      $expand_options[$i] = 'Expand on levels 1-' . $i;
     }
 
     $form['info'] = [
@@ -78,7 +73,7 @@ class BulkCreateForm extends FormBase {
           </li>
           <li>
               Language column order should match current order of languages in Drupal:<br>
-              <code>'.$langs.'</code><br>
+              <code>' . $langs . '</code><br>
               You can set it to be reversed with checkbox below.
           </li>
         </ul>',
@@ -87,39 +82,39 @@ class BulkCreateForm extends FormBase {
     $form['csv_content'] = [
       '#type' => 'textarea',
       '#title' => $this->t('CSV Content'),
-      '#required' => true,
+      '#required' => TRUE,
       '#description' => $this->t('Paste your CSV here.'),
     ];
     $form['content_type'] = [
       '#type' => 'select',
-      '#required' => true,
+      '#required' => TRUE,
       '#options' => $node_types,
       '#title' => $this->t('Content type'),
       '#description' => $this->t('Content type to create nodes for.'),
     ];
     $form['slug_field'] = [
       '#type' => 'textfield',
-      '#required' => true,
+      '#required' => TRUE,
       '#default_value' => 'field_url_slug',
       '#title' => $this->t('URL Slug field machine name'),
       '#description' => $this->t('Machine name of a field of selected content type that stores URL slug.'),
     ];
-    if(isset($node_types['page'])){
+    if (isset($node_types['page'])) {
       $form['content_type']['#default_value'] = 'page';
     }
     $form['menu'] = [
       '#type' => 'select',
-      '#required' => true,
+      '#required' => TRUE,
       '#options' => $menus,
       '#title' => $this->t('Menu'),
       '#description' => $this->t('Target menu to create links in.'),
     ];
-    if(isset($menus['main'])){
+    if (isset($menus['main'])) {
       $form['menu']['#default_value'] = 'main';
     }
     $form['expand'] = [
       '#type' => 'select',
-      '#required' => true,
+      '#required' => TRUE,
       '#default_value' => 'all',
       '#options' => $expand_options,
       '#title' => $this->t('Expand menu links'),
@@ -141,13 +136,6 @@ class BulkCreateForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
-    parent::validateForm($form, $form_state);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
     $csv_value = $form_state->getValue('csv_content');
@@ -158,7 +146,7 @@ class BulkCreateForm extends FormBase {
 
     $pages = $this->getPagesFromCSV($csv_value, $lang_reverse);
 
-    if(!empty($pages)){
+    if (!empty($pages)) {
       $this->createPages([
         'data' => $pages,
         'bundle' => $form_state->getValue('content_type'),
@@ -169,35 +157,41 @@ class BulkCreateForm extends FormBase {
     }
   }
 
-
-  private function getPagesFromCSV($csv, $lang_reverse){
+  /**
+   * Generate pages from CSV.
+   */
+  // phpcs:ignore
+  private function getPagesFromCSV($csv, $lang_reverse) {
     $data = [];
     $csv = explode("\n", $csv);
-    foreach($csv as $line) {
+    foreach ($csv as $line) {
       $line = trim($line);
       $data[] = str_getcsv($line);
     }
 
     $final_data = [];
     $langs = array_keys(\Drupal::languageManager()->getLanguages());
-    if($lang_reverse) {
+    if ($lang_reverse) {
       $langs = array_reverse($langs);
     }
 
-    foreach($data as $line) {
-      $slug_idx = count($line) - 1; // last item is slug
-      if(empty($slug_idx)){
-        continue; // slug is required
+    foreach ($data as $line) {
+      // Last item is slug.
+      $slug_idx = count($line) - 1;
+      if (empty($slug_idx)) {
+        // Slug is required.
+        continue;
       }
       $temp_data = [];
-      foreach($line as $idx => $val) {
-        if($idx == $slug_idx) {
+      foreach ($line as $idx => $val) {
+        if ($idx == $slug_idx) {
           $temp_data['slug'] = $val;
-        } elseif(!empty($langs[$idx])) {
+        }
+        elseif (!empty($langs[$idx])) {
 
-          if($idx === 0){
+          if ($idx === 0) {
             $level = 0;
-            while(substr($val, 0, 3) == '-- '){
+            while (substr($val, 0, 3) == '-- ') {
               $level++;
               $val = Unicode::substr($val, 3);
             }
@@ -213,7 +207,9 @@ class BulkCreateForm extends FormBase {
     return $final_data;
   }
 
-
+  /**
+   * Create actual pages.
+   */
   private function createPages($params) {
 
     $data = $params['data'];
@@ -222,21 +218,19 @@ class BulkCreateForm extends FormBase {
     $expanded = $params['expanded'];
     $slug_field = $params['slug_field'];
 
-    if(is_numeric($expanded)){
-      $expanded = (int)$expanded - 1;
+    if (is_numeric($expanded)) {
+      $expanded = (int) $expanded - 1;
     }
-
-    //
 
     $uid = \Drupal::currentUser()->id();
     $last_links_by_levels = [];
     $level_weights = [];
-    for($i = 0; $i <= 9; $i++){
+    for ($i = 0; $i <= 9; $i++) {
       $level_weights[$i] = 0;
     }
     $prev_level = 0;
 
-    foreach($data as $page) {
+    foreach ($data as $page) {
       $lang_variants = array_keys($page['labels']);
       $primary_lang = $lang_variants[0];
       unset($lang_variants[0]);
@@ -250,19 +244,20 @@ class BulkCreateForm extends FormBase {
       ]);
       $node->save();
 
-      $menu_link_parent = null;
-      if($page['level'] > 0){
+      $menu_link_parent = NULL;
+      if ($page['level'] > 0) {
         $menu_link_parent = 'menu_link_content:' . $last_links_by_levels[$page['level'] - 1]->uuid();
       }
-      if($page['level'] > $prev_level) {
+      if ($page['level'] > $prev_level) {
         $level_weights[$page['level']] = 0;
-      } else {
+      }
+      else {
         $level_weights[$page['level']]++;
       }
 
-      $menu_link_expanded = false;
-      if($expanded === 'all' || $page['level'] <= $expanded){
-        $menu_link_expanded = true;
+      $menu_link_expanded = FALSE;
+      if ($expanded === 'all' || $page['level'] <= $expanded) {
+        $menu_link_expanded = TRUE;
       }
 
       $menu_link = MenuLinkContent::create([
@@ -274,13 +269,14 @@ class BulkCreateForm extends FormBase {
       ]);
       $menu_link->enabled->value = 1;
       $menu_link->weight->value = $level_weights[$page['level']];
-      if($menu_link_parent) {
+      if ($menu_link_parent) {
         $menu_link->parent->value = $menu_link_parent;
       }
       $menu_link->save();
-      $node->save(); // to update url alias
+      // To update url alias.
+      $node->save();
 
-      foreach($lang_variants as $this_lang){
+      foreach ($lang_variants as $this_lang) {
         $node_translated = $node->addTranslation($this_lang);
         $node_translated->setTitle($page['labels'][$this_lang]);
         $node_translated->save();
@@ -288,11 +284,12 @@ class BulkCreateForm extends FormBase {
         $menu_link_translated = $menu_link->addTranslation($this_lang, $menu_link->toArray());
         $menu_link_translated->title->value = $page['labels'][$this_lang];
         $menu_link_translated->weight->value = $level_weights[$page['level']];
-        if($menu_link_parent) {
+        if ($menu_link_parent) {
           $menu_link_translated->parent->value = $menu_link_parent;
         }
         $menu_link_translated->save();
-        $node_translated->save(); // to update url alias
+        // To update url alias.
+        $node_translated->save();
       }
 
       $last_links_by_levels[$page['level']] = $menu_link;

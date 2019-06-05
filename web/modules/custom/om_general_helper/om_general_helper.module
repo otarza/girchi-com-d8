@@ -5,10 +5,10 @@
  * Contains om_general_helper.module.
  */
 
-use Drupal\Core\Database\Database;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\file\Entity\File;
+use Drupal\node\Entity\Node;
 use Drupal\Core\Render\BubbleableMetadata;
-use Drupal\paragraphs\Entity\Paragraph;
-
 
 /**
  * Implements hook_token_info().
@@ -88,30 +88,34 @@ function om_general_helper_tokens(
   return $replacements;
 }
 
+/**
+ *
+ */
+function _om_global_get_share_image(Node $node) {
 
-function _om_global_get_share_image(\Drupal\node\Entity\Node $node){
-
-  $image_entity = null;
+  $image_entity = NULL;
   $image_style = 'og_image';
   $node_type = $node->getType();
 
-  if($node_type == 'article'){
-    if(!$node->get('field_social_thumbnail')->isEmpty()){
+  if ($node_type == 'article') {
+    if (!$node->get('field_social_thumbnail')->isEmpty()) {
       $image_entity = $node->get('field_social_thumbnail')->entity;
-    } elseif(!$node->get('field_thumbnail')->isEmpty()) {
+    }
+    elseif (!$node->get('field_thumbnail')->isEmpty()) {
       $image_entity = $node->get('field_thumbnail')->entity;
     }
   }
 
-  if($image_entity instanceof \Drupal\file\Entity\File){
+  if ($image_entity instanceof File) {
     $uri = $image_entity->getFileUri();
-    if($image_style) {
-      $style = \Drupal\image\Entity\ImageStyle::load($image_style);
+    if ($image_style) {
+      $style = ImageStyle::load($image_style);
       return $style->buildUrl($uri);
-    } else {
+    }
+    else {
       return file_create_url($uri);
     }
   }
 
-  return \Drupal::request()->getSchemeAndHttpHost().'/og.png';
+  return \Drupal::request()->getSchemeAndHttpHost() . '/og.png';
 }

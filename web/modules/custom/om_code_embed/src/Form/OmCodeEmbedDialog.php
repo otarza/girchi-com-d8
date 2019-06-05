@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\om_code_embed\Form\OmCodeEmbedDialog.
- */
-
 namespace Drupal\om_code_embed\Form;
 
 use Drupal\Core\Ajax\AjaxResponse;
@@ -72,42 +67,42 @@ class OmCodeEmbedDialog extends FormBase {
     $form_state->set('embed_button', $embed_button);
     $form_state->set('editor', $editor);
     // Initialize URL element with form attributes, if present.
-    $om_code_element = empty($values['attributes']) ? array() : $values['attributes'];
-    $om_code_element += empty($input['attributes']) ? array() : $input['attributes'];
+    $om_code_element = empty($values['attributes']) ? [] : $values['attributes'];
+    $om_code_element += empty($input['attributes']) ? [] : $input['attributes'];
     // The default values are set directly from \Drupal::request()->request,
     // provided by the editor plugin opening the dialog.
     if (!$form_state->get('om_code_element')) {
-      $form_state->set('om_code_element', isset($input['editor_object']) ? $input['editor_object'] : array());
+      $form_state->set('om_code_element', isset($input['editor_object']) ? $input['editor_object'] : []);
     }
     $om_code_element += $form_state->get('om_code_element');
-    $om_code_element += array(
+    $om_code_element += [
       'data-embed-code' => '',
       'data-embed-type' => 'default',
       'data-embed-label' => '',
-    );
+    ];
     $form_state->set('om_code_element', $om_code_element);
 
     $form['#tree'] = TRUE;
     $form['#attached']['library'][] = 'editor/drupal.editor.dialog';
     $form['#prefix'] = '<div id="om-code-embed-dialog-form">';
     $form['#suffix'] = '</div>';
-    
-    $form['attributes']['data-embed-label'] = array(
+
+    $form['attributes']['data-embed-label'] = [
       '#type' => 'textfield',
       '#title' => 'Label',
       '#placeholder' => 'For keeping track in editor, not publicly visible.',
       '#default_value' => $om_code_element['data-embed-label'],
-    );
+    ];
 
-    $form['attributes']['data-embed-code'] = array(
+    $form['attributes']['data-embed-code'] = [
       '#type' => 'textarea',
       '#title' => 'Embed Code',
       '#rows' => 3,
       '#default_value' => $om_code_element['data-embed-code'],
       '#required' => TRUE,
-    );
+    ];
 
-    $form['attributes']['data-embed-type'] = array(
+    $form['attributes']['data-embed-type'] = [
       '#type' => 'select',
       '#options' => [
         'default' => 'Default',
@@ -117,31 +112,31 @@ class OmCodeEmbedDialog extends FormBase {
       '#title' => 'Embed Type',
       '#required' => TRUE,
       '#default_value' => $om_code_element['data-embed-type'],
-    );
+    ];
 
-    $form['attributes']['data-embed-button'] = array(
+    $form['attributes']['data-embed-button'] = [
       '#type' => 'value',
       '#value' => $embed_button->id(),
-    );
-    $form['attributes']['data-entity-label'] = array(
+    ];
+    $form['attributes']['data-entity-label'] = [
       '#type' => 'value',
       '#value' => $embed_button->label(),
-    );
+    ];
 
-    $form['actions'] = array(
+    $form['actions'] = [
       '#type' => 'actions',
-    );
-    $form['actions']['save_modal'] = array(
+    ];
+    $form['actions']['save_modal'] = [
       '#type' => 'submit',
       '#value' => $this->t('Embed'),
       '#button_type' => 'primary',
       // No regular submit-handler. This form only works via JavaScript.
-      '#submit' => array(),
-      '#ajax' => array(
+      '#submit' => [],
+      '#ajax' => [
         'callback' => '::submitForm',
         'event' => 'click',
-      ),
-    );
+      ],
+    ];
 
     return $form;
   }
@@ -156,10 +151,10 @@ class OmCodeEmbedDialog extends FormBase {
     // Display errors in form, if any.
     if ($form_state->hasAnyErrors()) {
       unset($form['#prefix'], $form['#suffix']);
-      $form['status_messages'] = array(
+      $form['status_messages'] = [
         '#type' => 'status_messages',
         '#weight' => -10,
-      );
+      ];
       $response->addCommand(new HtmlCommand('#om-code-embed-dialog-form', $form));
     }
     else {
@@ -169,4 +164,5 @@ class OmCodeEmbedDialog extends FormBase {
 
     return $response;
   }
+
 }

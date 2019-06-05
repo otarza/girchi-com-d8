@@ -13,27 +13,26 @@ use Drupal\menu_link_content\MenuLinkContentInterface;
 /**
  * Implements hook_token_info().
  */
-function om_menu_parents_token_token_info()
-{
-  $info = array();
-  $info['tokens']['menu-link']['om-parents-slugs'] = array(
+function om_menu_parents_token_token_info() {
+  $info = [];
+  $info['tokens']['menu-link']['om-parents-slugs'] = [
     'name' => t('Parents Slugs'),
     'description' => t("Array of parent items field_url_slug values. Use with :join-path"),
     'type' => 'array',
-  );
+  ];
   return $info;
 }
 
 /**
  * Implements hook_tokens().
  */
-function om_menu_parents_token_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata)
-{
-  $replacements = array();
+function om_menu_parents_token_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
+  $replacements = [];
   $language_manager = \Drupal::languageManager();
   if (isset($options['langcode'])) {
     $langcode = $options['langcode'];
-  } else {
+  }
+  else {
     $langcode = $language_manager->getCurrentLanguage()->getId();
   }
 
@@ -60,13 +59,12 @@ function om_menu_parents_token_tokens($type, $tokens, array $data, array $option
     // [menu-link:om-parents-slugs:*] chained tokens.
     if ($parents_tokens = \Drupal::token()->findWithPrefix($tokens, 'om-parents-slugs')) {
       if ($parents = om_menu_parents_load_all_parents($link->getPluginId(), $langcode)) {
-        $replacements += \Drupal::token()->generate('array', $parents_tokens, array('array' => $parents), $options, $bubbleable_metadata);
+        $replacements += \Drupal::token()->generate('array', $parents_tokens, ['array' => $parents], $options, $bubbleable_metadata);
       }
     }
   }
   return $replacements;
 }
-
 
 /**
  * Loads menu link slugs for all parents of a menu link plugin ID.
@@ -79,12 +77,11 @@ function om_menu_parents_token_tokens($type, $tokens, array $data, array $option
  * @return string[]
  *   List of menu link parent slugs.
  */
-function om_menu_parents_load_all_parents($plugin_id, $langcode)
-{
-  $cache = &drupal_static(__FUNCTION__, array());
+function om_menu_parents_load_all_parents($plugin_id, $langcode) {
+  $cache = &drupal_static(__FUNCTION__, []);
 
   if (!isset($cache[$plugin_id][$langcode])) {
-    $cache[$plugin_id][$langcode] = array();
+    $cache[$plugin_id][$langcode] = [];
     /** @var \Drupal\Core\Menu\MenuLinkManagerInterface $menu_link_manager */
     $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
     $parent_ids = $menu_link_manager->getParentIds($plugin_id);
@@ -92,7 +89,7 @@ function om_menu_parents_load_all_parents($plugin_id, $langcode)
     unset($parent_ids[$plugin_id]);
     foreach ($parent_ids as $parent_id) {
       $parent = $menu_link_manager->createInstance($parent_id);
-      $cache[$plugin_id][$langcode] = array($parent_id => om_menu_parents_get_link_slug($parent, $langcode)) + $cache[$plugin_id][$langcode];
+      $cache[$plugin_id][$langcode] = [$parent_id => om_menu_parents_get_link_slug($parent, $langcode)] + $cache[$plugin_id][$langcode];
     }
   }
 
@@ -101,6 +98,7 @@ function om_menu_parents_load_all_parents($plugin_id, $langcode)
 
 /**
  * Returns the translated slug of a menu item entity.
+ *
  * @param \Drupal\Core\Menu\MenuLinkInterface $menu_link
  *   The menu link.
  * @param string|null $langcode
@@ -109,8 +107,7 @@ function om_menu_parents_load_all_parents($plugin_id, $langcode)
  * @return string
  *   The menu link entity slug.
  */
-function om_menu_parents_get_link_slug(MenuLinkInterface $menu_link, $langcode = NULL)
-{
+function om_menu_parents_get_link_slug(MenuLinkInterface $menu_link, $langcode = NULL) {
   $metadata = $menu_link->getMetaData();
   if (isset($metadata['entity_id']) && $menu_link->getProvider() == 'menu_link_content') {
     /** @var \Drupal\menu_link_content\MenuLinkContentInterface $entity */
@@ -126,7 +123,8 @@ function om_menu_parents_get_link_slug(MenuLinkInterface $menu_link, $langcode =
 
       if (!empty($target_entity->hasField('field_url_slug'))) {
         return $target_entity->get('field_url_slug')->getString();
-      } else {
+      }
+      else {
         $menu_link_slug = Url::fromRoute($menu_link->getRouteName(), $menu_link->getRouteParameters())->toString();
         $exploded_menu_link_slug = explode('/', $menu_link_slug);
         return end($exploded_menu_link_slug);

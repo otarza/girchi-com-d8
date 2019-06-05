@@ -65,7 +65,6 @@ class OmVerificationController extends ControllerBase {
     );
   }
 
-
   /**
    * Confirms a user account.
    *
@@ -103,7 +102,7 @@ class OmVerificationController extends ControllerBase {
     if ($timestamp_created <= $current && !empty($users) && $account = $this->userStorage->load(reset($users))) {
       // Check if we have to enforce expiration for activation links.
       if ($this->config('user_registrationpassword.settings')
-          ->get('registration_ftll_expire') && $current - $timestamp > $timeout) {
+        ->get('registration_ftll_expire') && $current - $timestamp > $timeout) {
         $route_name = user_registrationpassword_set_message('linkerror',
           TRUE);
       }
@@ -149,7 +148,7 @@ class OmVerificationController extends ControllerBase {
       $route_name = user_registrationpassword_set_message('linkerror', TRUE);
     }
 
-
     return $this->redirect($route_name, $route_options);
   }
+
 }

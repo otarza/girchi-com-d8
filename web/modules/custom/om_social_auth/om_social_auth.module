@@ -25,7 +25,6 @@ function om_social_auth_help($route_name, RouteMatchInterface $route_match) {
   }
 }
 
-
 /**
  * Implements hook_form_FORM_ID_alter().
  *
@@ -37,7 +36,7 @@ function om_social_auth_form_user_register_form_alter(
 ) {
   $current_user = \Drupal::currentUser();
   if (\Drupal::config('user.settings')
-      ->get('register') == USER_REGISTER_VISITORS
+    ->get('register') == USER_REGISTER_VISITORS
     && \Drupal::config('user_registrationpassword.settings')
       ->get('registration') == USER_REGISTRATIONPASSWORD_VERIFICATION_PASS
     && !$current_user->id()) {
@@ -56,7 +55,6 @@ function om_social_auth_form_user_register_form_alter(
  * Implements hook_ENTITY_TYPE_presave().
  *
  * @param \Drupal\user\UserInterface $user
- *
  */
 function om_social_auth_user_presave(UserInterface $user) {
   /*
@@ -66,7 +64,6 @@ function om_social_auth_user_presave(UserInterface $user) {
     $user->addRole('passive');
   }
 }
-
 
 /**
  * Implements hook_form_alter().
@@ -97,10 +94,9 @@ function om_social_auth_form_alter(
   }
 }
 
-
-/*
- * ხელახლა გავაგზავნოთ აქტივაციის ლინკი მომხმარებელთან
- * */
+/**
+ * ხელახლა გავაგზავნოთ აქტივაციის ლინკი მომხმარებელთან.
+ */
 function _om_social_auth_resend_activation_link(
   &$form,
   FormStateInterface $form_state

@@ -5,7 +5,6 @@ namespace Drupal\om_admin\Form;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
-use Drupal\Core\Language\Language;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\language\ConfigurableLanguageManager;
 use Drupal\Core\Database\Driver\mysql\Connection;
@@ -13,8 +12,7 @@ use Drupal\Core\Database\Driver\mysql\Connection;
 /**
  * Class DropUserInterfaceTranslationsForm.
  */
-class DropUserInterfaceTranslationsForm extends ConfigFormBase
-{
+class DropUserInterfaceTranslationsForm extends ConfigFormBase {
 
   /**
    * Drupal\language\ConfigurableLanguageManager definition.
@@ -36,15 +34,16 @@ class DropUserInterfaceTranslationsForm extends ConfigFormBase
     ConfigFactoryInterface $config_factory,
     ConfigurableLanguageManager $language_manager,
     Connection $database
-  )
-  {
+  ) {
     parent::__construct($config_factory);
     $this->languageManager = $language_manager;
     $this->database = $database;
   }
 
-  public static function create(ContainerInterface $container)
-  {
+  /**
+   *
+   */
+  public static function create(ContainerInterface $container) {
     return new static(
       $container->get('config.factory'),
       $container->get('language_manager'),
@@ -55,8 +54,7 @@ class DropUserInterfaceTranslationsForm extends ConfigFormBase
   /**
    * {@inheritdoc}
    */
-  protected function getEditableConfigNames()
-  {
+  protected function getEditableConfigNames() {
     return [
       'om_admin.dropuserinterfacetranslations',
     ];
@@ -65,21 +63,19 @@ class DropUserInterfaceTranslationsForm extends ConfigFormBase
   /**
    * {@inheritdoc}
    */
-  public function getFormId()
-  {
+  public function getFormId() {
     return 'drop_user_interface_translations_form';
   }
 
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state)
-  {
+  public function buildForm(array $form, FormStateInterface $form_state) {
     $languages = $this->languageManager->getLanguages();
     $options = ['' => $this->t('- None -')];
-    /** @var Language $language */
-    foreach($languages as $id => $language) {
-      if($id != 'en') {
+    /** @var \Drupal\Core\Language\Language $language */
+    foreach ($languages as $id => $language) {
+      if ($id != 'en') {
         $options[$id] = $language->getName();
       }
     }
@@ -97,29 +93,29 @@ class DropUserInterfaceTranslationsForm extends ConfigFormBase
   /**
    * {@inheritdoc}
    */
-  public function validateForm(array &$form, FormStateInterface $form_state)
-  {
+  public function validateForm(array &$form, FormStateInterface $form_state) {
     parent::validateForm($form, $form_state);
   }
 
   /**
    * {@inheritdoc}
    */
-  public function submitForm(array &$form, FormStateInterface $form_state)
-  {
+  public function submitForm(array &$form, FormStateInterface $form_state) {
     $to_drop = $form_state->getValue('language_to_drop');
-    if($to_drop) {
-      if($language = $this->languageManager->getLanguage($to_drop)) {
+    if ($to_drop) {
+      if ($language = $this->languageManager->getLanguage($to_drop)) {
         $delete = $this->database->delete('locales_target');
         $delete->condition('language', $to_drop);
         $deleted_num = $delete->execute();
         drupal_flush_all_caches();
 
-        drupal_set_message($deleted_num.' items deleted from '.$language->getName().' interface translations.', 'status');
-      } else {
-        drupal_set_message('There is no language <code>'.$to_drop.'</code>', 'error');
+        drupal_set_message($deleted_num . ' items deleted from ' . $language->getName() . ' interface translations.', 'status');
       }
-    } else {
+      else {
+        drupal_set_message('There is no language <code>' . $to_drop . '</code>', 'error');
+      }
+    }
+    else {
       drupal_set_message('Please select language to drop translations for.', 'error');
     }
   }

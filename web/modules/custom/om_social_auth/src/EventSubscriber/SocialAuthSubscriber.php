@@ -55,7 +55,7 @@ class SocialAuthSubscriber implements EventSubscriberInterface {
   /**
    * {@inheritdoc}
    */
-  static function getSubscribedEvents() {
+  public static function getSubscribedEvents() {
     $events[SocialAuthEvents::USER_CREATED] = ['onUserCreated'];
     $events[SocialAuthEvents::USER_LOGIN] = ['onUserLogin'];
 
@@ -92,6 +92,5 @@ class SocialAuthSubscriber implements EventSubscriberInterface {
       $user->save();
     }
   }
-
 
 }
