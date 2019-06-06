@@ -1,0 +1,140 @@
+<div class="card mt-0 mt-md-3 mt-lg-0 mb-2 mb-lg-3">
+    <div class="card-body p-3 p-md-4">
+        <div class="d-flex flex-column flex-md-row">
+            <div>
+                <h5 class="text-uppercase text-success font-weight-bold">
+                    შეადგინე შენი პარტიული სია
+                </h5>
+                <p class="font-size-3 mb-0">
+                    აირჩიეთ პოლიტიკოსი, მიუთითეთ თქვენი წონის რამდენი %-ით
+                    უჭერთ მას მხარს და მიიღე მონაწილეობა პარტიული სიის
+                    ჩამოყალიბებაში.
+                </p>
+            </div>
+            <div
+                    class="border-top border-left-0 border-left-md-1 border-top-md-0 text-center px-0 pr-md-4 pl-md-6 ml-0 ml-md-2 mt-3 mt-md-0 pt-3 pt-md-0"
+            >
+                    <span
+                            class="text-uppercase text-grey font-size-1"
+                <span
+                        class="text-uppercase text-grey font-size-1"
+                >დაგრჩათ</span
+                >
+                <span
+                        class="d-block font-size-8 text-nowrap font-weight-bold text-warning line-height-1-0 pl-available-percentage"
+                >100%</span
+                >
+                <span
+                        class="text-uppercase text-grey font-size-1 text-nowrap"
+                >out of
+                      <span class="text-success font-size-2">100%</span></span
+                >
+            </div>
+        </div>
+        <hr class="mx-md-n4  mt-3 mt-md-4" />
+        <form action="">
+            <ul class="list-group my-3 my-md-4 pl-group">
+                <li
+                        class="list-group-item last border-dashed bg-dark-white p-2 p-md-3"
+                >
+                    <div
+                            class="d-flex flex-wrap flex-md-nowrap w-100 align-items-center"
+                    >
+                        <select
+                                id="politician"
+                                class="select w-100 w-md-40 mb-2 mb-md-0"
+                                data-live-search="true"
+                                data-style="btn-white border btn-lg bg-hover-white rounded-oval"
+                                title="აირჩიეთ პოლიტიკოსი"
+                                data-none-results-text="არაფერი მოიძებნა"
+                        >
+                            <option
+                                    value="1"
+                                    data-content='
+                                <div class="d-flex w-100 align-items-center p-1">
+                                  <span
+                                    class="rounded-circle overflow-hidden d-inline-block"
+                                  >
+                                    <img
+                                      src="images/i.metreveli.jpg"
+                                      width="35"
+                                      class="rounded pl-politician-avatar"
+                                      alt="..."
+                                    />
+                                  </span>
+                                  <h6
+                                    class="text-uppercase line-height-1-2 font-size-3 font-size-xl-3 mb-0 mx-2"
+                                  >
+                                    <span
+                                      class="text-decoration-none d-inline-block text-hover-success"
+                                    >
+                                      <span class="pl-politician-first-name">ზურაბ</span>
+                                      <span class="font-weight-bold pl-politician-last-name">ჯაფარიძე</span>
+                                    </span>
+                                    <span class="d-flex font-size-1 text-grey pl-politician-position">
+                                      პარტიის დამფუძნებელი
+                                    </span>
+                                  </h6>
+                                '
+                            ></option>
+                            <option
+                                    value="2"
+                                    data-content='
+                                <div class="d-flex w-100 align-items-center p-1">
+                                  <span
+                                    class="rounded-circle overflow-hidden d-inline-block"
+                                  >
+                                    <img
+                                      src="images/i.metreveli.jpg"
+                                      width="35"
+                                      class="rounded pl-politician-avatar"
+                                      alt="..."
+                                    />
+                                  </span>
+                                  <h6
+                                    class="text-uppercase line-height-1-2 font-size-3 font-size-xl-3 mb-0 mx-2"
+                                  >
+                                    <span
+                                      class="text-decoration-none d-inline-block text-hover-success"
+                                    >
+                                      <span class="pl-politician-first-name">ირაკლი</span>
+                                      <span class="font-weight-bold pl-politician-last-name">მეტრეველი</span>
+                                    </span>
+                                    <span class="d-flex font-size-1 text-grey pl-politician-position">
+                                      პარტიის დამფუძნებელი
+                                    </span>
+                                  </h6>
+                                '
+                            ></option>
+                        </select>
+                        <span
+                                class="font-size-1 max-w-210 w-50  w-md-30   font-weight-bold text-grey line-height-1-4 ml-0 ml-md-auto"
+                        >
+                          მიუთითეთ თქვენი წონის რამდენი პროცენტით უჭერთ მას
+                          მხარს
+                        </span>
+                        <input
+                                type="number"
+                                id="percent"
+                                class="form-control form-control-spin-none form-control-lg py-3 px-4 ml-auto ml-md-3  mr-0 font-size-4 font-weight-bold text-center max-px-sm-100 max-px-90"
+                                placeholder="0"
+                                data-msg-text="მაქსიმალური მნიშვნელობა {value}%"
+                        />
+                        <span class="ml-2 mr-0 mr-md-5 font-size-5">
+                          %
+                        </span>
+                    </div>
+                </li>
+            </ul>
+            <div class="text-center">
+                <button
+                        type="submit"
+                        class="btn btn-lg btn-success text-uppercase min-w-200"
+                >
+                    შენახვა
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{{ attach_library('girchi/myparty-list') }}
