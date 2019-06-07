@@ -3,7 +3,7 @@
         <div class="d-flex flex-column flex-md-row">
             <div>
                 <h5 class="text-uppercase text-success font-weight-bold">
-                    {{ 'Fill your party list' |t  }}
+                    {{ 'Establish your party list' | t  }}
                 </h5>
                 <p class="font-size-3 mb-0">
                     {{ 'Select a politician, Specify the percentage of your weight
@@ -18,7 +18,7 @@
                             class="text-uppercase text-grey font-size-1"
                 <span
                         class="text-uppercase text-grey font-size-1"
-                >{{ 'Left' | t }}</span
+                >{{ 'Percentage Left' | t }}</span
                 >
                 <span
                         class="d-block font-size-8 text-nowrap font-weight-bold text-warning line-height-1-0 pl-available-percentage"
@@ -84,8 +84,8 @@
                                 class="select w-100 w-md-40 mb-2 mb-md-0"
                                 data-live-search="true"
                                 data-style="btn-white border btn-lg bg-hover-white rounded-oval"
-                                title="{{ 'Choose politician' |t }}"
-                                data-none-results-text="{{ 'Nothing found' |t }}"
+                                title="{{ 'Select a politician' | t }}"
+                                data-none-results-text="{{ 'Nothing found' | t }}"
                         >
                             {% for politician in topPoliticians %}
                             <option
@@ -129,7 +129,7 @@
                                 id="percent"
                                 class="form-control form-control-spin-none form-control-lg py-3 px-4 ml-auto ml-md-3  mr-0 font-size-4 font-weight-bold text-center max-px-sm-100 max-px-90"
                                 placeholder="0"
-                                data-msg-text="მაქსიმალური მნიშვნელობა {value}%"
+                                data-msg-text="{{ 'Maximum value' | t }} {value}%"
                         />
                         <span class="ml-2 mr-0 mr-md-5 font-size-5">
                           %
