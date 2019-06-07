@@ -10,7 +10,15 @@ girchi_my_party_list.party_list_controller_getUsers:
   path: '/getUsers'
   defaults:
     _controller: '\Drupal\girchi_my_party_list\Controller\PartyListController::getUsers'
-    _title: 'My Party List'
+    _title: 'Get users'
   requirements:
     _permission: 'access content'
 
+
+girchi_my_party_list.party_list_controller_updateUser:
+  path: '/updateUser'
+  defaults:
+    _controller: '\Drupal\girchi_my_party_list\Controller\PartyListController::updateUser'
+    _title: 'Update user'
+  requirements:
+    _permission: 'access content'
