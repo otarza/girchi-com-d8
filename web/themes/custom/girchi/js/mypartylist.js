@@ -1,6 +1,4 @@
 $(document).ready(function () {
-
-
     $('.bs-searchbox :input').on('keyup', (e) => {
         let keyword = e.target.value;
         $.ajax({
@@ -8,15 +6,18 @@ $(document).ready(function () {
             url: "/getusers?user=" + keyword,
         })
             .done((data) => {
-                $(`<option
-                value="3"
+                console.log(data);
+                $('#politician').html('');
+                $.each( data, function( i, user ) {
+                    $(`<option
+                value="${user.id}"
                 data-content='
             <div class="d-flex w-100 align-items-center p-1">
             <span
                 class="rounded-circle overflow-hidden d-inline-block"
             >
                 <img
-                src="images/i.metreveli.jpg"
+                src="${user.imgUrl}"
                 width="35"
                 class="rounded pl-politician-avatar"
                 alt="..."
@@ -28,15 +29,16 @@ $(document).ready(function () {
                 <span
                 class="text-decoration-none d-inline-block text-hover-success"
                 >
-                <span class="pl-politician-first-name">ილია</span>
-                <span class="font-weight-bold pl-politician-last-name">ნოზახე</span>
+                <span class="pl-politician-first-name">${user.firstName}</span>
+                <span class="font-weight-bold pl-politician-last-name">${user.lastName}</span>
                 </span>
                 <span class="d-flex font-size-1 text-grey pl-politician-position">
-                ტესტ
+                პოლიტიკოსი
                 </span>
             </h6>
             '
             ></option>`).appendTo('#politician');
+                });
                 $("#politician").selectpicker("refresh");
             });
     })
